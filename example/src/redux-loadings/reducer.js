@@ -1,6 +1,3 @@
-// TODO extract
-import { createStore, compose, applyMiddleware } from 'redux'
-import reduxThunk from 'redux-thunk';
 import { handleActions } from 'redux-actions';
 import { assignValueDeep, setValueDeep } from './reducerPrototype';
 import { debug, group, groupEnd } from './logger';
@@ -21,7 +18,7 @@ function groupLog(key, result) {
   }
 }
 
-const counter = handleActions({
+export const reducer = handleActions({
   SET_LOADING: (state, action) => {
     const { key } = action.payload;
     log(key);
@@ -35,9 +32,3 @@ const counter = handleActions({
     return assignValueDeep(state, ['loadings', key], false);
   },
 }, {});
-
-const middleware = applyMiddleware(reduxThunk);
-
-let store = compose(middleware)(createStore)(counter);
-
-export { store };

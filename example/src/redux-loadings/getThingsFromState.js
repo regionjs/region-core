@@ -43,10 +43,14 @@ export const getFetchTimes = (state, path) => {
 
 export const mapResultToProps = (path) => (state) => {
   const loading = getLoading(state, path);
-  const resultArr = getResults(state, path);
-  const results = { loading };
-  path.forEach((key, index) => {
-    results[key] = resultArr[index];
-  })
-  return results;
+  const results = getResults(state, path);
+  const props = { loading };
+  if (Array.isArray(path)) {
+    path.forEach((key, index) => {
+      props[key] = results[index];
+    })
+    return props;
+  }
+  props[path] = results;
+  return props;
 }

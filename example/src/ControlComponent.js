@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { load, mapResultToProps } from './redux-loadings'; // TODO package
+import { load, mapResultToProps } from 'redux-loadings';
 import Loading from './LoadingComponent'
 import DisplayComponent from './DisplayComponent'
 import { fetchUser, fetchFollower } from './api'; // somewhere with axios

@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+svg{
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  display:inline-block;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  background: #222;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.panel {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  border: 10px #222 solid;
+}

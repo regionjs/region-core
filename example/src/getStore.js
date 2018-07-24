@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { getReducer, setConfig } from 'redux-loadings';
 
 const middleware = applyMiddleware(thunk);
-const reducer = combineReducers({ other : {}, results: getReducer() });
+const reducer = combineReducers({ results: getReducer() });
 setConfig({ reducerPath: 'results' });
 const store = compose(middleware)(createStore)(reducer);
 

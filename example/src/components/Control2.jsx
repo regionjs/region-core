@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { load, getLoading, getResults } from 'redux-loadings';
-import Loading from '../ui/Loading'
-import DisplayComponent from '../ui/Display'
+import Loading from '../ui/Loading';
+import DisplayComponent from '../ui/Display';
 import { fetchUser, fetchFollower } from '../api'; // somewhere with axios
 
 class Control2 extends PureComponent {
@@ -14,7 +14,7 @@ class Control2 extends PureComponent {
 
   render() {
     const { loading, user, follower } = this.props;
-    if(loading) {
+    if (loading) {
       return (
         <Loading />
       );
@@ -29,6 +29,6 @@ const mapStateToProps = (state) => {
   const loading = getLoading(state, 'user');
   const [user, follower] = getResults(state, ['user', 'follower']);
   return { loading, user, follower };
-}
+};
 
 export default connect(mapStateToProps)(Control2);

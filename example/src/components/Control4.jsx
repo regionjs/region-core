@@ -1,8 +1,8 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { load, getLoading, getResults } from 'redux-loadings';
-import Loading from '../ui/Loading'
-import DisplayComponent from '../ui/Display'
+import Loading from '../ui/Loading';
+import DisplayComponent from '../ui/Display';
 import { fetchUser, fetchFollower } from '../api'; // somewhere with axios
 
 class Control4 extends PureComponent {
@@ -34,6 +34,6 @@ const mapStateToProps = (state) => {
   const loading = getLoading(state, ['user4', 'follower4']);
   const [user, follower] = getResults(state, ['user4', 'follower4']);
   return { loading, user, follower };
-}
+};
 
 export default connect(mapStateToProps)(Control4);

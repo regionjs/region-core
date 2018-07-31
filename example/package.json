@@ -9,7 +9,7 @@
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "redux-actions": "^2.4.0",
-    "redux-loadings": "^0.2.5",
+    "redux-loadings": "git+https://github.com/dancerphil/redux-loadings.git#develop",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -17,5 +17,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0"
   }
 }

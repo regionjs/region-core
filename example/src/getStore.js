@@ -1,9 +1,8 @@
-import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
-import { getReducer } from 'redux-loadings';
+import { createStore, combineReducers } from 'redux';
+import { reducer as results, setConfig } from 'redux-loadings';
 
-const middleware = applyMiddleware(thunk);
-const reducer = combineReducers({ results: getReducer({ reducerPath: 'results' }) });
-const store = compose(middleware)(createStore)(reducer);
+const reducer = combineReducers({ results });
+const store = createStore(reducer);
+setConfig({ store, reducerPath: 'results', strictLoading: false });
 
 export default store;

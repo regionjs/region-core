@@ -6,8 +6,8 @@ class Layout extends PureComponent {
     const { children } = this.props;
     return (
       <Fragment>
-        {children.map(child => (
-          <div className="panel">
+        {children.map((child, index) => (
+          <div key={index} className="panel">
             {child}
           </div>
         ))}

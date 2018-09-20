@@ -1,17 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { load, getLoading, getResults } from 'redux-loadings';
+import { getLoading, getResults } from 'redux-loadings';
 import Loading from '../ui/Loading';
 import DisplayComponent from '../ui/Display';
-import { fetchUser, fetchFollower } from '../api'; // somewhere with axios
 
 class Control2 extends PureComponent {
-  componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(load('user', fetchUser));
-    dispatch(load('follower', fetchFollower));
-  }
-
   render() {
     const { loading, user, follower } = this.props;
     if (loading) {
@@ -25,9 +18,9 @@ class Control2 extends PureComponent {
   }
 }
 
-const mapStateToProps = (state) => {
-  const loading = getLoading(state, 'user');
-  const [user, follower] = getResults(state, ['user', 'follower']);
+const mapStateToProps = () => {
+  const loading = getLoading('user');
+  const [user, follower] = getResults(['user', 'follower']);
   return { loading, user, follower };
 };
 

@@ -1,30 +1,30 @@
 import React, { Fragment } from 'react';
-import { load, connectWith } from 'redux-loadings';
+import { connectWith } from 'redux-loadings';
+import Button from '../ui/Button';
 import Loading from '../ui/Loading';
-import DisplayComponent from '../ui/Display';
-import { fetchFollower } from '../api'; // somewhere with axios
+import { loadSome } from '../load';
 
-const Link = () => (
-  <div
-    style={{ padding: 10, color: 'blue', cursor: 'pointer' }}
-    onClick={() => load('followerClick', fetchFollower)}
-  >
-    click to load follower
+const DisplayComponent = ({ user, follower }) => (
+  <div style={{ flex: 1, width: '100%', padding: 10 }}>
+    <h1>{user}</h1>
+    <p>{follower}</p>
   </div>
 );
 
-const Control4 = ({ user, followerClick: follower }) => (
+const Control4 = ({ user, some }) => (
   <Fragment>
-    {!follower && <Link />}
-    <DisplayComponent user={user} follower={follower} />
+    {!some && (
+      <div style={{ padding: 10 }}><Button onClick={loadSome}>click to load something</Button></div>
+    )}
+    <DisplayComponent user={user} follower={some} />
   </Fragment>
 );
 
-const Loading4 = ({ user, followerClick: follower }) => (
+const Loading4 = ({ user, some }) => (
   <Fragment>
     <Loading loading />
-    <DisplayComponent user={user} follower={follower} />
+    <DisplayComponent user={user} follower={some} />
   </Fragment>
 );
 
-export default connectWith(['user', 'followerClick'], Control4, Loading4);
+export default connectWith(['user', 'some'], Control4, Loading4);

@@ -1,15 +1,13 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import Button from './Button';
+import { loadFollower } from '../load';
 
-class Display extends PureComponent {
-  render() {
-    const { user, follower } = this.props;
-    return (
-      <div style={{ flex: 1, width: '100%', height: '100%', padding: 10 }}>
-        <h1>{user}</h1>
-        <p>{follower}</p>
-      </div>
-    );
-  }
-}
+const Display = ({ user, follower }) => (
+  <div style={{ flex: 1, width: '100%', padding: 10 }}>
+    <h1>{user}</h1>
+    {follower && follower.map(f => <p>{f}</p>)}
+    <Button onClick={loadFollower}>more</Button>
+  </div>
+);
 
 export default Display;

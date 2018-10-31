@@ -1,27 +1,30 @@
-import React, { PureComponent, Fragment } from 'react';
-import { load, connect } from 'redux-loadings';
+import React, { Fragment } from 'react';
+import { load, connectWith } from 'redux-loadings';
 import Loading from '../ui/Loading';
 import DisplayComponent from '../ui/Display';
 import { fetchFollower } from '../api'; // somewhere with axios
 
-class Control4 extends PureComponent {
-  render() {
-    const { loading, user, follower } = this.props;
-    return (
-      <Fragment>
-        {!loading && !follower && (
-          <div
-            style={{ padding: 10, color: 'blue', cursor: 'pointer' }}
-            onClick={() => load('followerClick', fetchFollower)}
-          >
-            click to load follower
-          </div>
-        )}
-        <Loading loading={loading} />
-        <DisplayComponent user={user} follower={follower} />
-      </Fragment>
-    );
-  }
-}
+const Link = () => (
+  <div
+    style={{ padding: 10, color: 'blue', cursor: 'pointer' }}
+    onClick={() => load('followerClick', fetchFollower)}
+  >
+    click to load follower
+  </div>
+);
 
-export default connect(['user', 'followerClick'])(Control4);
+const Control4 = ({ user, followerClick: follower }) => (
+  <Fragment>
+    {!follower && <Link />}
+    <DisplayComponent user={user} follower={follower} />
+  </Fragment>
+);
+
+const Loading4 = ({ user, followerClick: follower }) => (
+  <Fragment>
+    <Loading loading />
+    <DisplayComponent user={user} follower={follower} />
+  </Fragment>
+);
+
+export default connectWith(['user', 'followerClick'], Control4, Loading4);

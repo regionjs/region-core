@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider, setConfig } from 'redux-loadings';
-import Layout from './Layout';
 import 'antd/dist/antd.css';
+import Layout from './Layout';
 
 setConfig({ strictLoading: false });
 

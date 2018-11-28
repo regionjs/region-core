@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react';
-import { connectWith } from 'redux-loadings';
+import { set, connectWith } from 'redux-loadings';
 import { Button } from 'antd';
-import Loading from '../ui/Loading';
+import Loading from './Loading';
 import { loadSome } from '../../interface';
 
-const DisplayComponent = ({ user, follower }) => (
+set('some', '');
+
+const Display = ({ user, follower }) => (
   <div style={{ flex: 1, width: '100%', padding: 10 }}>
     <h1>{user}</h1>
     <p>{follower}</p>
@@ -16,14 +18,14 @@ const Control4 = ({ user, some }) => (
     {!some && (
       <div style={{ padding: 10 }}><Button onClick={loadSome}>click to load something</Button></div>
     )}
-    <DisplayComponent user={user} follower={some} />
+    <Display user={user} follower={some} />
   </Fragment>
 );
 
 const Loading4 = ({ user, some }) => (
   <Fragment>
     <Loading loading />
-    <DisplayComponent user={user} follower={some} />
+    <Display user={user} follower={some} />
   </Fragment>
 );
 

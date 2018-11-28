@@ -1,5 +1,5 @@
 import React from 'react';
-import './layout.css';
+import './index.css';
 
 const Row = ({ children }) => <div style={{ flex: 1, display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>{children}</div>;
 

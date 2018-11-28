@@ -3,7 +3,7 @@ import { Provider, setConfig } from 'redux-loadings';
 import 'antd/dist/antd.css';
 import Layout from './Layout';
 
-setConfig({ strictLoading: false });
+// setConfig({ strictLoading: false });
 
 const App = () => (
   <Provider>

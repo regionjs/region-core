@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "antd": "^3.10.9",
+    "lodash": "^4.17.11",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "redux-actions": "^2.4.0",
-    "redux-loadings": "^0.4.4"
+    "redux-loadings": "^0.5.0"
   },
   "scripts": {
     "start": "react-scripts start",

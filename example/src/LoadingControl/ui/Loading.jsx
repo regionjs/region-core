@@ -1,7 +1,6 @@
 import React from 'react';
 import './loading.css';
 
-
 const Loading = ({ loading }) => (loading === false ? null : (
   <div className="container">
     <div className="loader">

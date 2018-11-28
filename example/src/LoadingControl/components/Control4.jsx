@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connectWith } from 'redux-loadings';
 import { Button } from 'antd';
 import Loading from '../ui/Loading';
-import { loadSome } from '../../load/index';
+import { loadSome } from '../../interface';
 
 const DisplayComponent = ({ user, follower }) => (
   <div style={{ flex: 1, width: '100%', padding: 10 }}>

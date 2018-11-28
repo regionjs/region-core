@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'antd';
-import { loadFollower } from '../../load/index';
+import { loadFollower } from '../../interface';
 
 const Display = ({ user, follower }) => (
   <div style={{ flex: 1, width: '100%', padding: 10 }}>

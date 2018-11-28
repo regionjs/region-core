@@ -4,7 +4,7 @@ import Control1 from './components/Control1';
 import Control2 from './components/Control2';
 import Control3 from './components/Control3';
 import Control4 from './components/Control4';
-import { loadUser, loadFollower } from '../load/index';
+import { loadUser, loadFollower } from '../interface';
 
 loadUser();
 loadFollower();

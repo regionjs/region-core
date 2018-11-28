@@ -1,14 +1,15 @@
 import React from 'react';
-import { set, connectWith } from 'redux-loadings';
+import { connectWith } from 'redux-loadings';
 import { Menu, Layout as AntdLayout } from 'antd';
 import { get } from 'lodash';
+import { setSelectedKey } from '../interface';
 import route from './route';
 
 const { Content, Sider } = AntdLayout;
 
-set('selectedKey', get(route, ['0', 'label']));
+setSelectedKey(get(route, ['0', 'label']));
 
-const onClick = ({ key }) => set('selectedKey', key);
+const onClick = ({ key }) => setSelectedKey(key);
 
 const MenuItem = ({ label }) => <Menu.Item key={label}>{label}</Menu.Item>;
 

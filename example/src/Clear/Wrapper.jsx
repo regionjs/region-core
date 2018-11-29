@@ -1,17 +1,17 @@
 import React from 'react';
 import { connectWith } from 'redux-loadings';
-import { Card } from 'antd';
-import { loadFollower } from '../interface';
+import { Card, Button } from 'antd';
+import { loadFollower, clearFollower } from '../interface';
 import Lines from '../components/Lines';
 
 const Display = ({ loading, user, follower }) => (
   <Card
-    loading={loading}
     title={user}
-    extra={<a onClick={loadFollower}>More</a>}
     style={{ width: 300, margin: 30 }}
   >
     <Lines lines={follower} />
+    <Button loading={loading} onClick={loadFollower}>More</Button>
+    <Button loading={loading} onClick={clearFollower}>Clear</Button>
   </Card>
 );
 

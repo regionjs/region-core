@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import Wrapper from './Wrapper';
 import { loadUser, loadFollower } from '../interface';
 
-
-const LoadingControl = () => {
+const LoadingFull = () => {
   useEffect(() => {
     loadUser();
     loadFollower();
@@ -13,4 +12,4 @@ const LoadingControl = () => {
   );
 };
 
-export default LoadingControl;
+export default LoadingFull;

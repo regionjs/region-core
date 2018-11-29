@@ -29,4 +29,4 @@ const Layout = ({ selectedKey }) => {
   );
 };
 
-export default connectWith('selectedKey', Layout, () => '');
+export default connectWith('selectedKey', Layout, () => null);

@@ -1,5 +1,5 @@
 import React from 'react';
-import './loading.css';
+import './index.css';
 
 const Loading = ({ loading }) => (loading === false ? null : (
   <div className="container">

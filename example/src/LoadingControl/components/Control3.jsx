@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { connectWith } from 'redux-loadings';
-import Loading from '../ui/Loading';
-import DisplayComponent from '../ui/Display';
+import Loading from './Loading';
+import Display from './Display';
 
 const Loading3 = ({ user, follower }) => (
   <Fragment>
     <Loading loading />
-    <DisplayComponent user={user} follower={follower} />
+    <Display user={user} follower={follower} />
   </Fragment>
 );
 
-export default connectWith(['user', 'follower'], DisplayComponent, Loading3);
+export default connectWith(['user', 'follower'], Display, Loading3);

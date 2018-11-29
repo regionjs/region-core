@@ -1,5 +1,5 @@
 import { connectWith } from 'redux-loadings';
-import Loading from '../ui/Loading';
-import DisplayComponent from '../ui/Display';
+import Loading from './Loading';
+import Display from './Display';
 
-export default connectWith(['user', 'follower'], DisplayComponent, Loading);
+export default connectWith(['user', 'follower'], Display, Loading);

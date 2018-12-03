@@ -9,6 +9,8 @@ import LoadingSideEffect from '../LoadingSideEffect';
 import SetNextCall from '../SetNextCall';
 import Form from '../Form';
 import FormTodo from '../FormTodo';
+import ErrorTodo from '../ErrorTodo';
+import OwnPropsTodo from '../OwnPropsTodo';
 
 export default [{
   key: 'home',
@@ -52,6 +54,14 @@ export default [{
   Component: Form,
 }, {
   key: 'FormTodo',
-  label: 'Form Todo',
+  label: 'Form(Todo)',
   Component: FormTodo,
+}, {
+  key: 'ErrorTodo',
+  label: 'Error(Todo)',
+  Component: ErrorTodo,
+}, {
+  key: 'OwnPropsTodo',
+  label: 'Own Props(Todo)',
+  Component: OwnPropsTodo,
 }];

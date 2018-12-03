@@ -1,6 +1,5 @@
 import React from 'react';
 import { Provider, setConfig } from 'redux-loadings';
-import 'antd/dist/antd.css';
 import Layout from './Layout';
 
 setConfig({});

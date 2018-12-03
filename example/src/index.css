@@ -1,27 +1,5 @@
-* {
-  box-sizing: border-box;
-}
-
-svg{
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  display:inline-block;
-}
-
-body {
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-}
-
-#root {
-  background: #222;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+pre {
+  padding: 0 15px;
+  border-radius: 2px;
+  border: 1px solid #d9d9d9;
 }

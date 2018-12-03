@@ -11,7 +11,6 @@ const Display = () => (
       <Radio.Button value="a">A</Radio.Button>
       <Radio.Button value="b">B</Radio.Button>
       <Radio.Button value="c">C</Radio.Button>
-      <Radio.Button value="d">D</Radio.Button>
     </Radio.Group>
   </Card>
 );

@@ -11,7 +11,7 @@ import Form from '../Form';
 import AsyncValidate from '../AsyncValidate';
 import DeepSet from '../DeepSet';
 import ErrorTodo from '../ErrorTodo';
-import OwnProps from '../OwnProps';
+import Selector from '../Selector';
 
 export default [{
   key: 'home',
@@ -50,9 +50,9 @@ export default [{
   label: 'Set Next Call',
   Component: SetNextCall,
 }, {
-  key: 'OwnProps',
-  label: 'Own Props',
-  Component: OwnProps,
+  key: 'Selector',
+  label: 'Selector',
+  Component: Selector,
 }, {
   key: 'Form',
   label: 'Form',

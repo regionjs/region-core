@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
-import Wrapper from './Wrapper';
-import { loadUser, loadFollower } from '../interface';
+import React from 'react';
+import { connectWith } from 'redux-loadings';
+import { Card } from 'antd';
+import { loadFollower } from '../interface';
+import Lines from '../components/Lines';
 
-const LoadingFull = () => {
-  useEffect(() => {
-    loadUser();
-    loadFollower();
-  });
-  return (
-    <Wrapper />
-  );
-};
+const Display = ({ loading, user, follower }) => (
+  <Card
+    loading={loading}
+    title={user}
+    extra={<a onClick={loadFollower}>More</a>}
+    style={{ width: 300, margin: 30 }}
+  >
+    <Lines lines={follower} />
+  </Card>
+);
 
-export default LoadingFull;
+export default connectWith(['user', 'follower'], Display);

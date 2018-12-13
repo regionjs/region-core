@@ -4,11 +4,12 @@
   "private": true,
   "dependencies": {
     "antd": "^3.10.9",
+    "history": "^4.7.2",
     "lodash": "^4.17.11",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
     "react-scripts": "1.1.4",
-    "redux-loadings": "^0.5.1"
+    "redux-loadings": "github:dancerphil/redux-loadings#develop"
   },
   "scripts": {
     "start": "react-scripts start",

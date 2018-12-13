@@ -2,14 +2,20 @@ import React from 'react';
 import { connectWith } from 'redux-loadings';
 import { Menu, Layout as AntdLayout } from 'antd';
 import { get } from 'lodash';
+import { createBrowserHistory } from 'history';
 import { setSelectedKey } from '../interface';
 import routes from './routes';
 
 const { Content, Sider } = AntdLayout;
 
-setSelectedKey(get(routes, ['0', 'key']));
+const history = createBrowserHistory();
 
-const onClick = ({ key }) => setSelectedKey(key);
+setSelectedKey(history.location.pathname.split('/')[1] || get(routes, ['0', 'key']));
+
+const onClick = ({ key }) => {
+  history.push(key);
+  setSelectedKey(key);
+};
 
 const MenuItem = ({ key, label }) => <Menu.Item key={key}>{label}</Menu.Item>;
 

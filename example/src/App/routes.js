@@ -8,7 +8,10 @@ import AsyncSideEffect from '../AsyncSideEffect';
 import LoadingSideEffect from '../LoadingSideEffect';
 import SetNextCall from '../SetNextCall';
 import Form from '../Form';
-import FormTodo from '../FormTodo';
+import AsyncValidate from '../AsyncValidate';
+import DeepSet from '../DeepSet';
+import ErrorTodo from '../ErrorTodo';
+import Selector from '../Selector';
 
 export default [{
   key: 'home',
@@ -47,11 +50,23 @@ export default [{
   label: 'Set Next Call',
   Component: SetNextCall,
 }, {
+  key: 'Selector',
+  label: 'Selector',
+  Component: Selector,
+}, {
   key: 'Form',
   label: 'Form',
   Component: Form,
 }, {
-  key: 'FormTodo',
-  label: 'Form Todo',
-  Component: FormTodo,
+  key: 'AsyncValidate',
+  label: 'Async Validate(Pending)',
+  Component: AsyncValidate,
+}, {
+  key: 'DeepSet',
+  label: 'Deep Set(Abandoned)',
+  Component: DeepSet,
+}, {
+  key: 'Error',
+  label: 'Error(Todo)',
+  Component: ErrorTodo,
 }];

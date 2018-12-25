@@ -1,21 +1,22 @@
-import React, { useEffect } from 'react';
-import { Provider, setConfig } from 'redux-loadings';
+import React, { Component } from 'react';
+import { Provider } from './Provider';
 import Layout from './Layout';
 import { loadFollower, loadUser } from '../interface';
 
-setConfig({});
-
-const App = () => {
-  useEffect(() => {
+class App extends Component {
+  componentDidMount() {
     loadUser();
     loadFollower();
-  });
-  return (
-    <Provider>
-      <Layout />
-    </Provider>
-  );
-};
+  }
+
+  render() {
+    return (
+      <Provider>
+        <Layout />
+      </Provider>
+    );
+  }
+}
 
 export default App;
 

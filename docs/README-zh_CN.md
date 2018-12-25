@@ -5,9 +5,7 @@
 [![codecov](https://codecov.io/gh/dancerphil/redux-loadings/branch/develop/graph/badge.svg)](https://codecov.io/gh/dancerphil/redux-loadings)
 [![MIT License](https://img.shields.io/npm/l/redux-loadings.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
-A replacement tool of `redux` to handle sync & async action flow. Extremely simple API!
-
-[中文版](https://github.com/dancerphil/redux-loadings/blob/master/docs/README-zh_CN.md)
+一个代替 redux 处理同步与异步流程的 react 配套库。极其简单的 API！
 
 ## Get Started
 
@@ -15,7 +13,7 @@ A replacement tool of `redux` to handle sync & async action flow. Extremely simp
 npm i redux-loadings
 ```
 
-create a file named `load.js`
+创建一个文件 `load.js`
 
 ```javascript
 import { load } from 'redux-loadings';
@@ -24,7 +22,7 @@ import { fetchUser } from './fetch'; // somewhere with axios
 export const loadUser = () => load('user', fetchUser);
 ```
 
-Then create your Component
+然后创建你的组件
 
 ```jsx harmony
 import { connectWith } from 'redux-loadings';
@@ -37,7 +35,7 @@ const Display = ({ user }) => {...}
 export default connectWith('user', Display, Loading);
 ```
 
-or
+或者
 
 ```jsx harmony
 import { connectWith } from 'redux-loadings';
@@ -52,17 +50,17 @@ const Display = ({ user, follower }) => {...}
 export default connectWith(['user', 'follower'], Display, Loading);
 ```
 
-## Docs
+## 文档
 
-[Document](https://github.com/dancerphil/redux-loadings/blob/master/docs/Document.md)
+[中文文档](https://github.com/dancerphil/redux-loadings/blob/master/docs/Document-zh_CN.md)
 
-[Migrate Guide](https://github.com/dancerphil/redux-loadings/blob/master/docs/Migrate.md)
+[迁移指南](https://github.com/dancerphil/redux-loadings/blob/master/docs/Migrate-zh_CN.md)
 
-[ChangeLog](https://github.com/dancerphil/redux-loadings/blob/master/docs/CHANGELOG.md)
+[更新日志](https://github.com/dancerphil/redux-loadings/blob/master/docs/CHANGELOG.md)
 
-## Example
+## 示例
 
-[Online Example](https://dancerphil.github.io/redux-loadings/index.html)
+[在线示例](https://dancerphil.github.io/redux-loadings/index.html)
 
 ```bash
 git clone https://github.com/dancerphil/redux-loadings.git
@@ -71,11 +69,6 @@ npm i
 npm start
 ```
 
-## TODO
+## 截图
 
-- [ ] release es version
-- [ ] release 1.0 when everything is ready
-- [ ] config to switch base between redux and react.Context
-- [ ] new site
-- [ ] loading => pendingMutex
-- [ ] change package name to react-name since redux is not related anymore
+![](https://github.com/dancerphil/redux-loadings/blob/master/screenshot.gif)

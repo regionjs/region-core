@@ -8,6 +8,7 @@ import AsyncSideEffect from '../AsyncSideEffect';
 import LoadingSideEffect from '../LoadingSideEffect';
 import SetNextCall from '../SetNextCall';
 import Form from '../Form';
+import RegionForm from '../RegionForm';
 import AsyncValidate from '../AsyncValidate';
 import DeepSet from '../DeepSet';
 import ErrorTodo from '../ErrorTodo';
@@ -57,6 +58,10 @@ export default [{
   key: 'Form',
   label: 'Form',
   Component: Form,
+}, {
+  key: 'RegionForm',
+  label: 'Region Form',
+  Component: RegionForm,
 }, {
   key: 'AsyncValidate',
   label: 'Async Validate(Pending)',

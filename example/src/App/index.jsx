@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Provider, setConfig } from 'redux-loadings';
+import { Provider } from './Provider';
 import Layout from './Layout';
 import { loadFollower, loadUser } from '../interface';
-
-setConfig({});
 
 class App extends Component {
   componentDidMount() {

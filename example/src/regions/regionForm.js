@@ -1,7 +1,5 @@
 import { Region } from 'redux-loadings';
 
-export const formRegion = new Region();
-
-formRegion.setConfig({
+export const formRegion = new Region({
   reducerPath: 'form',
 });

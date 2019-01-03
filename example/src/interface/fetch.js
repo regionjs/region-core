@@ -14,3 +14,14 @@ export const fetchAsyncEffect = array => new Promise((resolve) => {
 export const fetchA = fetchFactory('A from api');
 export const fetchB = fetchFactory('B from api');
 export const fetchC = fetchFactory('C from api');
+
+export const fetchValidate = value => new Promise((resolve) => {
+  setTimeout(() => {
+    if (String(Number(value)) === value) {
+      resolve(null);
+    } else {
+      // TODO made it reject
+      resolve('message from api: type some number');
+    }
+  }, 1000);
+});

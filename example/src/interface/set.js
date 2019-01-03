@@ -8,7 +8,7 @@ export const setA = factory('a');
 
 export const setB = factory('b');
 
-export const toggleB = () => set('b', null, {
+export const toggleA = () => set('a', null, {
   format: (result, snapshot) => !snapshot,
 });
 

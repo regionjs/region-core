@@ -10,7 +10,6 @@ import SetNextCall from '../SetNextCall';
 import Form from '../Form';
 import RegionForm from '../RegionForm';
 import AsyncValidate from '../AsyncValidate';
-import DeepSet from '../DeepSet';
 import ErrorTodo from '../ErrorTodo';
 import Selector from '../Selector';
 
@@ -64,12 +63,8 @@ export default [{
   Component: RegionForm,
 }, {
   key: 'AsyncValidate',
-  label: 'Async Validate',
+  label: 'Async Validate(TODO)',
   Component: AsyncValidate,
-}, {
-  key: 'DeepSet',
-  label: 'Deep Set(Abandoned)',
-  Component: DeepSet,
 }, {
   key: 'Error',
   label: 'Error(Todo)',

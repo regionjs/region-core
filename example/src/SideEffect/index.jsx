@@ -1,8 +1,8 @@
 import React from 'react';
 import { connectWith } from 'redux-loadings';
 import { Card, Button } from 'antd';
-import { loadFollowerWithSideEffect } from '../interface';
-import Lines from '../components/Lines';
+import { loadFollowerWithSideEffect } from './load';
+import Lines from '../shared/Lines';
 
 const Display = ({ loading, user, sideEffect, follower }) => (
   <Card

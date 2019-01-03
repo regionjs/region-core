@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Card, Switch } from 'antd';
-import { formRegion } from '../regions/regionForm';
+import { formRegion } from '../shared/regionForm';
 
 const handleChange = value => formRegion.set('a', value);
 

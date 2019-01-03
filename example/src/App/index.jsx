@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from './Provider';
 import Layout from './Layout';
-import { loadFollower, loadUser } from '../interface';
+import { loadFollower, loadUser } from '../shared/load';
 
 class App extends Component {
   componentDidMount() {

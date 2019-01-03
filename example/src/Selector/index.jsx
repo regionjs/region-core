@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { connectWith } from 'redux-loadings';
 import { Card, Input, Radio } from 'antd';
-import { setId, setType } from '../interface';
-import Lines from '../components/Lines';
-import Divider from '../components/Divider';
+import { setId, setType } from './load';
+import Lines from '../shared/Lines';
+import Divider from '../shared/Divider';
 
 const Result = ({ item, array }) => (
   <Card style={{ width: 500, margin: 30 }}>

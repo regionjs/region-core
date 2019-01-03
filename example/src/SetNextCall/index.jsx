@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connectWith } from 'redux-loadings';
 import { Card, Radio, Button } from 'antd';
-import { setNextCall, loadResultFactory } from '../interface';
+import { setNextCall, loadResultFactory } from './load';
 
 const handleRadio = e => setNextCall(loadResultFactory(e.target.value));
 

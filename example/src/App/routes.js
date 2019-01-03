@@ -64,7 +64,7 @@ export default [{
   Component: RegionForm,
 }, {
   key: 'AsyncValidate',
-  label: 'Async Validate(Pending)',
+  label: 'Async Validate',
   Component: AsyncValidate,
 }, {
   key: 'DeepSet',

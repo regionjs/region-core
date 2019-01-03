@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react';
 import { connectWith } from 'redux-loadings';
 import { Card, Input, Switch, Radio, Checkbox } from 'antd';
-import { setA, setB, toggleB, setC, setD } from '../interface';
+import { setA, setB, toggleA, setC, setD } from '../interface';
 import Divider from '../components/Divider';
 
-const handleInput = e => setA(e.target.value);
-const handleSwitch = Math.random() < 0.5 ? setB : toggleB; // both works
+const handleSwitch = Math.random() < 0.5 ? setA : toggleA; // both works
+const handleInput = e => setB(e.target.value);
 const handleRadio = e => setC(e.target.value);
 
 const FormCard = ({ a, b, c, d }) => (
   <Card style={{ width: 500, margin: 30 }}>
-    <Input value={a} onChange={handleInput} />
+    <Switch checked={a} onChange={handleSwitch} />
     <Divider />
-    <Switch checked={b} onChange={handleSwitch} />
+    <Input value={b} onChange={handleInput} />
     <Divider />
     <Radio.Group value={c} onChange={handleRadio}>
       <Radio.Button value="hangzhou">Hangzhou</Radio.Button>

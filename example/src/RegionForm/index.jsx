@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
-import { Card, Input } from 'antd';
-import { formRegion } from './region';
+import { Card, Switch } from 'antd';
+import { formRegion } from '../regions/regionForm';
 
-const setA = e => formRegion.set('a', e.target.value);
+const handleChange = value => formRegion.set('a', value);
 
 const FormCard = ({ a }) => (
   <Card style={{ width: 500, margin: 30 }}>
-    <Input value={a} onChange={setA} />
+    <Switch checked={a} onChange={handleChange} />
   </Card>
 );
 

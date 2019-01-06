@@ -1,8 +1,8 @@
 import React from 'react';
 import { connectWith } from 'redux-loadings';
 import { Card, Button } from 'antd';
-import { loadFollowerWithAsyncSideEffect } from '../interface';
-import Lines from '../components/Lines';
+import { loadFollowerWithAsyncSideEffect } from '../AsyncSideEffect/load';
+import Lines from '../shared/Lines';
 
 const Title = ({ user, asyncSideEffect }) => `${user}(${asyncSideEffect})`;
 

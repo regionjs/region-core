@@ -3,7 +3,7 @@ import { connectWith } from 'redux-loadings';
 import { Menu, Layout as AntdLayout } from 'antd';
 import { get } from 'lodash';
 import { createBrowserHistory } from 'history';
-import { setSelectedKey } from '../interface';
+import { setSelectedKey } from '../shared/load';
 import routes from './routes';
 
 const { Content, Sider } = AntdLayout;

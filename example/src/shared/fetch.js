@@ -21,6 +21,7 @@ export const fetchValidate = value => new Promise((resolve) => {
       resolve(null);
     } else {
       // TODO made it reject
+      // reject(new Error('message from api: type some number'))
       resolve('message from api: type some number');
     }
   }, 1000);

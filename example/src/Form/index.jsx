@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { connectWith } from 'redux-loadings';
 import { Card, Input, Switch, Radio, Checkbox } from 'antd';
-import { setA, setB, toggleA, setC, setD } from '../interface';
-import Divider from '../components/Divider';
+import { setA, setB, toggleA, setC, setD } from './load';
+import Divider from '../shared/Divider';
 
 const handleSwitch = Math.random() < 0.5 ? setA : toggleA; // both works
 const handleInput = e => setB(e.target.value);

@@ -1,5 +1,8 @@
 import { set, load } from 'redux-loadings';
 import { fetchUser, fetchFollower, fetchSome, deleteFollower } from './fetch';
+import factory from './setFactory';
+
+export const setSelectedKey = factory('selectedKey');
 
 export const loadUser = () => load('user', fetchUser);
 

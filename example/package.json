@@ -9,7 +9,7 @@
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
     "react-scripts": "1.1.4",
-    "redux-loadings": "^0.6.0-alpha.1"
+    "redux-loadings": "^0.6.0-alpha.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,4 +1,4 @@
-import { connectWith } from 'redux-loadings';
+import { connectWith } from 'region-shortcut';
 import Loading from './Loading';
 import Display from './Display';
 

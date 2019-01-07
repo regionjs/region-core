@@ -1,4 +1,4 @@
-import { set, load } from 'redux-loadings';
+import { set, load } from 'region-shortcut';
 import { fetchFollower } from '../shared/fetch';
 
 set('sideEffect', null);

@@ -6,7 +6,7 @@ const IconFont = Icon.createFromIconfontCN({
 });
 
 const pre = ''
-  + 'git clone https://github.com/dancerphil/redux-loadings.git\n'
+  + 'git clone https://github.com/regionjs/region-core.git\n'
   + 'cd example\n'
   + 'npm i\n'
   + 'npm start\n';
@@ -16,9 +16,9 @@ export default () => (
     <h1>How to run this</h1>
     <pre>{pre}</pre>
     <div style={{ fontSize: 18 }}>
-      <a href="https://github.com/dancerphil/redux-loadings"><Icon type="github" /></a>
+      <a href="https://github.com/regionjs/region-core"><Icon type="github" /></a>
       {' '}
-      <a href="https://www.npmjs.com/package/redux-loadings"><IconFont type="npm" /></a>
+      <a href="https://www.npmjs.com/package/region-core"><IconFont type="npm" /></a>
     </div>
   </div>
 );

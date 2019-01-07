@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { connectWith } from 'redux-loadings';
+import { connectWith } from 'region-shortcut';
 import { Card, Radio, Button } from 'antd';
 import { setNextCall, loadResultFactory } from './load';
 

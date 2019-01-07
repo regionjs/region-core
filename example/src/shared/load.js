@@ -1,4 +1,4 @@
-import { set, load } from 'redux-loadings';
+import { set, load } from 'region-shortcut';
 import { fetchUser, fetchFollower, fetchSome, deleteFollower } from './fetch';
 import factory from './setFactory';
 

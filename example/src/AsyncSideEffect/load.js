@@ -1,4 +1,4 @@
-import { load, set } from 'redux-loadings';
+import { load, set } from 'region-shortcut';
 import { fetchAsyncEffect, fetchFollower } from '../shared/fetch';
 
 set('asyncSideEffect', null);

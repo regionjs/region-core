@@ -1,4 +1,4 @@
-import { set } from 'redux-loadings';
+import { set } from 'region-shortcut';
 import factory from '../shared/setFactory';
 
 export const setA = factory('a');

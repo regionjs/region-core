@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Provider } from './Provider';
+import { Provider } from 'region-shortcut';
 import Layout from './Layout';
 import { loadFollower, loadUser } from '../shared/load';
 

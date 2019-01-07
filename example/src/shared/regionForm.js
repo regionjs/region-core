@@ -1,4 +1,4 @@
-import { Region } from 'redux-loadings';
+import { Region } from 'region-shortcut';
 
 export const formRegion = new Region({
   reducerPath: 'form',

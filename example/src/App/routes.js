@@ -63,7 +63,7 @@ export default [{
   Component: RegionForm,
 }, {
   key: 'AsyncValidate',
-  label: 'Async Validate(TODO)',
+  label: 'Async Validate',
   Component: AsyncValidate,
 }, {
   key: 'Error',

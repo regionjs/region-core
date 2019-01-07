@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { connectWith } from 'redux-loadings';
+import { connectWith } from 'region-shortcut';
 import { Card, Input, Radio } from 'antd';
 import { setId, setType } from './load';
 import Lines from '../shared/Lines';

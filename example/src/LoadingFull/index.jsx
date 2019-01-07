@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectWith } from 'redux-loadings';
+import { connectWith } from 'region-shortcut';
 import { Card } from 'antd';
 import { loadFollower } from '../shared/load';
 import Lines from '../shared/Lines';

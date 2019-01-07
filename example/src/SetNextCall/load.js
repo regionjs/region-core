@@ -1,4 +1,4 @@
-import { load, set } from 'redux-loadings';
+import { load, set } from 'region-shortcut';
 import { fetchA, fetchB, fetchC } from '../shared/fetch';
 import factory from '../shared/setFactory';
 

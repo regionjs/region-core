@@ -1,4 +1,4 @@
-# redux-loadings example
+# region example
 
 ```
 npm i

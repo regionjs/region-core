@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { connectWith } from 'redux-loadings';
+import { connectWith } from 'region-shortcut';
 import { Button } from 'antd';
 import Loading from './Loading';
 import { loadSome } from '../../shared/load';

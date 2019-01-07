@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { connectWith } from 'redux-loadings';
+import { connectWith } from 'region-shortcut';
 import { Card, Input, Switch, Radio, Checkbox } from 'antd';
 import { setA, setB, toggleA, setC, setD } from './load';
 import Divider from '../shared/Divider';

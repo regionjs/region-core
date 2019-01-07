@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectWith } from 'redux-loadings';
+import { connectWith } from 'region-shortcut';
 import { Menu, Layout as AntdLayout } from 'antd';
 import { get } from 'lodash';
 import { createBrowserHistory } from 'history';

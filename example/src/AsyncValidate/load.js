@@ -4,9 +4,9 @@ import { fetchValidate } from '../shared/fetch';
 const { set, load } = formRegion;
 
 set('value', null);
-set('error', '');
+set('validate', '');
 
 export const loadValidate = (value) => {
   set('value', value);
-  load('error', fetchValidate, { params: value });
+  load('validate', fetchValidate, { params: value });
 };

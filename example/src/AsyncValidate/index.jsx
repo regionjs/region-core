@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, Form, Input } from 'antd';
+import { Form, Input } from 'antd';
 import { formRegion } from '../shared/regionForm';
 import { loadValidate } from './load';
+import Card from '../shared/Card';
 
 const handleChange = e => loadValidate(e.target.value);
 
@@ -21,7 +22,7 @@ const getValidateStatus = (loading, value, error) => {
 const AsyncValidate = ({ loading, value, error }) => {
   const validateStatus = getValidateStatus(loading, value, error);
   return (
-    <Card style={{ width: 500, margin: 30 }}>
+    <Card>
       <Form>
         <Form.Item
           hasFeedback
@@ -39,4 +40,4 @@ const AsyncValidate = ({ loading, value, error }) => {
   );
 };
 
-export default formRegion.connectWith(['value', 'error'], AsyncValidate);
+export default formRegion.connectWith(['value', 'validate'], AsyncValidate);

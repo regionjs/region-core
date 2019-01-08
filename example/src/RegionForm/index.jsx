@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
-import { Card, Switch } from 'antd';
+import { Switch } from 'antd';
 import { formRegion } from '../shared/regionForm';
+import Card from '../shared/Card';
 
 const handleChange = value => formRegion.set('a', value);
 
 const FormCard = ({ a }) => (
-  <Card style={{ width: 500, margin: 30 }}>
+  <Card>
     <Switch checked={a} onChange={handleChange} />
   </Card>
 );
@@ -13,7 +14,7 @@ const FormCard = ({ a }) => (
 const FormConnected = formRegion.connectWith('a', FormCard);
 
 const Result = ({ a }) => (
-  <Card style={{ width: 500, margin: 30 }}>
+  <Card>
     {JSON.stringify({ a })}
   </Card>
 );

@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import { connectWith } from 'region-shortcut';
-import { Card, Input, Radio } from 'antd';
+import { Input, Radio } from 'antd';
 import { setId, setType } from './load';
+import Card from '../shared/Card';
 import Lines from '../shared/Lines';
 import Divider from '../shared/Divider';
 
 const Result = ({ item, array }) => (
-  <Card style={{ width: 500, margin: 30 }}>
+  <Card>
     <p>Active</p>
     <p>{item ? item.value : 'null'}</p>
     <Divider />
@@ -34,7 +35,7 @@ const handleRadio = e => setType(e.target.value);
 
 const Panel = ({ id, type }) => (
   <Fragment>
-    <Card style={{ width: 500, margin: 30 }}>
+    <Card>
       <Input value={id} onChange={handleInput} />
       <Divider />
       <Radio.Group value={type} onChange={handleRadio}>

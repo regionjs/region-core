@@ -15,14 +15,24 @@ export const fetchA = fetchFactory('A from api');
 export const fetchB = fetchFactory('B from api');
 export const fetchC = fetchFactory('C from api');
 
-export const fetchValidate = value => new Promise((resolve) => {
+export const fetchValidate = value => new Promise((resolve, reject) => {
   setTimeout(() => {
     if (String(Number(value)) === value) {
       resolve(null);
     } else {
-      // TODO made it reject
-      // reject(new Error('message from api: type some number'))
-      resolve('message from api: type some number');
+      reject(new Error('message from api: type some number'));
+    }
+  }, 1000);
+});
+
+let toggle = Math.random() < 0.5;
+export const fetchValueWithError = () => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    toggle = !toggle;
+    if (toggle) {
+      resolve('well, lucky');
+    } else {
+      reject(new Error('message from api: error'));
     }
   }, 1000);
 });

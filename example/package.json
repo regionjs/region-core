@@ -9,7 +9,7 @@
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
     "react-scripts": "1.1.4",
-    "region-shortcut": "^0.6.0"
+    "region-shortcut": "^0.6.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -7,11 +7,12 @@ import SideEffect from '../SideEffect';
 import AsyncSideEffect from '../AsyncSideEffect';
 import LoadingSideEffect from '../LoadingSideEffect';
 import SetNextCall from '../SetNextCall';
+import Selector from '../Selector';
 import Form from '../Form';
 import RegionForm from '../RegionForm';
 import AsyncValidate from '../AsyncValidate';
-import ErrorTodo from '../ErrorTodo';
-import Selector from '../Selector';
+import Error from '../Error';
+import ExtendRegion from '../ExtendRegion';
 
 export default [{
   key: 'home',
@@ -67,6 +68,10 @@ export default [{
   Component: AsyncValidate,
 }, {
   key: 'Error',
-  label: 'Error(Todo)',
-  Component: ErrorTodo,
+  label: 'Error',
+  Component: Error,
+}, {
+  key: 'ExtendRegion',
+  label: 'Extend Region',
+  Component: ExtendRegion,
 }];

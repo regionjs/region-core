@@ -1,5 +1,3 @@
 import { Region } from 'region-shortcut';
 
-export const formRegion = new Region({
-  reducerPath: 'form',
-});
+export const formRegion = new Region('form');

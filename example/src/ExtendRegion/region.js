@@ -1,12 +1,16 @@
 /* global localStorage */
 import { Region } from 'region-shortcut';
 
+const sync = (key, result) => {
+  const obj = { [key]: result };
+  localStorage.setItem('RegionLocalStorage', JSON.stringify(obj));
+};
+
 class RegionLocalStorage extends Region {
   constructor() {
     super('localStorage');
-    this.setWithLocalStorage = this.setWithLocalStorage.bind(this);
+    const { set, load } = this;
     try {
-      const { set } = this;
       const local = localStorage.getItem('RegionLocalStorage');
       const obj = JSON.parse(local);
       Object.keys(obj).forEach((key) => {
@@ -15,14 +19,16 @@ class RegionLocalStorage extends Region {
     } catch (e) {
       // do nothing
     }
-  }
-
-  setWithLocalStorage(key, result) {
-    const { set } = this;
-    set(key, result);
-    const obj = { [key]: result };
-    localStorage.setItem('RegionLocalStorage', JSON.stringify(obj));
-    return result;
+    this.set = (key, result, options) => {
+      set(key, result, options);
+      sync(key, result);
+      return result;
+    };
+    this.load = async (key, asyncFunction, options) => {
+      const result = await load(key, asyncFunction, options);
+      sync(key, result);
+      return result;
+    };
   }
 }
 

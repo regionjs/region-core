@@ -8,6 +8,7 @@ import Divider from '../shared/Divider';
 const handleSwitch = Math.random() < 0.5 ? setA : toggleA; // both works
 const handleInput = e => setB(e.target.value);
 const handleRadio = e => setC(e.target.value);
+const handleCheckBox = setD;
 
 const FormCard = ({ a, b, c, d }) => (
   <Card>
@@ -15,21 +16,16 @@ const FormCard = ({ a, b, c, d }) => (
     <Divider />
     <Input value={b} onChange={handleInput} />
     <Divider />
-    <Radio.Group value={c} onChange={handleRadio}>
-      <Radio.Button value="hangzhou">Hangzhou</Radio.Button>
-      <Radio.Button value="shanghai">Shanghai</Radio.Button>
-      <Radio.Button value="beijing">Beijing</Radio.Button>
-      <Radio.Button value="chengdu">Chengdu</Radio.Button>
-    </Radio.Group>
+    <Radio.Group value={c} onChange={handleRadio} options={['Hangzhou', 'Shanghai', 'Beijing', 'Chengdu']} />
     <Divider />
-    <Checkbox.Group options={['Apple', 'Pear', 'Orange']} value={d} onChange={setD} />
+    <Checkbox.Group options={['Apple', 'Pear', 'Orange']} value={d} onChange={handleCheckBox} />
   </Card>
 );
 
 const FormConnected = connectWith(['a', 'b', 'c', 'd'], FormCard);
 
 const Result = ({ a, b, c, d }) => (
-  <Card style={{ width: 500, margin: 30 }}>
+  <Card>
     {JSON.stringify({ a, b, c, d })}
   </Card>
 );

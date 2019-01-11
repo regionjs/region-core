@@ -5,7 +5,7 @@ import RegionLocalStorage from './region';
 
 const myRegion = new RegionLocalStorage();
 
-const handleChange = e => myRegion.setWithLocalStorage('value', e.target.value);
+const handleChange = e => myRegion.set('value', e.target.value);
 
 const ExtendRegion = ({ value }) => (
   <Card>

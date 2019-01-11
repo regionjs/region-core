@@ -13,6 +13,7 @@ import RegionForm from '../RegionForm';
 import AsyncValidate from '../AsyncValidate';
 import Error from '../Error';
 import ExtendRegion from '../ExtendRegion';
+import BindForm from '../BindForm';
 
 export default [{
   key: 'home',
@@ -74,4 +75,8 @@ export default [{
   key: 'ExtendRegion',
   label: 'Extend Region',
   Component: ExtendRegion,
+}, {
+  key: 'BindForm',
+  label: 'Bind Form',
+  Component: BindForm,
 }];

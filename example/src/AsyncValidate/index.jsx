@@ -6,7 +6,7 @@ import Card from '../shared/Card';
 
 const handleChange = e => loadValidate(e.target.value);
 
-const getValidateStatus = (loading, value, error) => {
+const getValidateStatus = ({ loading, error, value }) => {
   if (value === null) {
     return null;
   }
@@ -19,15 +19,15 @@ const getValidateStatus = (loading, value, error) => {
   return 'success';
 };
 
-const AsyncValidate = ({ loading, value, error }) => {
-  const validateStatus = getValidateStatus(loading, value, error);
+const AsyncValidate = ({ loading, error, value }) => {
+  const validateStatus = getValidateStatus({ loading, error, value });
   return (
     <Card>
       <Form>
         <Form.Item
           hasFeedback
           validateStatus={validateStatus}
-          help={loading ? 'validating' : error}
+          help={loading ? 'validating...' : error}
         >
           <Input
             placeholder="type some number"

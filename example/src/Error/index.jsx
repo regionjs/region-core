@@ -10,7 +10,7 @@ class Error extends Component {
   }
 
   render() {
-    const { loading, valueWithError, error } = this.props;
+    const { loading, error, valueWithError } = this.props;
     const log = ''
       + `loading: ${loading}\n`
       + `value: ${valueWithError}\n`

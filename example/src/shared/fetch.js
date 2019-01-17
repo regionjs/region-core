@@ -25,11 +25,12 @@ export const fetchValidate = value => new Promise((resolve, reject) => {
   }, 1000);
 });
 
-let toggle = Math.random() < 0.5;
+const toggleList = [false, false, false, true, true, false, true, true];
+let index = -1;
 export const fetchValueWithError = () => new Promise((resolve, reject) => {
   setTimeout(() => {
-    toggle = !toggle;
-    if (toggle) {
+    index += 1;
+    if (toggleList[index]) {
       resolve('well, lucky');
     } else {
       reject(new Error('message from api: error'));

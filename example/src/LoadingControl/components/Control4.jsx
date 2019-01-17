@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connectWith } from 'region-shortcut';
 import { Button } from 'antd';
-import Loading from './Loading';
+import RawLoading from './Loading';
 import { loadSome } from '../../shared/load';
 
 const Display = ({ user, some }) => (
@@ -11,7 +11,7 @@ const Display = ({ user, some }) => (
   </div>
 );
 
-const Control4 = ({ user, some }) => (
+const Control = ({ user, some }) => (
   <Fragment>
     {!some && (
       <div style={{ padding: 10 }}><Button onClick={loadSome}>click to load something</Button></div>
@@ -20,11 +20,11 @@ const Control4 = ({ user, some }) => (
   </Fragment>
 );
 
-const Loading4 = ({ user, some }) => (
+const Loading = ({ user, some }) => (
   <Fragment>
-    <Loading loading />
+    <RawLoading loading />
     <Display user={user} follower={some} />
   </Fragment>
 );
 
-export default connectWith(['user', 'some'], Control4, Loading4);
+export default connectWith(['user', 'some'], Control, { Loading });

@@ -1,26 +1,20 @@
 import React from 'react';
-import './index.css';
-
-const Row = ({ children }) => <div style={{ flex: 1, display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>{children}</div>;
+import Card from '../../../shared/Card';
 
 const Layout = ({ children }) => (
-  <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
-    <Row>
-      <div className="panel">
-        {children[0]}
-      </div>
-      <div className="panel">
-        {children[1]}
-      </div>
-    </Row>
-    <Row>
-      <div className="panel">
-        {children[2]}
-      </div>
-      <div className="panel">
-        {children[3]}
-      </div>
-    </Row>
+  <div style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+    <Card>
+      {children[0]}
+    </Card>
+    <Card>
+      {children[1]}
+    </Card>
+    <Card>
+      {children[2]}
+    </Card>
+    <Card>
+      {children[3]}
+    </Card>
   </div>
 );
 

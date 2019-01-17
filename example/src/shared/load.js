@@ -11,13 +11,10 @@ set('some', null);
 export const loadSome = () => load('some', fetchSome);
 
 export const loadFollower = () => load('follower', fetchFollower, {
-  forceUpdate: true,
   format: (result, snapshot = []) => {
     snapshot.push(result);
     return snapshot.slice();
   },
 });
 
-export const clearFollower = () => load('follower', deleteFollower, {
-  forceUpdate: true,
-});
+export const clearFollower = () => load('follower', deleteFollower);

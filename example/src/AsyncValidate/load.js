@@ -8,5 +8,5 @@ set('validate', '');
 
 export const loadValidate = (value) => {
   set('value', value);
-  load('validate', fetchValidate, { params: value });
+  load('value', fetchValidate, { params: value });
 };

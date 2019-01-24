@@ -23,21 +23,19 @@ const AsyncValidate = ({ loading, error, value }) => {
   const validateStatus = getValidateStatus({ loading, error, value });
   return (
     <Card>
-      <Form>
-        <Form.Item
-          hasFeedback
-          validateStatus={validateStatus}
-          help={loading ? 'validating...' : error}
-        >
-          <Input
-            placeholder="type some number"
-            value={value}
-            onChange={handleChange}
-          />
-        </Form.Item>
-      </Form>
+      <Form.Item
+        hasFeedback
+        validateStatus={validateStatus}
+        help={loading ? 'validating...' : error}
+      >
+        <Input
+          placeholder="type some number"
+          value={value}
+          onChange={handleChange}
+        />
+      </Form.Item>
     </Card>
   );
 };
 
-export default formRegion.connectWith(['value', 'validate'], AsyncValidate);
+export default formRegion.connectWith('value', AsyncValidate);

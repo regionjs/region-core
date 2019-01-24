@@ -18,7 +18,7 @@ export const fetchC = fetchFactory('C from api');
 export const fetchValidate = value => new Promise((resolve, reject) => {
   setTimeout(() => {
     if (String(Number(value)) === value) {
-      resolve(null);
+      resolve(value);
     } else {
       reject(new Error('message from api: type some number'));
     }

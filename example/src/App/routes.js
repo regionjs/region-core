@@ -16,8 +16,8 @@ import ExtendRegion from '../ExtendRegion';
 import BindForm from '../BindForm';
 
 export default [{
-  key: 'home',
-  label: '首页',
+  key: 'Home',
+  label: 'Home',
   Component: Home,
 }, {
   key: 'LoadingControl',

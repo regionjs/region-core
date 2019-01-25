@@ -5,7 +5,6 @@ set('asyncSideEffect', null);
 
 export const loadFollowerWithAsyncSideEffect = async () => {
   const follower = await load('follower', fetchFollower, {
-    forceUpdate: true,
     format: (result, snapshot = []) => {
       snapshot.push(result);
       set('sideEffect', snapshot.length);
@@ -13,7 +12,6 @@ export const loadFollowerWithAsyncSideEffect = async () => {
     },
   });
   load('asyncSideEffect', fetchAsyncEffect, {
-    forceUpdate: true,
     params: follower,
   });
 };

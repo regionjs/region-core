@@ -18,18 +18,19 @@ export const fetchC = fetchFactory('C from api');
 export const fetchValidate = value => new Promise((resolve, reject) => {
   setTimeout(() => {
     if (String(Number(value)) === value) {
-      resolve(null);
+      resolve(value);
     } else {
       reject(new Error('message from api: type some number'));
     }
   }, 1000);
 });
 
-let toggle = Math.random() < 0.5;
+const toggleList = [false, false, false, true, true, false, true, true];
+let index = -1;
 export const fetchValueWithError = () => new Promise((resolve, reject) => {
   setTimeout(() => {
-    toggle = !toggle;
-    if (toggle) {
+    index += 1;
+    if (toggleList[index]) {
       resolve('well, lucky');
     } else {
       reject(new Error('message from api: error'));

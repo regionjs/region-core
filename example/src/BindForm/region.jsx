@@ -1,53 +1,55 @@
 import React from 'react';
 import { Region } from 'region-shortcut';
-import { Input, Checkbox, Switch, Radio } from 'antd';
+import { Form } from 'antd';
 import { omit } from 'lodash';
+import antdAdapter from './adapter';
+
+const getValidateStatus = ({ loading, error, value }) => {
+  if (value === null) {
+    return null;
+  }
+  if (loading) {
+    return 'validating';
+  }
+  if (error) {
+    return 'error';
+  }
+  return 'success';
+};
 
 class RegionForm extends Region {
   constructor() {
     super('bindForm');
+    this.adapter = antdAdapter;
   }
 
-  handleChangeFactory = key => (value) => {
-    this.set(key, value);
-  }
-
-  handleEventFactory = key => (e) => {
-    this.set(key, e.target.value);
-  }
-
-  getHandlers = (key, Component) => {
-    const { handleChangeFactory, handleEventFactory } = this;
-    const handleChange = handleChangeFactory(key);
-    const handleEvent = handleEventFactory(key);
-    const standardChangeCallback = { onChange: handleChange };
-    const standardEventCallback = { onChange: handleEvent };
-    switch (Component) {
-      case Input:
-      case Radio.Group:
-        return ['value', standardEventCallback];
-      case Switch:
-        return ['value', standardChangeCallback];
-      case Checkbox.Group:
-        return ['checked', standardChangeCallback];
-      default: {
-        const name = Component && Component.name;
-        console.warn(`Can not unrecognized Component ${name || 'Unknown'}, data is bind on props.value and callback is bind on props.onChange`); // eslint-disable-line no-console
-        return ['value', standardChangeCallback];
-      }
+  handlerFactory = (key, selector, validate) => (value) => {
+    const selectedValue = selector(value);
+    this.set(key, selectedValue);
+    if (validate) {
+      this.load(key, validate, { params: selectedValue });
     }
   }
 
-  bindWith = (key, Component) => {
-    const { connectWith, getHandlers } = this;
-    const [valueName, handlers] = getHandlers(key, Component);
-    const Hoc = ({ [key]: value, ...args }) => {
-      const passByArgs = omit(args, ['value', 'loading', 'error', 'dispatch'].concat(Object.keys(handlers)));
-      const valueObj = { [valueName]: value };
-      return <Component {...valueObj} {...handlers} {...passByArgs} />;
+  bindWith = (key, Component, { validate } = {}) => {
+    const { set, connectWith, handlerFactory, adapter } = this;
+    set(key, null);
+    const [valueName, handlerName, selector] = adapter(Component);
+    const handler = handlerFactory(key, selector, validate);
+    const Hoc = ({ loading, error, [key]: value, ...args }) => {
+      const validateStatus = getValidateStatus({ loading, error, value });
+      const passByArgs = omit(args, ['dispatch', valueName, handlerName]);
+      const bindObj = { [valueName]: value, [handlerName]: handler };
+      return (
+        <Form.Item
+          validateStatus={validateStatus}
+          help={loading ? 'validating...' : error}
+        >
+          <Component {...bindObj} {...passByArgs} />
+        </Form.Item>
+      );
     };
     return connectWith(key, Hoc);
   }
 }
-
 export default RegionForm;

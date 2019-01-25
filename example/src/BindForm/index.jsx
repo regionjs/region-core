@@ -7,10 +7,17 @@ import Divider from '../shared/Divider';
 const myRegion = new RegionForm();
 
 const { bindWith } = myRegion;
-const SwitchA = bindWith('a', Switch);
-const InputB = bindWith('b', Input);
-const RadioGroupC = bindWith('c', Radio.Group);
-const CheckBoxGroupD = bindWith('d', Checkbox.Group);
+
+const validate = () => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    Math.random() < 0.9 ? resolve() : reject(new Error('error'));
+  }, 500);
+});
+
+const SwitchA = bindWith('a', Switch, { validate });
+const InputB = bindWith('b', Input, { validate });
+const RadioGroupC = bindWith('c', Radio.Group, { validate });
+const CheckBoxGroupD = bindWith('d', Checkbox.Group, { validate });
 
 const Form = () => (
   <Card>

@@ -14,7 +14,5 @@ const fetchCalls = {
 
 export const loadResultFactory = (value) => {
   const fetch = fetchCalls[value];
-  return () => load('result', fetch, {
-    forceUpdate: true,
-  });
+  return () => load('result', fetch);
 };

@@ -23,7 +23,7 @@ const getFilteredArray = (array, type) => {
 };
 
 const ResultConnected = connectWith({
-  entity: 'array',
+  key: 'array',
   selector: ({ array }, { id, type }) => {
     const filteredArray = getFilteredArray(array, type);
     return { item: filteredArray.find(item => item.id === id), array: filteredArray };

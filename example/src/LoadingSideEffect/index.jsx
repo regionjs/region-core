@@ -8,7 +8,7 @@ const Title = ({ user, asyncSideEffect }) => `${user}(${asyncSideEffect})`;
 
 const Loading = ({ user }) => `${user}(...)`;
 
-const LoadingTitle = connectWith('asyncSideEffect', Title, Loading);
+const LoadingTitle = connectWith('asyncSideEffect', Title, { Loading });
 
 const Display = ({ loading, user, follower }) => (
   <Card

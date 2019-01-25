@@ -5,6 +5,7 @@ import { get } from 'lodash';
 import { createBrowserHistory } from 'history';
 import { setSelectedKey } from '../shared/load';
 import routes from './routes';
+import External from './External';
 
 const { Content, Sider } = AntdLayout;
 
@@ -41,10 +42,11 @@ const Layout = ({ selectedKey }) => {
         </Menu>
       </Sider>
       <Content>
+        {selectedKey !== 'Home' && <External selectedKey={selectedKey} />}
         <Component />
       </Content>
     </AntdLayout>
   );
 };
 
-export default connectWith('selectedKey', Layout, () => null);
+export default connectWith('selectedKey', Layout, { Loading: () => null });

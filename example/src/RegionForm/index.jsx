@@ -23,9 +23,9 @@ const FormCard = ({ a, b, c, d }) => (
 
 const FormConnected = formRegion.connectWith(['a', 'b', 'c', 'd'], FormCard);
 
-const Result = ({ a }) => (
+const Result = ({ a, b, c, d }) => (
   <Card>
-    {JSON.stringify({ a })}
+    {JSON.stringify({ a, b, c, d })}
   </Card>
 );
 

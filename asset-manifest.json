@@ -1,15 +1,15 @@
 {
-  "main.css": "/redux-loadings/static/css/main.c7749ced.chunk.css",
-  "main.js": "/redux-loadings/static/js/main.916fe613.chunk.js",
-  "main.js.map": "/redux-loadings/static/js/main.916fe613.chunk.js.map",
-  "static/css/1.18259691.chunk.css": "/redux-loadings/static/css/1.18259691.chunk.css",
-  "static/js/1.0d129236.chunk.js": "/redux-loadings/static/js/1.0d129236.chunk.js",
-  "static/js/1.0d129236.chunk.js.map": "/redux-loadings/static/js/1.0d129236.chunk.js.map",
-  "runtime~main.js": "/redux-loadings/static/js/runtime~main.de134eca.js",
-  "runtime~main.js.map": "/redux-loadings/static/js/runtime~main.de134eca.js.map",
-  "static/css/1.18259691.chunk.css.map": "/redux-loadings/static/css/1.18259691.chunk.css.map",
-  "static/css/main.c7749ced.chunk.css.map": "/redux-loadings/static/css/main.c7749ced.chunk.css.map",
-  "index.html": "/redux-loadings/index.html",
-  "precache-manifest.d29ce728f4025e9bef5d2e25bf2c03e2.js": "/redux-loadings/precache-manifest.d29ce728f4025e9bef5d2e25bf2c03e2.js",
-  "service-worker.js": "/redux-loadings/service-worker.js"
+  "main.css": "/region-core/static/css/main.c7749ced.chunk.css",
+  "main.js": "/region-core/static/js/main.916fe613.chunk.js",
+  "main.js.map": "/region-core/static/js/main.916fe613.chunk.js.map",
+  "static/css/1.18259691.chunk.css": "/region-core/static/css/1.18259691.chunk.css",
+  "static/js/1.37882282.chunk.js": "/region-core/static/js/1.37882282.chunk.js",
+  "static/js/1.37882282.chunk.js.map": "/region-core/static/js/1.37882282.chunk.js.map",
+  "runtime~main.js": "/region-core/static/js/runtime~main.d6d0021d.js",
+  "runtime~main.js.map": "/region-core/static/js/runtime~main.d6d0021d.js.map",
+  "static/css/1.18259691.chunk.css.map": "/region-core/static/css/1.18259691.chunk.css.map",
+  "static/css/main.c7749ced.chunk.css.map": "/region-core/static/css/main.c7749ced.chunk.css.map",
+  "index.html": "/region-core/index.html",
+  "precache-manifest.d053f1155029ad66fd0009c684c795ad.js": "/region-core/precache-manifest.d053f1155029ad66fd0009c684c795ad.js",
+  "service-worker.js": "/region-core/service-worker.js"
 }

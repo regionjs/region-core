@@ -2,15 +2,28 @@ import React, { Fragment } from 'react';
 import { Input, Switch, Radio, Checkbox } from 'antd';
 import RegionForm from './region';
 import Card from '../shared/Card';
-import Divider from '../shared/Divider';
 
-const myRegion = new RegionForm();
+const myRegion = new RegionForm({
+  name: 'bindForm',
+  defaultProps: {
+    labelCol: {
+      sm: { span: 4 },
+    },
+    wrapperCol: {
+      sm: { span: 20 },
+    },
+  },
+});
 
 const { bindWith } = myRegion;
 
 const validate = () => new Promise((resolve, reject) => {
   setTimeout(() => {
-    Math.random() < 0.9 ? resolve() : reject(new Error('error'));
+    if (Math.random() < 0.9) {
+      resolve();
+    } else {
+      reject(new Error('error'));
+    }
   }, 500);
 });
 
@@ -21,13 +34,10 @@ const CheckBoxGroupD = bindWith('d', Checkbox.Group, { validate });
 
 const Form = () => (
   <Card>
-    <SwitchA />
-    <Divider />
-    <InputB />
-    <Divider />
-    <RadioGroupC options={['Hangzhou', 'Shanghai', 'Beijing', 'Chengdu']} />
-    <Divider />
-    <CheckBoxGroupD options={['Apple', 'Pear', 'Orange']} />
+    <SwitchA label="A" />
+    <InputB label="B" />
+    <RadioGroupC label="C" options={['Hangzhou', 'Shanghai', 'Beijing', 'Chengdu']} />
+    <CheckBoxGroupD label="D" options={['Apple', 'Pear', 'Orange']} />
   </Card>
 );
 
@@ -39,6 +49,11 @@ const Result = ({ a, b, c, d }) => (
 
 const ResultConnected = myRegion.connectWith(['a', 'b', 'c', 'd'], Result);
 
-const Panel = () => <Fragment><Form /><ResultConnected /></Fragment>;
+const Panel = () => (
+  <Fragment>
+    <Form />
+    <ResultConnected />
+  </Fragment>
+);
 
 export default Panel;

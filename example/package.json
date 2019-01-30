@@ -2,25 +2,32 @@
   "name": "example",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://regionjs.github.io/region-core/",
   "dependencies": {
     "antd": "^3.12.4",
     "history": "^4.7.2",
     "lodash": "^4.17.11",
-    "react": "^16.8.0-alpha.1",
-    "react-dom": "^16.8.0-alpha.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-scripts": "^2.1.3",
-    "region-shortcut": "^0.6.3"
+    "region-form": "^0.6.5",
+    "region-shortcut": "^0.6.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }

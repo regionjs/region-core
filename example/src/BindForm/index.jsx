@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
+import { RegionForm } from 'region-form';
 import { Input, Switch, Radio, Checkbox } from 'antd';
-import RegionForm from './region';
 import Card from '../shared/Card';
 
 const myRegion = new RegionForm({
-  name: 'bindForm',
+  name: 'myForm',
   defaultProps: {
     labelCol: {
       sm: { span: 4 },
@@ -13,19 +13,22 @@ const myRegion = new RegionForm({
       sm: { span: 20 },
     },
   },
+  initialValues: {
+    a: false,
+    b: 'value',
+    c: 'Hangzhou',
+    d: ['Apple', 'Pear'],
+  },
 });
 
-const { bindWith } = myRegion;
+const { bindWith, connectWith } = myRegion;
 
-const validate = () => new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (Math.random() < 0.9) {
-      resolve();
-    } else {
-      reject(new Error('error'));
-    }
-  }, 500);
-});
+const validate = async () => {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  if (Math.random() < 0.5) {
+    throw new Error('value is invalid');
+  }
+};
 
 const SwitchA = bindWith('a', Switch, { validate });
 const InputB = bindWith('b', Input, { validate });
@@ -34,20 +37,20 @@ const CheckBoxGroupD = bindWith('d', Checkbox.Group, { validate });
 
 const Form = () => (
   <Card>
-    <SwitchA label="A" />
-    <InputB label="B" />
-    <RadioGroupC label="C" options={['Hangzhou', 'Shanghai', 'Beijing', 'Chengdu']} />
-    <CheckBoxGroupD label="D" options={['Apple', 'Pear', 'Orange']} />
+    <SwitchA label="LabelA" />
+    <InputB label="LabelB" />
+    <RadioGroupC label="LabelC" options={['Hangzhou', 'Shanghai', 'Beijing', 'Chengdu']} />
+    <CheckBoxGroupD label="LabelD" options={['Apple', 'Pear', 'Orange']} />
   </Card>
 );
 
-const Result = ({ a, b, c, d }) => (
+const Result = ({ loading, error, a, b, c, d }) => (
   <Card>
-    {JSON.stringify({ a, b, c, d })}
+    {JSON.stringify({ loading, error, a, b, c, d })}
   </Card>
 );
 
-const ResultConnected = myRegion.connectWith(['a', 'b', 'c', 'd'], Result);
+const ResultConnected = connectWith(['a', 'b', 'c', 'd'], Result);
 
 const Panel = () => (
   <Fragment>

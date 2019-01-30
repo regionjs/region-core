@@ -6,10 +6,12 @@
     "antd": "^3.12.4",
     "history": "^4.7.2",
     "lodash": "^4.17.11",
-    "react": "^16.8.0-alpha.1",
-    "react-dom": "^16.8.0-alpha.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-scripts": "^2.1.3",
-    "region-shortcut": "^0.6.3"
+    "region-core": "github:regionjs/region-core#develop",
+    "region-form": "^0.6.4",
+    "region-shortcut": "^0.6.4"
   },
   "scripts": {
     "start": "react-scripts start",

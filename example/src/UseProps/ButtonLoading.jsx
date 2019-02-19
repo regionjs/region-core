@@ -1,17 +1,22 @@
 import React from 'react';
-import { connectWith } from 'region-shortcut';
+import { region } from 'region-shortcut';
 import { Card, Button } from 'antd';
 import { loadFollower } from '../shared/load';
 import Lines from '../shared/Lines';
 
-const Display = ({ loading, user, follower }) => (
-  <Card
-    title={user}
-    style={{ width: 300, margin: 30 }}
-  >
-    <Lines lines={follower} />
-    <Button loading={loading} onClick={loadFollower}>More</Button>
-  </Card>
-);
+const { useProps } = region;
 
-export default connectWith(['user', 'follower'], Display);
+const Display = () => {
+  const { loading, user, follower } = useProps(['user', 'follower']);
+  return (
+    <Card
+      title={user}
+      style={{ width: 300, margin: 30 }}
+    >
+      <Lines lines={follower} />
+      <Button loading={loading} onClick={loadFollower}>More</Button>
+    </Card>
+  );
+};
+
+export default Display;

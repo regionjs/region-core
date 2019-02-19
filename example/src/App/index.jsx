@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'region-shortcut';
 import Layout from './Layout';
 import { loadFollower, loadUser } from '../shared/load';
 
-class App extends Component {
-  componentDidMount() {
-    loadUser();
-    loadFollower();
-  }
+loadUser();
+loadFollower();
 
-  render() {
-    return (
-      <Provider>
-        <Layout />
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider>
+    <Layout />
+  </Provider>
+);
 
 export default App;
 

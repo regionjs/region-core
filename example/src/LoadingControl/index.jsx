@@ -3,7 +3,6 @@ import Layout from './components/Layout/index';
 import Control1 from './components/Control1';
 import Control2 from './components/Control2';
 import Control3 from './components/Control3';
-import Control4 from './components/Control4';
 
 
 const LoadingControl = () => (
@@ -11,7 +10,6 @@ const LoadingControl = () => (
     <Control1 />
     <Control2 />
     <Control3 />
-    <Control4 />
   </Layout>
 );
 

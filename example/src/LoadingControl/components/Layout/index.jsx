@@ -12,9 +12,6 @@ const Layout = ({ children }) => (
     <Card>
       {children[2]}
     </Card>
-    <Card>
-      {children[3]}
-    </Card>
   </div>
 );
 

@@ -1,11 +1,7 @@
 import Home from '../Home';
 import LoadingControl from '../LoadingControl';
-import LoadingFull from '../LoadingFull';
-import LoadingMore from '../LoadingMore';
-import Clear from '../Clear';
+import UseProps from '../UseProps';
 import SideEffect from '../SideEffect';
-import AsyncSideEffect from '../AsyncSideEffect';
-import LoadingSideEffect from '../LoadingSideEffect';
 import SetNextCall from '../SetNextCall';
 import Selector from '../Selector';
 import Form from '../Form';
@@ -24,29 +20,13 @@ export default [{
   label: 'Loading Control',
   Component: LoadingControl,
 }, {
-  key: 'LoadingFull',
-  label: 'Loading Full',
-  Component: LoadingFull,
-}, {
-  key: 'LoadingMore',
-  label: 'Loading More',
-  Component: LoadingMore,
-}, {
-  key: 'Clear',
-  label: 'Clear',
-  Component: Clear,
+  key: 'UseProps',
+  label: 'Use Props',
+  Component: UseProps,
 }, {
   key: 'SideEffect',
   label: 'Side Effect',
   Component: SideEffect,
-}, {
-  key: 'AsyncSideEffect',
-  label: 'Async Side Effect',
-  Component: AsyncSideEffect,
-}, {
-  key: 'LoadingSideEffect',
-  label: 'Loading Side Effect',
-  Component: LoadingSideEffect,
 }, {
   key: 'SetNextCall',
   label: 'Set Next Call',

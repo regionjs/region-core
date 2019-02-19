@@ -4,9 +4,9 @@ import { Card, Button } from 'antd';
 import { loadFollowerWithAsyncSideEffect } from './load';
 import Lines from '../shared/Lines';
 
-const Display = ({ loading, user, asyncSideEffect, follower }) => (
+const Display = ({ loading, asyncSideEffect, follower }) => (
   <Card
-    title={`${user}(${asyncSideEffect})`}
+    title={`The number of follower: ${asyncSideEffect}`}
     style={{ width: 300, margin: 30 }}
   >
     <Lines lines={follower} />
@@ -14,4 +14,4 @@ const Display = ({ loading, user, asyncSideEffect, follower }) => (
   </Card>
 );
 
-export default connectWith(['user', 'follower', 'asyncSideEffect'], Display);
+export default connectWith(['follower', 'asyncSideEffect'], Display);

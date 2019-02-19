@@ -1,17 +1,14 @@
 import React from 'react';
-import { connectWith } from 'region-shortcut';
-import { Card, Button } from 'antd';
-import { loadFollowerWithSideEffect } from './load';
-import Lines from '../shared/Lines';
+import SideEffect from './SideEffect';
+import AsyncSideEffect from './AsyncSideEffect';
+import LoadingSideEffect from './LoadingSideEffect';
 
-const Display = ({ loading, user, sideEffect, follower }) => (
-  <Card
-    title={`${user}(${sideEffect})`}
-    style={{ width: 300, margin: 30 }}
-  >
-    <Lines lines={follower} />
-    <Button loading={loading} onClick={loadFollowerWithSideEffect}>More</Button>
-  </Card>
+const Wrapper = () => (
+  <div style={{ display: 'flex' }}>
+    <SideEffect />
+    <AsyncSideEffect />
+    <LoadingSideEffect />
+  </div>
 );
 
-export default connectWith(['user', 'follower', 'sideEffect'], Display);
+export default Wrapper;

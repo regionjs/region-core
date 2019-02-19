@@ -1,18 +1,18 @@
 import React from 'react';
 import { connectWith } from 'region-shortcut';
 import { Card, Button } from 'antd';
-import { loadFollowerWithAsyncSideEffect } from '../AsyncSideEffect/load';
+import { loadFollowerWithAsyncSideEffect } from './load';
 import Lines from '../shared/Lines';
 
-const Title = ({ user, asyncSideEffect }) => `${user}(${asyncSideEffect})`;
+const Title = ({ asyncSideEffect }) => `The number of follower: ${asyncSideEffect}`;
 
-const Loading = ({ user }) => `${user}(...)`;
+const Loading = () => 'loading...';
 
 const LoadingTitle = connectWith('asyncSideEffect', Title, { Loading });
 
-const Display = ({ loading, user, follower }) => (
+const Display = ({ loading, follower }) => (
   <Card
-    title={<LoadingTitle user={user} />}
+    title={<LoadingTitle />}
     style={{ width: 300, margin: 30 }}
   >
     <Lines lines={follower} />
@@ -20,4 +20,4 @@ const Display = ({ loading, user, follower }) => (
   </Card>
 );
 
-export default connectWith(['user', 'follower'], Display);
+export default connectWith(['follower'], Display);

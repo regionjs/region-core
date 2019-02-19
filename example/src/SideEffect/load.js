@@ -1,12 +1,18 @@
 import { set, load } from 'region-shortcut';
-import { fetchFollower } from '../shared/fetch';
+import { fetchAsyncEffect, fetchFollower } from '../shared/fetch';
 
 set('sideEffect', null);
+set('asyncSideEffect', null);
 
-export const loadFollowerWithSideEffect = () => load('follower', fetchFollower, {
-  format: (result, snapshot = []) => {
-    snapshot.push(result);
-    set('sideEffect', snapshot.length);
-    return snapshot.slice();
-  },
-});
+export const loadFollowerWithAsyncSideEffect = async () => {
+  const follower = await load('follower', fetchFollower, {
+    format: (result, snapshot = []) => {
+      snapshot.push(result);
+      set('sideEffect', snapshot.length);
+      return snapshot.slice();
+    },
+  });
+  load('asyncSideEffect', fetchAsyncEffect, {
+    params: follower,
+  });
+};

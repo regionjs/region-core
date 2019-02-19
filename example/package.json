@@ -7,11 +7,11 @@
     "antd": "^3.12.4",
     "history": "^4.7.2",
     "lodash": "^4.17.11",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "react-scripts": "^2.1.3",
-    "region-form": "^0.6.5",
-    "region-shortcut": "^0.6.5"
+    "region-form": "^0.6.6",
+    "region-shortcut": "^0.6.6"
   },
   "scripts": {
     "start": "react-scripts start",

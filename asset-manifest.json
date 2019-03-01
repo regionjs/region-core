@@ -1,15 +1,15 @@
 {
-  "main.css": "/region-core/static/css/main.d5794a5b.chunk.css",
-  "main.js": "/region-core/static/js/main.5c12a917.chunk.js",
-  "main.js.map": "/region-core/static/js/main.5c12a917.chunk.js.map",
-  "static/css/1.92a46072.chunk.css": "/region-core/static/css/1.92a46072.chunk.css",
-  "static/js/1.ec858bae.chunk.js": "/region-core/static/js/1.ec858bae.chunk.js",
-  "static/js/1.ec858bae.chunk.js.map": "/region-core/static/js/1.ec858bae.chunk.js.map",
-  "runtime~main.js": "/region-core/static/js/runtime~main.d6d0021d.js",
-  "runtime~main.js.map": "/region-core/static/js/runtime~main.d6d0021d.js.map",
-  "static/css/1.92a46072.chunk.css.map": "/region-core/static/css/1.92a46072.chunk.css.map",
-  "static/css/main.d5794a5b.chunk.css.map": "/region-core/static/css/main.d5794a5b.chunk.css.map",
+  "main.css": "/region-core/static/css/main.fa9bae07.chunk.css",
+  "main.js": "/region-core/static/js/main.694c3b69.chunk.js",
+  "main.js.map": "/region-core/static/js/main.694c3b69.chunk.js.map",
+  "runtime~main.js": "/region-core/static/js/runtime~main.29a42ccb.js",
+  "runtime~main.js.map": "/region-core/static/js/runtime~main.29a42ccb.js.map",
+  "static/css/2.d2a0810b.chunk.css": "/region-core/static/css/2.d2a0810b.chunk.css",
+  "static/js/2.f2ef4d33.chunk.js": "/region-core/static/js/2.f2ef4d33.chunk.js",
+  "static/js/2.f2ef4d33.chunk.js.map": "/region-core/static/js/2.f2ef4d33.chunk.js.map",
   "index.html": "/region-core/index.html",
-  "precache-manifest.d12d29c11f101ac852803e93ff45bc5d.js": "/region-core/precache-manifest.d12d29c11f101ac852803e93ff45bc5d.js",
-  "service-worker.js": "/region-core/service-worker.js"
+  "precache-manifest.1d2d49c7aa5c98c5b0351613e65d6fc8.js": "/region-core/precache-manifest.1d2d49c7aa5c98c5b0351613e65d6fc8.js",
+  "service-worker.js": "/region-core/service-worker.js",
+  "static/css/2.d2a0810b.chunk.css.map": "/region-core/static/css/2.d2a0810b.chunk.css.map",
+  "static/css/main.fa9bae07.chunk.css.map": "/region-core/static/css/main.fa9bae07.chunk.css.map"
 }

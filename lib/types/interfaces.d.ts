@@ -9,7 +9,7 @@ export interface LoadOptions {
     params?: Params;
     id?: string;
 }
-export interface Config {
+export interface StrictConfig {
     name?: Name;
     expiredTime?: number;
     enableLog?: boolean;
@@ -17,15 +17,16 @@ export interface Config {
     DefaultLoading?: any;
     DefaultError?: any;
 }
+export declare type Config = StrictConfig | Name;
 export interface ProvideOptions {
     store?: any;
     reducers?: any;
 }
 export interface Payload {
     key: string;
-    result: any;
-    error: Error;
-    withLoadEnd: boolean;
+    result?: any;
+    error?: Error;
+    withLoadEnd?: boolean;
 }
 export interface Action {
     type: string;

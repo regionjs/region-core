@@ -9,9 +9,9 @@ declare class RegionPublic extends RegionPrivate {
     reset: () => void;
     load: (key: string, asyncFunction: any, option?: LoadOptions) => Promise<any>;
     /**
-     * @param params asyncFunction may need
-     * @param format A function format result to other data structure
-     * @param forceUpdate true | false
+     * @param option.params asyncFunction may need
+     * @param option.format A function format result to other data structure
+     * @param option.forceUpdate true | false
      */
     loadBy: (key: string, asyncFunction: any, option?: LoadOptions) => (params: any) => Promise<any>;
 }

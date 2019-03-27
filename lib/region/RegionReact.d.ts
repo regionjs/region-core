@@ -3,7 +3,7 @@ import { Props } from '../types/types';
 import { ConnectOptions } from '../types/interfaces';
 import RegionPublic from './RegionPublic';
 declare class RegionReact extends RegionPublic {
-    connectWith: (key: any, Display: any, option: ConnectOptions) => ((ownProps: Props) => JSX.Element) | null;
+    connectWith: (key: any, Display: any, option?: ConnectOptions | undefined) => ((ownProps: Props) => JSX.Element) | null;
     connect: (key: any, { Loading, Error }?: ConnectOptions) => (Display?: any) => ((ownProps: Props) => JSX.Element) | null;
     unstable_connect: (key: any, { Loading, Error }?: ConnectOptions) => (Display?: () => null) => import("react-redux").ConnectedComponentClass<(props: Props) => JSX.Element, any> | import("react-redux").ConnectedComponentClass<() => null, Pick<{}, never>>;
     /**

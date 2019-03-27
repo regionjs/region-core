@@ -4,33 +4,37 @@ import { formRegion } from '../shared/regionForm';
 import Card from '../shared/Card';
 import Divider from '../shared/Divider';
 
-const handleChange = value => formRegion.set('a', value);
-const handleInput = e => formRegion.set('b', e.target.value);
-const handleRadio = e => formRegion.set('c', e.target.value);
-const handleCheckBox = value => formRegion.set('d', value);
+const { set, useProps } = formRegion;
 
-const FormCard = ({ a, b, c, d }) => (
-  <Card>
-    <Switch checked={a} onChange={handleChange} />
-    <Divider />
-    <Input value={b} onChange={handleInput} />
-    <Divider />
-    <Radio.Group value={c} onChange={handleRadio} options={['Hangzhou', 'Shanghai', 'Beijing', 'Chengdu']} />
-    <Divider />
-    <Checkbox.Group options={['Apple', 'Pear', 'Orange']} value={d} onChange={handleCheckBox} />
-  </Card>
-);
+const handleChange = value => set('a', value);
+const handleInput = e => set('b', e.target.value);
+const handleRadio = e => set('c', e.target.value);
+const handleCheckBox = value => set('d', value);
 
-const FormConnected = formRegion.connectWith(['a', 'b', 'c', 'd'], FormCard);
+const FormCard = () => {
+  const { a, b, c, d } = useProps(['a', 'b', 'c', 'd']);
+  return (
+    <Card>
+      <Switch checked={a} onChange={handleChange} />
+      <Divider />
+      <Input value={b} onChange={handleInput} />
+      <Divider />
+      <Radio.Group value={c} onChange={handleRadio} options={['Hangzhou', 'Shanghai', 'Beijing', 'Chengdu']} />
+      <Divider />
+      <Checkbox.Group options={['Apple', 'Pear', 'Orange']} value={d} onChange={handleCheckBox} />
+    </Card>
+  );
+};
 
-const Result = ({ a, b, c, d }) => (
-  <Card>
-    {JSON.stringify({ a, b, c, d })}
-  </Card>
-);
+const Result = () => {
+  const { a, b, c, d } = useProps(['a', 'b', 'c', 'd']);
+  return (
+    <Card>
+      {JSON.stringify({ a, b, c, d })}
+    </Card>
+  );
+};
 
-const ResultConnected = formRegion.connectWith(['a', 'b', 'c', 'd'], Result);
-
-const Panel = () => <Fragment><FormConnected /><ResultConnected /></Fragment>;
+const Panel = () => <Fragment><FormCard /><Result /></Fragment>;
 
 export default Panel;

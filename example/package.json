@@ -10,9 +10,9 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "^2.1.5",
-    "region-core": "^0.7.1",
+    "region-core": "^0.7.4",
     "region-form": "^0.7.0",
-    "region-shortcut": "^0.7.1"
+    "region-shortcut": "^0.7.4"
   },
   "scripts": {
     "start": "react-scripts start",

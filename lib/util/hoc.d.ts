@@ -1,10 +1,10 @@
 /// <reference types="react" />
-import { Props, Component } from '../types/types';
+import { Props, ComponentType } from '../types/types';
 export declare const prehoc: (Display: any, Loading: any, Error: any) => (props: Props) => JSX.Element;
 interface Params {
-    Display?: Component;
-    Loading?: Component;
-    Error?: Component;
+    Display?: ComponentType;
+    Loading?: ComponentType;
+    Error?: ComponentType;
     useProps?: any;
     key?: any;
 }

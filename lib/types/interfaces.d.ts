@@ -1,7 +1,7 @@
-import { Params, Format, Name } from './types';
+import { Params, Format, Name, ComponentType } from './types';
 export interface ConnectOptions {
-    Loading?: any;
-    Error?: any;
+    Loading?: ComponentType;
+    Error?: ComponentType;
 }
 export interface LoadOptions {
     format?: Format;
@@ -14,8 +14,8 @@ export interface StrictConfig {
     expiredTime?: number;
     enableLog?: boolean;
     strictLoading?: boolean;
-    DefaultLoading?: any;
-    DefaultError?: any;
+    DefaultLoading?: ComponentType;
+    DefaultError?: ComponentType;
 }
 export declare type Config = StrictConfig | Name;
 export interface ProvideOptions {

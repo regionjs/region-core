@@ -1,5 +1,5 @@
-import { connectWith } from 'region-shortcut';
+import { connect } from 'region-shortcut';
 import Loading from './Loading';
 import Display from './Display';
 
-export default connectWith({ loading: 'user', result: ['user', 'follower'] }, Display, { Loading });
+export default connect({ loading: 'user', result: ['user', 'follower'] }, { Loading })(Display);

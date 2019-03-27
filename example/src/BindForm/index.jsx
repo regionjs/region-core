@@ -21,7 +21,7 @@ const myRegion = new RegionForm({
   },
 });
 
-const { bindWith, connectWith } = myRegion;
+const { bindWith, useProps } = myRegion;
 
 const validate = async () => {
   await new Promise(resolve => setTimeout(resolve, 1000));
@@ -44,18 +44,19 @@ const Form = () => (
   </Card>
 );
 
-const Result = ({ loading, error, a, b, c, d }) => (
-  <Card>
-    {JSON.stringify({ loading, error, a, b, c, d })}
-  </Card>
-);
-
-const ResultConnected = connectWith(['a', 'b', 'c', 'd'], Result);
+const Result = () => {
+  const { loading, error, a, b, c, d } = useProps(['a', 'b', 'c', 'd']);
+  return (
+    <Card>
+      {JSON.stringify({ loading, error, a, b, c, d })}
+    </Card>
+  );
+};
 
 const Panel = () => (
   <Fragment>
     <Form />
-    <ResultConnected />
+    <Result />
   </Fragment>
 );
 

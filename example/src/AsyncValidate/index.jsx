@@ -4,6 +4,8 @@ import { formRegion } from '../shared/regionForm';
 import { loadValidate } from './load';
 import Card from '../shared/Card';
 
+const { useProps } = formRegion;
+
 const handleChange = e => loadValidate(e.target.value);
 
 const getValidateStatus = ({ loading, error, value }) => {
@@ -19,7 +21,8 @@ const getValidateStatus = ({ loading, error, value }) => {
   return 'success';
 };
 
-const AsyncValidate = ({ loading, error, value }) => {
+const AsyncValidate = () => {
+  const { loading, error, value } = useProps('value');
   const validateStatus = getValidateStatus({ loading, error, value });
   return (
     <Card>
@@ -38,4 +41,4 @@ const AsyncValidate = ({ loading, error, value }) => {
   );
 };
 
-export default formRegion.connectWith('value', AsyncValidate);
+export default AsyncValidate;

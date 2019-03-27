@@ -4,8 +4,10 @@ import { loadValueWithError } from './load';
 import { formRegion } from '../shared/regionForm';
 import Card from '../shared/Card';
 
-formRegion.set('valueWithError1', null);
-formRegion.set('valueWithError2', null);
+const { set, useProps } = formRegion;
+
+set('valueWithError1', null);
+set('valueWithError2', null);
 
 const getStatus = ({ loading, error }) => {
   if (loading) {
@@ -17,7 +19,8 @@ const getStatus = ({ loading, error }) => {
   return 'check-circle';
 };
 
-const Display = ({ loading, error, valueWithError1, valueWithError2 }) => {
+const Display = () => {
+  const { loading, error, valueWithError1, valueWithError2 } = useProps(['valueWithError1', 'valueWithError2']);
   const log = ''
     + `loading: ${loading}\n`
     + `value1: ${valueWithError1}\n`
@@ -32,4 +35,4 @@ const Display = ({ loading, error, valueWithError1, valueWithError2 }) => {
   );
 };
 
-export default formRegion.connectWith(['valueWithError1', 'valueWithError2'], Display);
+export default Display;

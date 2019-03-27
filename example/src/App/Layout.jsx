@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectWith } from 'region-shortcut';
+import { connect } from 'region-shortcut';
 import { Menu, Layout as AntdLayout } from 'antd';
 import { get } from 'lodash';
 import { createBrowserHistory } from 'history';
@@ -49,4 +49,4 @@ const Layout = ({ selectedKey }) => {
   );
 };
 
-export default connectWith('selectedKey', Layout, { Loading: () => null });
+export default connect('selectedKey', { Loading: () => null })(Layout);

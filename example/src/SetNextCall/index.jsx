@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { connectWith } from 'region-shortcut';
+import { connect } from 'region-shortcut';
 import { Card, Radio, Button } from 'antd';
 import { setNextCall, loadResultFactory } from './load';
 
@@ -22,7 +22,7 @@ const Result = ({ loading, nextCall, result }) => (
   </Card>
 );
 
-const ResultConnected = connectWith(['nextCall', 'result'], Result);
+const ResultConnected = connect(['nextCall', 'result'])(Result);
 
 const Panel = () => (
   <Fragment>

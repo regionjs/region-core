@@ -5,12 +5,17 @@ import RegionLocalStorage from './region';
 
 const myRegion = new RegionLocalStorage();
 
-const handleChange = e => myRegion.set('value', e.target.value);
+const { set, useProps } = myRegion;
 
-const ExtendRegion = ({ value }) => (
-  <Card>
-    <Input value={value} onChange={handleChange} />
-  </Card>
-);
+const handleChange = e => set('value', e.target.value);
 
-export default myRegion.connectWith('value', ExtendRegion);
+const ExtendRegion = () => {
+  const { value} = useProps('value');
+  return (
+    <Card>
+      <Input value={value} onChange={handleChange} />
+    </Card>
+  );
+}
+
+export default ExtendRegion;

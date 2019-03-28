@@ -1,4 +1,4 @@
-import { Action, Config, StrictConfig } from '../types/interfaces';
+import { State, Action, Config, StrictConfig } from '../types/interfaces';
 declare class RegionInitial {
     name: string;
     private_actionTypes: {
@@ -6,13 +6,13 @@ declare class RegionInitial {
         SET: string;
         RESET: string;
     };
-    expiredTime?: number;
-    enableLog?: boolean;
-    strictLoading?: boolean;
+    expiredTime: number;
+    enableLog: boolean;
+    strictLoading: boolean;
     DefaultLoading?: any;
     DefaultError?: any;
     constructor(config: Config);
     private_setConfig: (config?: StrictConfig) => void;
-    private_reducer: (state: {} | undefined, action: Action) => any;
+    private_reducer: (state: State | undefined, action: Action) => State;
 }
 export default RegionInitial;

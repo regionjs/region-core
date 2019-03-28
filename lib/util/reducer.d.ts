@@ -1,1 +1,2 @@
-export declare const reducer: (state: any, action: any, actionTypes: any, enableLogInDev?: boolean | undefined) => any;
+import { State, Action } from '../types/interfaces';
+export declare const reducer: (state: State, action: Action, actionTypes: any, enableLogInDev?: boolean | undefined) => State;

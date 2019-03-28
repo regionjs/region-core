@@ -9,6 +9,5 @@ declare class RegionPrivate extends RegionInitial {
      * @todo move to RegionPublic after private_selectorFactory removed
      */
     getProps: (key: any) => import("../types/interfaces").Props;
-    private_selectorFactory: (key: any) => (state?: any, ownProps?: any) => any;
 }
 export default RegionPrivate;

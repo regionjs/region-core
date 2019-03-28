@@ -1,4 +1,4 @@
-import { Params, Format, Name, ComponentType } from './types';
+import { Params, Format, Name, ComponentType, SelectPropsKey, Loadings, Results, Errors } from './types';
 export interface Props {
     [key: string]: any;
 }
@@ -37,4 +37,10 @@ export interface Payload {
 export interface Action {
     type: string;
     payload: Payload;
+}
+export interface SelectPropsParams {
+    keys: SelectPropsKey;
+    loadings: Loadings;
+    results: Results;
+    errors: Errors;
 }

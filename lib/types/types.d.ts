@@ -17,10 +17,10 @@ export declare type Params = any;
 export declare type Format = (result: any, snapshot: any) => any;
 export declare type Name = string;
 export declare type Path = string | string[];
-/**
- * @type key: EntityName
- */
-export declare type Props = {
-    [key: string]: any;
-};
+export declare type SelectPropsKey = string | string[];
+export declare type Loading = boolean | undefined;
+export declare type Loadings = Loading | Loading[];
+export declare type Results = Result | Result[];
+export declare type Error = any;
+export declare type Errors = Error | Error[];
 export {};

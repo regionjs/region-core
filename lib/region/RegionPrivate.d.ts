@@ -5,9 +5,5 @@ declare class RegionPrivate extends RegionInitial {
     private_getFetchTimes: (path: string | string[]) => any;
     private_getResults: (path: string | string[]) => any;
     private_getError: (path: string | string[]) => any;
-    /**
-     * @todo move to RegionPublic after private_selectorFactory removed
-     */
-    getProps: (key: any) => import("../types/interfaces").Props;
 }
 export default RegionPrivate;

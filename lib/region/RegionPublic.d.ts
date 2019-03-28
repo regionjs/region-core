@@ -22,5 +22,6 @@ declare class RegionPublic extends RegionPrivate {
      * @param option.forceUpdate true | false
      */
     loadBy: (key: string, asyncFunction: any, option?: LoadOption) => (params: any) => Promise<any>;
+    getProps: (key: any) => import("../types/interfaces").Props;
 }
 export default RegionPublic;

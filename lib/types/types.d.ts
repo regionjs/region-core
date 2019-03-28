@@ -14,7 +14,7 @@ export declare type EntityName = string;
 export declare type Result = any;
 export declare type AsyncFunction = any;
 export declare type Params = any;
-export declare type Format = (result: any, snapshot: any, error: any) => any;
+export declare type Format = (result: any, snapshot: any) => any;
 export declare type Name = string;
 export declare type Path = string | string[];
 /**

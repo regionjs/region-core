@@ -1,4 +1,5 @@
 import Home from '../Home';
+import CURD from '../CURD';
 import LoadingControl from '../LoadingControl';
 import UseProps from '../UseProps';
 import SideEffect from '../SideEffect';
@@ -15,6 +16,10 @@ export default [{
   key: 'Home',
   label: 'Home',
   Component: Home,
+}, {
+  key: 'CURD',
+  label: 'CURD',
+  Component: CURD,
 }, {
   key: 'LoadingControl',
   label: 'Loading Control',

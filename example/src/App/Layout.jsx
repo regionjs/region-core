@@ -21,7 +21,7 @@ if (!initSelectKey || routes.find(({ key }) => key === initSelectKey) === undefi
 }
 
 const onClick = ({ key }) => {
-  history.push(`#${key}`);
+  history.replace(`#${key}`);
   setSelectedKey(key);
 };
 
@@ -35,8 +35,8 @@ const Layout = ({ selectedKey }) => {
   }
   const { Component } = route;
   return (
-    <AntdLayout style={{ minHeight: '100vh' }}>
-      <Sider width={200} theme="light">
+    <AntdLayout style={{ height: '100vh' }}>
+      <Sider width={200} theme="light" style={{ overflowY: 'auto' }}>
         <Menu mode="inline" selectedKeys={[selectedKey]} onClick={onClick}>
           {routes.map(MenuItem)}
         </Menu>

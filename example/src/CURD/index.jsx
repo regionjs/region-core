@@ -47,12 +47,12 @@ export default () => {
   const { loading, list } = useProps('list');
   const formattedList = deNormalize(list);
   return (
-    <div style={{ padding: 32 }}>
+    <Card>
       <List
         loading={loading}
+        dataSource={formattedList}
         header={<Button onClick={handleGet}>GET</Button>}
         footer={<Button onClick={handlePost}>POST</Button>}
-        dataSource={formattedList}
         renderItem={
           item => {
             const nextItem = { id: item.id, value: item.value + 1 };
@@ -67,8 +67,9 @@ export default () => {
                 <Button onClick={handleDelete}>DELETE</Button>
               </List.Item>
             )
-          }}
+          }
+        }
       />
-    </div>
+    </Card>
   );
 }

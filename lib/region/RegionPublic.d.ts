@@ -1,3 +1,4 @@
+import { Key } from '../types/types';
 import { LoadOption } from '../types/interfaces';
 import RegionPrivate from './RegionPrivate';
 declare class RegionPublic extends RegionPrivate {
@@ -22,5 +23,6 @@ declare class RegionPublic extends RegionPrivate {
      * @param option.forceUpdate true | false
      */
     loadBy: (key: string, asyncFunction: any, option?: LoadOption) => (params: any) => Promise<any>;
+    getProps: (key: Key) => import("../types/interfaces").Props;
 }
 export default RegionPublic;

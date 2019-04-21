@@ -1,6 +1,8 @@
 import Home from '../Home';
 import LoadingControl from '../LoadingControl';
 import UseProps from '../UseProps';
+import AdvancedLoading from '../AdvancedLoading';
+import CURD from '../CURD';
 import SideEffect from '../SideEffect';
 import SetNextCall from '../SetNextCall';
 import Selector from '../Selector';
@@ -23,6 +25,14 @@ export default [{
   key: 'UseProps',
   label: 'Use Props',
   Component: UseProps,
+}, {
+  key: 'CURD',
+  label: 'CURD',
+  Component: CURD,
+}, {
+  key: 'AdvancedLoading',
+  label: 'Advanced Loading',
+  Component: AdvancedLoading,
 }, {
   key: 'SideEffect',
   label: 'Side Effect',

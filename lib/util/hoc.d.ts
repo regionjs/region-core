@@ -1,7 +1,6 @@
 /// <reference types="react" />
 import { Props } from '../types/interfaces';
 import { ComponentType } from '../types/types';
-export declare const prehoc: (Display: any, Loading: any, Error: any) => (props: Props) => JSX.Element;
 interface Params {
     Display?: ComponentType;
     Loading?: ComponentType;

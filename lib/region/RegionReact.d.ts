@@ -1,10 +1,10 @@
 /// <reference types="react" />
+import { Key } from '../types/types';
 import { ConnectOption, Props } from '../types/interfaces';
 import RegionPublic from './RegionPublic';
 declare class RegionReact extends RegionPublic {
-    connectWith: (key: any, Display: any, option?: ConnectOption | undefined) => ((ownProps: Props) => JSX.Element) | null;
-    connect: (key: any, { Loading, Error }?: ConnectOption) => (Display?: any) => ((ownProps: Props) => JSX.Element) | null;
-    unstable_connect: (key: any, { Loading, Error }?: ConnectOption) => (Display?: () => null) => import("react-redux").ConnectedComponentClass<(props: Props) => JSX.Element, any> | import("react-redux").ConnectedComponentClass<() => null, Pick<{}, never>>;
+    connectWith: (key: Key, Display: any, option?: ConnectOption | undefined) => ((ownProps: Props) => JSX.Element) | null;
+    connect: (key: Key, { Loading, Error }?: ConnectOption) => (Display?: any) => ((ownProps: Props) => JSX.Element) | null;
     /**
      * There is only one store bound to all regions. App store is not related unless it is {@code provide()}
      * So it is unnecessary to check whether store is memoized
@@ -16,6 +16,6 @@ declare class RegionReact extends RegionPublic {
      * Further information needed.
      * @param key string | string[]
      */
-    useProps: (key: any) => Props;
+    useProps: (key: Key) => Props;
 }
 export default RegionReact;

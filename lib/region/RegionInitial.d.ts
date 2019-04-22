@@ -1,6 +1,8 @@
+import { Store } from 'redux';
 import { State, Action, Config, StrictConfig } from '../types/interfaces';
 declare class RegionInitial {
     name: string;
+    private_store: Store;
     private_actionTypes: {
         LOAD: string;
         SET: string;

@@ -24,5 +24,6 @@ declare class RegionPublic extends RegionPrivate {
      */
     loadBy: (key: string, asyncFunction: any, option?: LoadOption) => (params: any) => Promise<any>;
     getProps: (key: Key) => import("../types/interfaces").Props;
+    unstable_effect: (from: Key, to: string, getDerivedStateFromProps: any) => void;
 }
 export default RegionPublic;

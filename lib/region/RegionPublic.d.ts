@@ -1,6 +1,5 @@
-import { Key } from '../types/types';
-import { LoadOption, Props } from '../types/interfaces';
 import RegionPrivate from './RegionPrivate';
+import { Props, Key, GetDerivedStateFromProps, LoadOption } from '../types';
 declare class RegionPublic extends RegionPrivate {
     /**
      * @param key string
@@ -24,6 +23,6 @@ declare class RegionPublic extends RegionPrivate {
      */
     loadBy: (key: string, asyncFunction: any, option?: LoadOption) => (params: any) => Promise<any>;
     getProps: (key: Key) => Props;
-    unstable_effect: (from: Key, to: string, getDerivedStateFromProps: any) => void;
+    unstable_effect: (from: Key, to: string, getDerivedStateFromProps: GetDerivedStateFromProps) => void;
 }
 export default RegionPublic;

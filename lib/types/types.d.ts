@@ -1,4 +1,5 @@
 import { ComponentType as RawComponentType } from 'react';
+import { Props } from './basic';
 export declare type ComponentType = RawComponentType | any;
 declare type BaseKey = string | string[];
 interface ComplexKey {
@@ -16,6 +17,7 @@ export declare type Result = any;
 export declare type AsyncFunction = any;
 export declare type Params = any;
 export declare type Format = (result: any, snapshot: any) => any;
+export declare type GetDerivedStateFromProps = (props: Props, snapshot: any) => any;
 export declare type Name = string;
 export declare type Path = string | string[];
 export declare type SelectPropsKey = string | string[];

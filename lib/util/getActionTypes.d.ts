@@ -1,6 +1,5 @@
-declare const _default: (name: string) => {
+export declare const getActionTypes: (name: string) => {
     LOAD: string;
     SET: string;
     RESET: string;
 };
-export default _default;

@@ -7,12 +7,14 @@
     "antd": "^3.13.6",
     "history": "^4.7.2",
     "lodash": "^4.17.11",
+    "monaco-editor": "^0.17.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-monaco-editor": "^0.25.1",
     "react-scripts": "^2.1.5",
-    "region-core": "^0.7.4",
-    "region-form": "^0.7.0",
-    "region-shortcut": "^0.7.4"
+    "region-core": "^8.1.5",
+    "region-form": "^8.0.0",
+    "region-shortcut": "^8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

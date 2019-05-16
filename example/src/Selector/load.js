@@ -1,5 +1,4 @@
-import { set } from 'region-shortcut';
-import factory from '../shared/setFactory';
+import { set, setBy } from 'region-shortcut';
 
 const generate = (type, id) => ({
   id: String(id),
@@ -7,8 +6,10 @@ const generate = (type, id) => ({
   value: `item with id === ${id} and type === ${type}`,
 });
 
-set('array', ['cat', 'cat', 'dog', 'cat', 'dog'].map(generate));
+const animalArray = ['cat', 'cat', 'dog', 'cat', 'dog'].map(generate)
 
-export const setId = factory('id');
+set('array', animalArray);
 
-export const setType = factory('type');
+export const setId = setBy('id');
+
+export const setType = setBy('type');

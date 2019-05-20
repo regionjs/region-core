@@ -1,7 +1,8 @@
 import { ComponentType as RawComponentType } from 'react';
 import { Props } from './basic';
 export declare type ComponentType = RawComponentType | any;
-declare type BaseKey = string | string[];
+export declare type SimpleKey = string;
+export declare type BaseKey = SimpleKey | SimpleKey[];
 interface ComplexKey {
     key?: BaseKey;
     loading?: BaseKey;
@@ -19,7 +20,6 @@ export declare type Params = any;
 export declare type Format = (result: any, snapshot: any) => any;
 export declare type GetDerivedStateFromProps = (props: Props, snapshot: any) => any;
 export declare type Name = string;
-export declare type Path = string | string[];
 export declare type SelectPropsKey = string | string[];
 export declare type Loading = boolean | undefined;
 export declare type Loadings = Loading | Loading[];

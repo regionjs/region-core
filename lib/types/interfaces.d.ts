@@ -1,5 +1,5 @@
 import { Any } from './basic';
-import { Params, Format, Name, ComponentType, SelectPropsKey, Loadings, Results, FetchTimes, Errors } from './types';
+import { Params, Format, Name, ComponentType, SimpleKeys, Loading, Result, FetchTime, Error } from './types';
 export interface ConnectOption {
     Loading?: ComponentType;
     Error?: ComponentType;
@@ -32,9 +32,9 @@ export interface Action {
     payload: Payload;
 }
 export interface SelectPropsParams {
-    keys: SelectPropsKey;
-    loadings: Loadings;
-    results: Results;
-    fetchTimes: FetchTimes;
-    errors: Errors;
+    keys: SimpleKeys;
+    loadings: Loading[];
+    results: Result[];
+    fetchTimes: FetchTime[];
+    errors: Error[];
 }

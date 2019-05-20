@@ -22,7 +22,11 @@ declare class RegionPublic extends RegionPrivate {
      * @param option.forceUpdate true | false
      */
     loadBy: (key: string, asyncFunction: any, option?: LoadOption) => (params: any) => Promise<any>;
-    getProps: (key: Key) => Props;
+    getProps: (key: Key) => {
+        loading: boolean | undefined;
+        fetchTime: number | undefined;
+        error: string | undefined;
+    } & Props;
     unstable_effect: (from: Key, to: string, getDerivedStateFromProps: GetDerivedStateFromProps) => void;
 }
 export default RegionPublic;

@@ -2,7 +2,8 @@ import { ComponentType as RawComponentType } from 'react';
 import { Props } from './basic';
 export declare type ComponentType = RawComponentType | any;
 export declare type SimpleKey = string;
-export declare type BaseKey = SimpleKey | SimpleKey[];
+export declare type SimpleKeys = SimpleKey[];
+export declare type BaseKey = SimpleKey | SimpleKeys;
 interface ComplexKey {
     key?: BaseKey;
     loading?: BaseKey;

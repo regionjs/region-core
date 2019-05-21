@@ -48,6 +48,8 @@ export interface State {
 export interface Payload {
     key: string;
     result?: Any;
+    results?: Any;
+    id?: Any;
     error?: Error;
 }
 export interface Action {
@@ -57,11 +59,15 @@ export interface Action {
 export declare type Loading = boolean | undefined;
 export declare type FetchTime = number;
 export declare type Error = any;
-export interface SelectPropsParams {
-    keys: SimpleKeys;
-    loadings: Loading[];
-    results: Result[];
-    fetchTimes: FetchTime[];
-    errors: Error[];
+export interface FormatResultParams {
+    result: any;
+    snapshot: any;
+    format: any;
+}
+export interface FormatResultWithIdParams {
+    result: any;
+    snapshot: any;
+    format: any;
+    id: any;
 }
 export {};

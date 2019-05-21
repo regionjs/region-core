@@ -1,8 +1,3 @@
-interface Params {
-    result?: any;
-    snapshot?: any;
-    format?: any;
-    id?: any;
-}
-export declare const formatResult: ({ result, snapshot, format, id }: Params) => any;
-export {};
+import { FormatResultParams, FormatResultWithIdParams } from '../types';
+export declare const formatResult: ({ result, snapshot, format }: FormatResultParams) => any;
+export declare const formatResultWithId: ({ result, snapshot, format, id }: FormatResultWithIdParams) => any;

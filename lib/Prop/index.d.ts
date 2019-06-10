@@ -6,7 +6,7 @@ declare class Prop {
     set: (result: any, option: LoadOption) => any;
     setBy: (option?: LoadOption) => (result: any) => any;
     load: (asyncFunction: any, option: LoadOption) => Promise<any>;
-    loadBy: (asyncFunction: any, option: LoadOption) => Promise<(params: any) => Promise<any>>;
+    loadBy: (asyncFunction: any, option: LoadOption) => (params: any) => Promise<any>;
     getProps: () => {
         loading: boolean | undefined;
         fetchTime: number | undefined;

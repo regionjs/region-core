@@ -1,5 +1,5 @@
 import RegionPrivate from './RegionPrivate';
-import { Props, Key, GetDerivedStateFromProps, LoadOption } from '../types';
+import { Key, LoadOption } from '../types';
 declare class RegionPublic extends RegionPrivate {
     /**
      * @param key string
@@ -26,7 +26,7 @@ declare class RegionPublic extends RegionPrivate {
         loading: boolean | undefined;
         fetchTime: number | undefined;
         error: string | undefined;
-    } & Props;
-    unstable_effect: (from: Key, to: string, getDerivedStateFromProps: GetDerivedStateFromProps) => void;
+    } & import("../types").Props;
+    getValue: (key: string) => any;
 }
 export default RegionPublic;

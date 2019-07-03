@@ -1,7 +1,7 @@
-import Region from '../Region';
+import CombinedRegion from '../CombinedRegion';
 import { Config, LoadOption } from '../types';
-declare class Prop {
-    region: Region;
+export declare class Region {
+    region: CombinedRegion;
     constructor(config?: Config);
     set: (result: any, option?: LoadOption) => any;
     setBy: (option?: LoadOption) => (result: any) => any;
@@ -20,4 +20,5 @@ declare class Prop {
     useProps: () => import("../types").Props;
     useValue: () => any;
 }
-export default Prop;
+declare const createRegion: (initialValue: any) => Region;
+export default createRegion;

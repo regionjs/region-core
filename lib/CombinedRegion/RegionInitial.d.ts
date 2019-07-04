@@ -13,7 +13,7 @@ declare class RegionInitial {
     strictLoading: boolean;
     DefaultLoading?: any;
     DefaultError?: any;
-    constructor(config: Config);
+    constructor(config?: Config);
     private_setConfig: (config?: StrictConfig) => void;
     private_reducer: (state: State | undefined, action: Action) => State;
 }

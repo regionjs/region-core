@@ -1,8 +1,8 @@
 import CombinedRegion from '../CombinedRegion';
-import { Config, LoadOption } from '../types';
+import { LoadOption } from '../types';
 export declare class Region {
     region: CombinedRegion;
-    constructor(config?: Config);
+    constructor();
     set: (result: any, option?: LoadOption) => any;
     setBy: (option?: LoadOption) => (result: any) => any;
     load: (asyncFunction: any, option?: LoadOption) => Promise<any>;

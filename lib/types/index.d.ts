@@ -25,11 +25,14 @@ export declare type Result = any;
 export declare type AsyncFunction = any;
 export declare type Params = any;
 declare type Format = (result: any, snapshot: any) => any;
+declare type Reducer = (state: any, action: any, params: any) => any;
 export interface LoadOption {
     format?: Format;
+    reducer?: Reducer;
     forceUpdate?: boolean;
     params?: Params;
     id?: string;
+    delay?: boolean;
 }
 export declare type GetDerivedStateFromProps = (props: Props, snapshot: any) => any;
 export declare type Name = string;

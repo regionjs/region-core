@@ -12,11 +12,7 @@ export declare class Region {
         fetchTime: number | undefined;
         error: string | undefined;
     } & import("../types").Props;
-    getValue: () => {
-        loading: boolean | undefined;
-        fetchTime: number | undefined;
-        error: string | undefined;
-    } & import("../types").Props;
+    getValue: () => any;
     useProps: () => import("../types").Props;
     useValue: () => any;
 }

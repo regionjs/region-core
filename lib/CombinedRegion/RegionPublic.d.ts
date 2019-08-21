@@ -28,5 +28,8 @@ declare class RegionPublic extends RegionPrivate {
         error: string | undefined;
     } & import("../types").Props;
     getValue: (key: string) => any;
+    getLoading: (key: string) => any;
+    getError: (key: string) => any;
+    getFetchTime: (key: string) => any;
 }
 export default RegionPublic;

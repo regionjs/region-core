@@ -13,8 +13,14 @@ export declare class Region {
         error: string | undefined;
     } & import("../types").Props;
     getValue: () => any;
+    getLoading: () => any;
+    getError: () => any;
+    getFetchTime: () => any;
     useProps: () => import("../types").Props;
     useValue: () => any;
+    useLoading: () => any;
+    useError: () => any;
+    useFetchTime: () => any;
 }
-declare const createRegion: (initialValue: any) => Region;
+declare const createRegion: (initialValue?: any) => Region;
 export default createRegion;

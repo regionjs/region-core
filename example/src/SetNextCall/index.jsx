@@ -1,9 +1,21 @@
 import React, { Fragment } from 'react';
-import { connect } from 'region-shortcut';
+import { createRegion } from 'region-core';
 import { Card, Radio, Button } from 'antd';
-import { setNextCall, loadResultFactory } from './load';
+import { fetchA, fetchB, fetchC } from '../shared/fetch';
 
-const handleRadio = e => setNextCall(loadResultFactory(e.target.value));
+const nextCallRegion = createRegion()
+const resultRegion = createRegion(null)
+
+const fetchCalls = {
+  a: fetchA,
+  b: fetchB,
+  c: fetchC,
+};
+
+const handleRadio = e => nextCallRegion.set(() => {
+  const fetch = fetchCalls[e.target.value]
+  return resultRegion.loadBy(fetch);
+});
 
 const Display = () => (
   <Card style={{ width: 300, margin: 30 }}>
@@ -15,19 +27,24 @@ const Display = () => (
   </Card>
 );
 
-const Result = ({ loading, nextCall, result }) => (
-  <Card style={{ width: 300, margin: 30 }}>
-    <p>{result}</p>
-    <Button loading={loading} onClick={nextCall}>Call</Button>
-  </Card>
-);
-
-const ResultConnected = connect(['nextCall', 'result'])(Result);
+const Result = () => {
+  const nextCallLoading = nextCallRegion.useLoading()
+  const resultLoading = resultRegion.useLoading()
+  const nextCall = nextCallRegion.useValue()
+  const result = resultRegion.useValue()
+  console.log(nextCall);
+  return (
+    <Card style={{ width: 300, margin: 30 }}>
+      <p>{result}</p>
+      <Button loading={nextCallLoading || resultLoading} onClick={nextCall}>Call</Button>
+    </Card>
+  );
+}
 
 const Panel = () => (
   <Fragment>
     <Display />
-    <ResultConnected />
+    <Result />
   </Fragment>
 );
 

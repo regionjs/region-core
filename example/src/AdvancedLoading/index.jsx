@@ -1,48 +1,44 @@
 import React from 'react';
-import { set, load, useProps } from 'region-shortcut';
+import { createRegion } from 'region-core';
 import { Button, Spin } from 'antd';
 import Card from '../shared/Card';
+import Divider from '../shared/Divider';
 
-set('leftPart')
-set('rightPart')
+const leftPartRegion = createRegion(null)
+const rightPartRegion = createRegion(null)
 
-const fetch = () => new Promise((resolve) => {
-  setTimeout(() => { resolve(); }, 1000);
-});
+const fetch = () => new Promise((resolve) => setTimeout(resolve, 1000));
 
-const handleLeft = () => {
-  load('leftPart', fetch)
-}
+const handleLeft = leftPartRegion.loadBy(fetch)
 
-const handleRight = () => {
-  load('rightPart', fetch)
-}
+const handleRight = rightPartRegion.loadBy(fetch)
 
 const LeftPart = () => {
-  const { loading } = useProps('leftPart');
+  const loading = leftPartRegion.useLoading();
   return <Button loading={loading} onClick={handleLeft}>Load Left Part</Button>
 }
 
 const RightPart = () => {
-  const { loading } = useProps('rightPart');
+  const loading = rightPartRegion.useLoading();
   return <Button loading={loading} onClick={handleRight}>Load Right Part</Button>
 }
 
 const SomethingIsLoading = () => {
-  const { loading } = useProps(['leftPart', 'rightPart']);
-  return <Button loading={loading} disabled>Something is loading</Button>
+  const loadingLeft = leftPartRegion.useLoading();
+  const loadingRight = rightPartRegion.useLoading();
+  return <Button loading={loadingLeft || loadingRight} disabled>Something is loading</Button>
 }
 
 const Parent = () => {
-  const { loading: loadingLeft } = useProps('leftPart');
-  const { loading: loadingRight } = useProps('rightPart');
+  const loadingLeft = leftPartRegion.useLoading();
+  const loadingRight = rightPartRegion.useLoading();
   return (
     <Card>
       <Spin spinning={loadingLeft && loadingRight}>
         <LeftPart />
-        <br />
+        <Divider />
         <RightPart />
-        <br />
+        <Divider />
         <SomethingIsLoading />
       </Spin>
     </Card>

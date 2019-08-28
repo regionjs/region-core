@@ -1,72 +1,84 @@
-import Home from '../Home';
-import LoadingControl from '../LoadingControl';
+import GetStarted from '../GetStarted';
+import UseValue from '../UseValue';
+import UseLoading from '../UseLoading';
+import UseError from '../UseError';
 import UseProps from '../UseProps';
+import SharedValue from '../SharedValue';
 import AdvancedLoading from '../AdvancedLoading';
 import CURD from '../CURD';
-import SideEffect from '../SideEffect';
-import SetNextCall from '../SetNextCall';
-import Selector from '../Selector';
+import SelectValue from '../SelectValue';
 import Form from '../Form';
-import RegionForm from '../RegionForm';
 import AsyncValidate from '../AsyncValidate';
-import Error from '../Error';
-import ExtendRegion from '../ExtendRegion';
-import BindForm from '../BindForm';
+import LocalStorageRegion from '../LocalStorageRegion';
+import CombinedError from '../CombinedError';
 
 export default [{
-  key: 'Home',
-  label: 'Home',
-  Component: Home,
+  key: 'GetStarted',
+  label: 'Get Started',
+  groupName: 'GetStarted',
+  Component: GetStarted,
 }, {
-  key: 'LoadingControl',
-  label: 'Loading Control',
-  Component: LoadingControl,
+  key: 'UseValue',
+  label: 'useValue',
+  groupName: 'Basic',
+  Component: UseValue,
+}, {
+  key: 'UseLoading',
+  label: 'useLoading',
+  groupName: 'Basic',
+  Component: UseLoading,
+}, {
+  key: 'UseError',
+  label: 'useError',
+  groupName: 'Basic',
+  Component: UseError,
 }, {
   key: 'UseProps',
-  label: 'Use Props',
+  label: 'useProps',
+  groupName: 'Basic',
   Component: UseProps,
+} ,{
+  key: 'LocalStorageRegion',
+  label: 'localStorage',
+  groupName: 'Basic',
+  Component: LocalStorageRegion,
 }, {
-  key: 'CURD',
-  label: 'CURD',
-  Component: CURD,
+  key: 'CombinedError',
+  label: 'Combined Error',
+  groupName: 'Basic',
+  Component: CombinedError,
+}, {
+  key: 'SharedValue',
+  label: 'Shared Value',
+  groupName: 'Advanced',
+  Component: SharedValue,
 }, {
   key: 'AdvancedLoading',
   label: 'Advanced Loading',
+  groupName: 'Advanced',
   Component: AdvancedLoading,
 }, {
-  key: 'SideEffect',
-  label: 'Side Effect',
-  Component: SideEffect,
+//   key: 'SetNextCall',
+//   label: 'Set Next Call',
+//   Component: SetNextCall,
+// }, {
+  key: 'SelectValue',
+  label: 'Select Value',
+  groupName: 'Advanced',
+  Component: SelectValue,
 }, {
-  key: 'SetNextCall',
-  label: 'Set Next Call',
-  Component: SetNextCall,
-}, {
-  key: 'Selector',
-  label: 'Selector',
-  Component: Selector,
+  key: 'CURD',
+  label: 'CURD',
+  groupName: 'Advanced',
+  Component: CURD,
 }, {
   key: 'Form',
   label: 'Form',
+  groupName: 'Advanced',
   Component: Form,
-}, {
-  key: 'RegionForm',
-  label: 'Region Form',
-  Component: RegionForm,
 }, {
   key: 'AsyncValidate',
   label: 'Async Validate',
+  groupName: 'Advanced',
   Component: AsyncValidate,
-}, {
-  key: 'Error',
-  label: 'Error',
-  Component: Error,
-}, {
-  key: 'ExtendRegion',
-  label: 'Extend Region',
-  Component: ExtendRegion,
-}, {
-  key: 'BindForm',
-  label: 'Bind Form',
-  Component: BindForm,
 }];

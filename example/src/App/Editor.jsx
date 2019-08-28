@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MonacoEditor from "react-monaco-editor";
 import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
-import { load, useProps } from 'region-shortcut';
+import { codeRegion, loadCode } from './codeRegion';
 
 const getWindowSize = () => {
   if (typeof window === 'undefined') {
@@ -38,16 +38,11 @@ const useWindowSize = () => {
 
 const Editor = ({selectedKey}) => {
   const {innerWidth} = useWindowSize()
-  const {loading, code} = useProps('code');
+  const loading = codeRegion.useLoading();
+  const code = codeRegion.useValue();
   useEffect(
     () => {
-      const href = `https://raw.githubusercontent.com/regionjs/region-core/master/example/src/${selectedKey}/index.jsx`
-      const request = new Request(href)
-      const fetcher = () => fetch(request).then(res => {
-        console.log(res)
-        return res.text()
-      })
-      load('code', fetcher)
+      loadCode(selectedKey)
     },
     [selectedKey]
   );
@@ -57,15 +52,13 @@ const Editor = ({selectedKey}) => {
   }
 
   return (
-    <div style={{ flex: 1, minHeight: 500}}>
-      <MonacoEditor
-        width={innerWidth - 200}
-        // height={100}
-        language="javascript"
-        theme="vs-dark"
-        value={code}
-      />
-    </div>
+    <MonacoEditor
+      width={innerWidth - 260}
+      height={500}
+      language="javascript"
+      theme="vs-dark"
+      value={code}
+    />
   )
 }
 export default Editor;

@@ -13,14 +13,16 @@ const loadUser = region.loadBy(apiGetUser)
 loadUser();
 
 const Component = () => {
-  // TODO support error as typeof Error & support value as value
-  const {loading, error, fetchTime, data: value} = region.useProps();
+  const loading = region.useLoading();
+  const value = region.useValue()
+  const error = region.useError()
+  const fetchTime = region.useFetchTime()
 
   return (
     <Card loading={loading}>
       {value}
       <Divider/>
-      {error}
+      {error && error.message}
       <Divider/>
       {new Date(fetchTime).toString()}
       <Divider/>

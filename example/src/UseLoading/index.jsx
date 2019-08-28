@@ -7,22 +7,18 @@ import Divider from "../shared/Divider";
 
 const region = createRegion()
 
-// apiGetUser may reject
 const loadUser = region.loadBy(apiGetUser)
 
+// application initial
 loadUser();
 
 const Component = () => {
-  // TODO support error as typeof Error & support value as value
-  const {loading, error, fetchTime, data: value} = region.useProps();
+  const loading = region.useLoading();
+  const value = region.useValue();
 
   return (
     <Card loading={loading}>
       {value}
-      <Divider/>
-      {error}
-      <Divider/>
-      {new Date(fetchTime).toString()}
       <Divider/>
       <Button onClick={loadUser}>loadUser</Button>
     </Card>

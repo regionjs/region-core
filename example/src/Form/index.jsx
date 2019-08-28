@@ -1,20 +1,21 @@
 import React, { Fragment } from 'react';
-import { useProps } from 'region-shortcut';
+import { CombinedRegion } from 'region-core';
 import { Input, Switch, Radio, Checkbox } from 'antd';
-import { setA, setB, toggleA, setC, setD } from './load';
 import Card from '../shared/Card';
 import Divider from '../shared/Divider';
 
-const handleSwitch = Math.random() < 0.5 ? setA : toggleA; // both works
-const handleInput = e => setB(e.target.value);
-const handleRadio = e => setC(e.target.value);
-const handleCheckBox = setD;
+const combinedRegion = new CombinedRegion();
+
+const handleChange = value => combinedRegion.set('a', value);
+const handleInput = e => combinedRegion.set('b', e.target.value);
+const handleRadio = e => combinedRegion.set('c', e.target.value);
+const handleCheckBox = value => combinedRegion.set('d', value);
 
 const FormCard = () => {
-  const { a, b, c, d } = useProps(['a', 'b', 'c', 'd']);
+  const { a, b, c, d } = combinedRegion.useProps(['a', 'b', 'c', 'd']);
   return (
     <Card>
-      <Switch checked={a} onChange={handleSwitch} />
+      <Switch checked={a} onChange={handleChange} />
       <Divider />
       <Input value={b} onChange={handleInput} />
       <Divider />
@@ -26,7 +27,7 @@ const FormCard = () => {
 };
 
 const Result = () => {
-  const { a, b, c, d } = useProps(['a', 'b', 'c', 'd']);
+  const { a, b, c, d } = combinedRegion.useProps(['a', 'b', 'c', 'd']);
   return (
     <Card>
       {JSON.stringify({ a, b, c, d })}

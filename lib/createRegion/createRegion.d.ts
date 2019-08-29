@@ -10,7 +10,7 @@ export declare class Region {
     getProps: () => {
         loading: boolean | undefined;
         fetchTime: number | undefined;
-        error: string | undefined;
+        error: Error | undefined;
     } & import("../types").Props;
     getValue: () => any;
     getLoading: () => any;

@@ -25,7 +25,7 @@ declare class RegionPublic extends RegionPrivate {
     getProps: (key: Key) => {
         loading: boolean | undefined;
         fetchTime: number | undefined;
-        error: string | undefined;
+        error: Error | undefined;
     } & import("../types").Props;
     getValue: (key: string) => any;
     getLoading: (key: string) => any;

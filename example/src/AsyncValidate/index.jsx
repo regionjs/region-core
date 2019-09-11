@@ -1,8 +1,7 @@
 import React from 'react';
 import { createRegion } from 'region-core';
-import { Form, Input } from 'antd';
-import Card from '../shared/Card';
-import { fetchValidate } from '../shared/fetch';
+import { Form, Input, Card } from '../components';
+import { fetchValidate } from './api';
 
 const asyncValidateRegion = createRegion(null);
 
@@ -27,14 +26,15 @@ const getValidateStatus = ({ loading, error, value }) => {
 };
 
 const AsyncValidate = () => {
-  const { loading, error, data: value } = asyncValidateRegion.useProps();
+  const { loading, error, value } = asyncValidateRegion.useProps();
   const validateStatus = getValidateStatus({ loading, error, value });
+  const errorMessage = error && error.message;
   return (
     <Card>
       <Form.Item
         hasFeedback
         validateStatus={validateStatus}
-        help={loading ? 'validating...' : error}
+        help={loading ? 'validating...' : errorMessage}
       >
         <Input
           placeholder="type some number"

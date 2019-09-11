@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import { CombinedRegion } from 'region-core';
-import { Input, Switch, Radio, Checkbox } from 'antd';
-import Card from '../shared/Card';
-import Divider from '../shared/Divider';
+import { Input, Switch, Radio, Checkbox, Card, Divider } from '../components';
 
 const combinedRegion = new CombinedRegion();
 

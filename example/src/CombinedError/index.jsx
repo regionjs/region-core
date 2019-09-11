@@ -1,18 +1,16 @@
 import React from 'react';
 import { CombinedRegion } from 'region-core';
-import { Button, Icon } from 'antd';
-import { fetchValueWithError } from '../shared/fetch';
-import Card from '../shared/Card';
+import { Button, Divider, Icon, Card } from '../components';
+import { fetchValue1, fetchValue2 } from './api';
 
 const errorRegion = new CombinedRegion();
 
 const loadValueWithError = () => {
-  errorRegion.load('valueWithError1', fetchValueWithError);
-  errorRegion.load('valueWithError2', fetchValueWithError);
+  errorRegion.load('value1', fetchValue1);
+  errorRegion.load('value2', fetchValue2);
 };
 
-errorRegion.set('valueWithError1', null);
-errorRegion.set('valueWithError2', null);
+loadValueWithError();
 
 const getStatus = ({ loading, error }) => {
   if (loading) {
@@ -25,18 +23,16 @@ const getStatus = ({ loading, error }) => {
 };
 
 const Display = () => {
-  const {
-    loading, error, valueWithError1, valueWithError2,
-  } = errorRegion.useProps(['valueWithError1', 'valueWithError2']);
-  const log = ''
-    + `loading: ${loading}\n`
-    + `value1: ${valueWithError1}\n`
-    + `value2: ${valueWithError2}\n`
-    + `error: ${error}\n`;
+  // loading and error is combined
+  const { loading, error, value1, value2 } = errorRegion.useProps(['value1', 'value2']);
   return (
     <Card>
-      <Icon type={getStatus({ loading, error })} />
-      <pre>{log}</pre>
+      {'Status: '}<Icon type={getStatus({ loading, error })} />
+      <Divider />
+      {'Value will remain last resolved value'}
+      <pre>{`value1: ${value1}\nvalue2: ${value2}\n`}</pre>
+      {'Error will be combined'}
+      <pre>{`error message: ${error && error.message}\n`}</pre>
       <Button loading={loading} onClick={loadValueWithError}>Try Again</Button>
     </Card>
   );

@@ -1,9 +1,6 @@
 import React, { Fragment, useMemo } from 'react';
 import { createRegion } from 'region-core';
-import { Input, Radio } from 'antd';
-import Card from '../shared/Card';
-import Lines from '../shared/Lines';
-import Divider from '../shared/Divider';
+import { Input, Radio, Card, Lines, Divider } from '../components';
 
 const generate = (type, id) => ({
   id: String(id),

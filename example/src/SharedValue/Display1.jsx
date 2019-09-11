@@ -1,7 +1,6 @@
 import React from 'react';
-import { Card, Button } from 'antd';
+import { Card, Button, Lines } from '../components';
 import { loadFollower, useLoading, useUser, useFollower } from './load';
-import Lines from '../shared/Lines';
 
 const extra = <Button type="link" onClick={loadFollower}>More</Button>;
 

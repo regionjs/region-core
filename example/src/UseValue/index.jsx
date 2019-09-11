@@ -1,8 +1,6 @@
 import React from 'react';
 import { createRegion } from 'region-core';
-import { Input } from 'antd';
-import Card from '../shared/Card';
-import Divider from '../shared/Divider';
+import { Input, Card, Divider } from '../components';
 
 const region = createRegion('initialValue');
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import { createRegion } from 'region-core';
-import { Button, Spin } from 'antd';
-import Card from '../shared/Card';
-import Divider from '../shared/Divider';
+import { Button, Spin, Card, Divider } from '../components';
 
 const leftPartRegion = createRegion(null);
 const rightPartRegion = createRegion(null);

@@ -1,5 +1,5 @@
 import { createRegion } from 'region-core';
-import { fetchUser, fetchFollower, deleteFollower } from '../shared/fetch';
+import { fetchUser, fetchFollower, deleteFollower } from './api';
 
 const userRegion = createRegion();
 const followerRegion = createRegion();

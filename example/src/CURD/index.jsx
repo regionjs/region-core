@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRegion } from 'region-core';
-import { Button, List } from 'antd';
-import Card from '../shared/Card';
+import { Button, List, Card } from '../components';
 import { getList, postList, putList, patchList, deleteList } from './mockList';
 
 const listRegion = createRegion();

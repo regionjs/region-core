@@ -1,7 +1,6 @@
 import React from 'react';
-import { Card, Button } from 'antd';
+import { Card, Button, Lines } from '../components';
 import { loadFollower, clearFollower, useLoading, useUser, useFollower } from './load';
-import Lines from '../shared/Lines';
 
 const Display = () => {
   const loading = useLoading();

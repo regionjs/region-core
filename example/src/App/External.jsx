@@ -1,6 +1,6 @@
 /* global window */
 import React from 'react';
-import { Icon } from 'antd';
+import { Icon } from '../components';
 import Editor from './Editor';
 import styles from './External.module.css';
 import { codeRegion } from './codeRegion';

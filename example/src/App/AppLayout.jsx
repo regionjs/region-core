@@ -1,12 +1,10 @@
 import React from 'react';
 import { createRegion } from 'region-core';
-import { Menu, Layout as AntdLayout } from 'antd';
 import { get, groupBy } from 'lodash';
+import { Menu, Layout } from '../components';
 import history from './history';
 import routes from './routes';
 import External from './External';
-
-const { Content, Sider } = AntdLayout;
 
 const initSelectedKey = () => {
   const { hash } = history.location;
@@ -48,7 +46,7 @@ const getMenuElements = () => {
 
 const menuElements = getMenuElements();
 
-const Layout = () => {
+const AppLayout = () => {
   const loading = selectedKeyRegion.useLoading();
   const selectedKey = selectedKeyRegion.useValue();
   if (loading) {
@@ -61,18 +59,18 @@ const Layout = () => {
   }
   const { Component } = route;
   return (
-    <AntdLayout style={{ height: '100vh' }}>
-      <Sider width={200} theme="light" style={{ overflowY: 'auto' }}>
+    <Layout style={{ height: '100vh' }}>
+      <Layout.Sider width={200} theme="light" style={{ overflowY: 'auto' }}>
         <Menu mode="inline" selectedKeys={[selectedKey]} onClick={onClick} style={{ minHeight: '100%', borderRight: '1px solid #e8e8e8' }}>
           {menuElements}
         </Menu>
-      </Sider>
-      <Content style={{ display: 'flex', flexDirection: 'column' }}>
+      </Layout.Sider>
+      <Layout.Content>
         <Component />
         {selectedKey !== 'GetStarted' && <External selectedKey={selectedKey} />}
-      </Content>
-    </AntdLayout>
+      </Layout.Content>
+    </Layout>
   );
 };
 
-export default Layout;
+export default AppLayout;

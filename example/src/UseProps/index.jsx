@@ -1,9 +1,7 @@
 import React from 'react';
-import { Button } from 'antd';
 import { createRegion } from 'region-core';
+import { Button, Card, Divider } from '../components';
 import { apiGetUser } from './api';
-import Card from '../shared/Card';
-import Divider from '../shared/Divider';
 
 const region = createRegion();
 
@@ -13,14 +11,13 @@ const loadUser = region.loadBy(apiGetUser);
 loadUser();
 
 const Component = () => {
-  // TODO support error as typeof Error & support value as value
-  const { loading, error, fetchTime, data: value } = region.useProps();
+  const { loading, error, fetchTime, value } = region.useProps();
 
   return (
     <Card loading={loading}>
       {value}
       <Divider/>
-      {error}
+      {error && error.message}
       <Divider/>
       {new Date(fetchTime).toString()}
       <Divider/>

@@ -1,10 +1,4 @@
 import React from 'react';
-import Layout from './Layout';
+import AppLayout from './AppLayout';
 
-const App = () => (
-  <Layout />
-);
-
-export default App;
-
-export const app = <App />;
+export const app = <AppLayout />;

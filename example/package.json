@@ -12,7 +12,7 @@
     "react-dom": "^16.8.3",
     "react-monaco-editor": "^0.25.1",
     "react-scripts": "^2.1.5",
-    "region-core": "^8.7.1"
+    "region-core": "^8.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

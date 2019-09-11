@@ -11,9 +11,9 @@ const generate = (type, id) => ({
   value: `item with id === ${id} and type === ${type}`,
 });
 
-const animalRegion = createRegion(['cat', 'cat', 'dog', 'cat', 'dog'].map(generate))
-const idRegion = createRegion()
-const typeRegion = createRegion()
+const animalRegion = createRegion(['cat', 'cat', 'dog', 'cat', 'dog'].map(generate));
+const idRegion = createRegion();
+const typeRegion = createRegion();
 
 const getFilteredArray = (array, type) => {
   if (type && type !== 'all') {
@@ -23,7 +23,7 @@ const getFilteredArray = (array, type) => {
 };
 
 const Result = ({ id, type }) => {
-  const array = animalRegion.useValue()
+  const array = animalRegion.useValue();
   const memoizedArray = useMemo(
     () => getFilteredArray(array, type),
     [array, type],
@@ -47,8 +47,8 @@ const handleInput = e => idRegion.set(e.target.value);
 const handleRadio = e => typeRegion.set(e.target.value);
 
 const Panel = () => {
-  const id = idRegion.useValue()
-  const type = typeRegion.useValue()
+  const id = idRegion.useValue();
+  const type = typeRegion.useValue();
   return (
     <Fragment>
       <Card>

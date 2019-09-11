@@ -8,12 +8,12 @@ const localStorageRegion = createLocalStorageRegion('localStorage-key', 'some va
 const handleChange = e => localStorageRegion.set(e.target.value);
 
 const LocalStorageRegion = () => {
-  const value = localStorageRegion.useValue()
+  const value = localStorageRegion.useValue();
   return (
     <Card>
       <Input value={value} onChange={handleChange} />
     </Card>
   );
-}
+};
 
 export default LocalStorageRegion;

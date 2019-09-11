@@ -2,19 +2,19 @@ import React from 'react';
 import { Button } from 'antd';
 import { createRegion } from 'region-core';
 import { apiGetUser } from './api';
-import Card from "../shared/Card";
-import Divider from "../shared/Divider";
+import Card from '../shared/Card';
+import Divider from '../shared/Divider';
 
-const region = createRegion()
+const region = createRegion();
 
 // apiGetUser may reject
-const loadUser = region.loadBy(apiGetUser)
+const loadUser = region.loadBy(apiGetUser);
 
 loadUser();
 
 const Component = () => {
   // TODO support error as typeof Error & support value as value
-  const {loading, error, fetchTime, data: value} = region.useProps();
+  const { loading, error, fetchTime, data: value } = region.useProps();
 
   return (
     <Card loading={loading}>
@@ -26,7 +26,7 @@ const Component = () => {
       <Divider/>
       <Button onClick={loadUser}>loadUser</Button>
     </Card>
-  )
-}
+  );
+};
 
 export default Component;

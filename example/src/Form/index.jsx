@@ -12,7 +12,9 @@ const handleRadio = e => combinedRegion.set('c', e.target.value);
 const handleCheckBox = value => combinedRegion.set('d', value);
 
 const FormCard = () => {
-  const { a, b, c, d } = combinedRegion.useProps(['a', 'b', 'c', 'd']);
+  const {
+    a, b, c, d,
+  } = combinedRegion.useProps(['a', 'b', 'c', 'd']);
   return (
     <Card>
       <Switch checked={a} onChange={handleChange} />
@@ -27,10 +29,14 @@ const FormCard = () => {
 };
 
 const Result = () => {
-  const { a, b, c, d } = combinedRegion.useProps(['a', 'b', 'c', 'd']);
+  const {
+    a, b, c, d,
+  } = combinedRegion.useProps(['a', 'b', 'c', 'd']);
   return (
     <Card>
-      {JSON.stringify({ a, b, c, d })}
+      {JSON.stringify({
+        a, b, c, d,
+      })}
     </Card>
   );
 };

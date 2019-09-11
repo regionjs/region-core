@@ -14,12 +14,11 @@ const initSelectedKey = () => {
   const defaultSelectKey = get(routes, ['0', 'key']);
   if (!initSelectKey || routes.find(({ key }) => key === initSelectKey) === undefined) {
     return defaultSelectKey;
-  } else {
-    return initSelectKey;
   }
-}
+  return initSelectKey;
+};
 
-const selectedKeyRegion = createRegion(initSelectedKey())
+const selectedKeyRegion = createRegion(initSelectedKey());
 
 const defaultSelectKey = get(routes, ['0', 'key']);
 
@@ -31,23 +30,23 @@ const onClick = ({ key }) => {
 const MenuItem = ({ key, label }) => <Menu.Item key={key}>{label}</Menu.Item>;
 
 const getMenuElements = () => {
-  const routeGroups = groupBy(routes, 'groupName')
+  const routeGroups = groupBy(routes, 'groupName');
 
   return Object.entries(routeGroups).map(([groupName, routeList]) => {
-    const routeElements = routeList.map(MenuItem)
-    if(routeList.length === 1) {
-      return routeElements
+    const routeElements = routeList.map(MenuItem);
+    if (routeList.length === 1) {
+      return routeElements;
     }
     return (
       <Menu.SubMenu key={groupName} title={groupName} >
         {routeElements}
       </Menu.SubMenu>
-    )
-  })
+    );
+  });
   // routes.map(MenuItem);
-}
+};
 
-const menuElements = getMenuElements()
+const menuElements = getMenuElements();
 
 const Layout = () => {
   const loading = selectedKeyRegion.useLoading();
@@ -64,11 +63,11 @@ const Layout = () => {
   return (
     <AntdLayout style={{ height: '100vh' }}>
       <Sider width={200} theme="light" style={{ overflowY: 'auto' }}>
-        <Menu mode="inline" selectedKeys={[selectedKey]} onClick={onClick} style={{minHeight: '100%', borderRight: '1px solid #e8e8e8'}}>
+        <Menu mode="inline" selectedKeys={[selectedKey]} onClick={onClick} style={{ minHeight: '100%', borderRight: '1px solid #e8e8e8' }}>
           {menuElements}
         </Menu>
       </Sider>
-      <Content style={{display: 'flex', flexDirection: 'column'}}>
+      <Content style={{ display: 'flex', flexDirection: 'column' }}>
         <Component />
         {selectedKey !== 'GetStarted' && <External selectedKey={selectedKey} />}
       </Content>

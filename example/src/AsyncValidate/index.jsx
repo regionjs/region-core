@@ -2,7 +2,7 @@ import React from 'react';
 import { createRegion } from 'region-core';
 import { Form, Input } from 'antd';
 import Card from '../shared/Card';
-import { fetchValidate } from "../shared/fetch";
+import { fetchValidate } from '../shared/fetch';
 
 const asyncValidateRegion = createRegion(null);
 

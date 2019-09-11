@@ -4,7 +4,7 @@ import { Button, Icon } from 'antd';
 import { fetchValueWithError } from '../shared/fetch';
 import Card from '../shared/Card';
 
-const errorRegion = new CombinedRegion()
+const errorRegion = new CombinedRegion();
 
 const loadValueWithError = () => {
   errorRegion.load('valueWithError1', fetchValueWithError);
@@ -25,7 +25,9 @@ const getStatus = ({ loading, error }) => {
 };
 
 const Display = () => {
-  const { loading, error, valueWithError1, valueWithError2 } = errorRegion.useProps(['valueWithError1', 'valueWithError2']);
+  const {
+    loading, error, valueWithError1, valueWithError2,
+  } = errorRegion.useProps(['valueWithError1', 'valueWithError2']);
   const log = ''
     + `loading: ${loading}\n`
     + `value1: ${valueWithError1}\n`

@@ -37,7 +37,7 @@ export default [{
   label: 'useProps',
   groupName: 'Basic',
   Component: UseProps,
-} ,{
+}, {
   key: 'LocalStorageRegion',
   label: 'localStorage',
   groupName: 'Basic',

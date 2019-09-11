@@ -1,0 +1,9 @@
+{
+    "extends": ["airbnb-base", "react-app"],
+    "rules": {
+        "no-plusplus": "off",
+        "object-curly-newline": "off",
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off"
+    }
+}

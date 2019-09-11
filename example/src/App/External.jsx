@@ -1,15 +1,15 @@
 /* global window */
 import React from 'react';
 import { Icon } from 'antd';
-import Editor from "./Editor";
+import Editor from './Editor';
 import styles from './External.module.css';
 import { codeRegion } from './codeRegion';
 
 const External = ({ selectedKey }) => {
-  const codeLoading = codeRegion.useLoading()
-  let gotoDefinitionClass =styles.code
-  if(!codeLoading) {
-    gotoDefinitionClass = `${styles.code} ${styles.dark}`
+  const codeLoading = codeRegion.useLoading();
+  let gotoDefinitionClass = styles.code;
+  if (!codeLoading) {
+    gotoDefinitionClass = `${styles.code} ${styles.dark}`;
   }
   return (
     <div className={styles.container}>
@@ -25,6 +25,6 @@ const External = ({ selectedKey }) => {
       <Editor selectedKey={selectedKey} />
     </div>
   );
-}
+};
 
 export default External;

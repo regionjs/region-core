@@ -6,7 +6,7 @@ import Lines from '../shared/Lines';
 const extra = <Button type="link" onClick={loadFollower}>More</Button>;
 
 const Display = () => {
-  const loading = useLoading()
+  const loading = useLoading();
   const user = useUser();
   const follower = useFollower();
   return (

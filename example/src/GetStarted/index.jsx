@@ -23,4 +23,4 @@ const GetStarted = () => (
   </div>
 );
 
-export default GetStarted
+export default GetStarted;

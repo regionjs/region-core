@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MonacoEditor from "react-monaco-editor";
+import MonacoEditor from 'react-monaco-editor';
 import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
 import { codeRegion, loadCode } from './codeRegion';
 
@@ -25,26 +25,24 @@ const useWindowSize = () => {
   const [size, setSize] = useState(getWindowSize);
   useEffect(
     () => {
-      if (typeof window !== 'undefined') {
-        const updateWindowSize = () => setSize(getWindowSize());
-        window.addEventListener('resize', updateWindowSize);
-        return () => window.removeEventListener('resize', updateWindowSize);
-      }
+      const updateWindowSize = () => setSize(getWindowSize());
+      window.addEventListener('resize', updateWindowSize);
+      return () => window.removeEventListener('resize', updateWindowSize);
     },
-    []
+    [],
   );
   return size;
 };
 
-const Editor = ({selectedKey}) => {
-  const {innerWidth} = useWindowSize()
+const Editor = ({ selectedKey }) => {
+  const { innerWidth } = useWindowSize();
   const loading = codeRegion.useLoading();
   const code = codeRegion.useValue();
   useEffect(
     () => {
-      loadCode(selectedKey)
+      loadCode(selectedKey);
     },
-    [selectedKey]
+    [selectedKey],
   );
 
   if (loading) {
@@ -59,6 +57,6 @@ const Editor = ({selectedKey}) => {
       theme="vs-dark"
       value={code}
     />
-  )
-}
+  );
+};
 export default Editor;

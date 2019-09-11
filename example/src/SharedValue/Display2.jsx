@@ -4,7 +4,7 @@ import { loadFollower, clearFollower, useLoading, useUser, useFollower } from '.
 import Lines from '../shared/Lines';
 
 const Display = () => {
-  const loading = useLoading()
+  const loading = useLoading();
   const user = useUser();
   const follower = useFollower();
   return (

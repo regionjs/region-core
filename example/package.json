@@ -29,6 +29,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint-config-airbnb-base": "^13.2.0",
     "gh-pages": "^2.0.1"
   }
 }

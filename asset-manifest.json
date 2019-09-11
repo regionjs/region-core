@@ -1,17 +1,17 @@
 {
-  "main.css": "/region-core/static/css/main.75d0f353.chunk.css",
-  "main.js": "/region-core/static/js/main.34931a5e.chunk.js",
-  "main.js.map": "/region-core/static/js/main.34931a5e.chunk.js.map",
-  "runtime~main.js": "/region-core/static/js/runtime~main.47dacd32.js",
-  "runtime~main.js.map": "/region-core/static/js/runtime~main.47dacd32.js.map",
+  "main.css": "/region-core/static/css/main.4551825a.chunk.css",
+  "main.js": "/region-core/static/js/main.cf05f0c6.chunk.js",
+  "main.js.map": "/region-core/static/js/main.cf05f0c6.chunk.js.map",
+  "runtime~main.js": "/region-core/static/js/runtime~main.579c4cb7.js",
+  "runtime~main.js.map": "/region-core/static/js/runtime~main.579c4cb7.js.map",
   "static/css/2.c161a1f9.chunk.css": "/region-core/static/css/2.c161a1f9.chunk.css",
-  "static/js/2.366a8244.chunk.js": "/region-core/static/js/2.366a8244.chunk.js",
-  "static/js/2.366a8244.chunk.js.map": "/region-core/static/js/2.366a8244.chunk.js.map",
-  "static/js/3.54d2d636.chunk.js": "/region-core/static/js/3.54d2d636.chunk.js",
-  "static/js/3.54d2d636.chunk.js.map": "/region-core/static/js/3.54d2d636.chunk.js.map",
+  "static/js/2.9b1e7841.chunk.js": "/region-core/static/js/2.9b1e7841.chunk.js",
+  "static/js/2.9b1e7841.chunk.js.map": "/region-core/static/js/2.9b1e7841.chunk.js.map",
+  "static/js/3.c5cf03bd.chunk.js": "/region-core/static/js/3.c5cf03bd.chunk.js",
+  "static/js/3.c5cf03bd.chunk.js.map": "/region-core/static/js/3.c5cf03bd.chunk.js.map",
   "index.html": "/region-core/index.html",
-  "precache-manifest.9611b0cf542b837a10f31d3361468b14.js": "/region-core/precache-manifest.9611b0cf542b837a10f31d3361468b14.js",
+  "precache-manifest.990c44467e25980bd755a41c62056a4d.js": "/region-core/precache-manifest.990c44467e25980bd755a41c62056a4d.js",
   "service-worker.js": "/region-core/service-worker.js",
   "static/css/2.c161a1f9.chunk.css.map": "/region-core/static/css/2.c161a1f9.chunk.css.map",
-  "static/css/main.75d0f353.chunk.css.map": "/region-core/static/css/main.75d0f353.chunk.css.map"
+  "static/css/main.4551825a.chunk.css.map": "/region-core/static/css/main.4551825a.chunk.css.map"
 }

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import CombinedRegion from '../CombinedRegion';
 import { LoadOption } from '../types';
 export declare class Region {
@@ -21,6 +22,7 @@ export declare class Region {
     useLoading: () => any;
     useError: () => any;
     useFetchTime: () => any;
+    connect: (Component: any, alias?: string) => ((ownProps: import("../types").Props) => JSX.Element) | null;
 }
 declare const createRegion: (initialValue?: any) => Region;
 export default createRegion;

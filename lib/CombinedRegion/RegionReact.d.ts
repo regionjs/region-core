@@ -15,9 +15,9 @@ declare class RegionReact extends RegionPublic {
      * @param key string | string[]
      */
     useProps: (key: Key) => Props;
-    useValue: (key: string) => any;
-    useLoading: (key: string) => any;
-    useError: (key: string) => any;
-    useFetchTime: (key: string) => any;
+    useValue: (key: Key) => any;
+    useLoading: (key: Key) => any;
+    useError: (key: Key) => any;
+    useFetchTime: (key: Key) => any;
 }
 export default RegionReact;

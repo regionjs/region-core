@@ -1,7 +1,6 @@
 import { ComponentType as RawComponentType } from 'react';
-export declare type Any = any;
 export interface Props {
-    [key: string]: Any;
+    [key: string]: any;
 }
 export declare type ComponentType = RawComponentType | any;
 export declare type SimpleKey = string;
@@ -24,8 +23,10 @@ export declare type EntityName = string;
 export declare type Result = any;
 export declare type AsyncFunction = any;
 export declare type Params = any;
-declare type Format = (result: any, snapshot: any) => any;
-declare type Reducer = (state: any, action: any, params: any) => any;
+declare type Id = any;
+declare type Snapshot = any;
+declare type Format = (result: Result, snapshot: Snapshot) => Result;
+export declare type Reducer = (state: any, action: any, params: any) => any;
 export interface LoadOption {
     format?: Format;
     reducer?: Reducer;
@@ -34,7 +35,6 @@ export interface LoadOption {
     id?: string;
     delay?: boolean;
 }
-export declare type GetDerivedStateFromProps = (props: Props, snapshot: any) => any;
 export declare type Name = string;
 export interface StrictConfig {
     name?: Name;
@@ -46,13 +46,13 @@ export interface StrictConfig {
 }
 export declare type Config = StrictConfig | Name;
 export interface State {
-    [key: string]: Any;
+    [key: string]: any;
 }
 export interface Payload {
     key: string;
-    result?: Any;
-    results?: Any;
-    id?: Any;
+    result?: Result;
+    results?: Result[];
+    id?: Id;
     error?: Error;
 }
 export interface Action {
@@ -62,15 +62,20 @@ export interface Action {
 export declare type Loading = boolean | undefined;
 export declare type FetchTime = number;
 export declare type Error = any;
+declare type ResultFunction = (snapshot: Snapshot) => Result;
 export interface FormatResultParams {
-    result: any;
-    snapshot: any;
-    format: any;
+    result: ResultFunction | Result;
+    snapshot: Snapshot;
+    format?: Format;
+    reducer?: Reducer;
+    params?: Params;
 }
 export interface FormatResultWithIdParams {
-    result: any;
-    snapshot: any;
-    format: any;
-    id: any;
+    result: Result;
+    snapshot: Snapshot;
+    format?: Format;
+    id: Id;
+    reducer?: Reducer;
+    params?: Params;
 }
 export {};

@@ -1,5 +1,5 @@
 import RegionPrivate from './RegionPrivate';
-import { Key, LoadOption } from '../types';
+import { Key, LoadOption, Reducer } from '../types';
 declare class RegionPublic extends RegionPrivate {
     /**
      * @param key string
@@ -15,13 +15,8 @@ declare class RegionPublic extends RegionPrivate {
      */
     setBy: (key: string, option?: LoadOption) => (result: any) => any;
     reset: () => void;
-    load: (key: string, asyncFunction: any, option?: LoadOption) => Promise<any>;
-    /**
-     * @param option.params asyncFunction may need
-     * @param option.format A function format result to other data structure
-     * @param option.forceUpdate true | false
-     */
-    loadBy: (key: string, asyncFunction: any, option?: LoadOption) => (params: any) => Promise<any>;
+    load: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | Reducer | undefined, exOption?: LoadOption | undefined) => Promise<any>;
+    loadBy: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | Reducer | undefined, exOption?: LoadOption | undefined) => (params: any) => Promise<any>;
     getProps: (key: Key) => {
         loading: boolean | undefined;
         fetchTime: number | undefined;

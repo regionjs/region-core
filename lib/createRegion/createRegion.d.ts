@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import CombinedRegion from '../CombinedRegion';
-import { LoadOption } from '../types';
+import { LoadOption, Props } from '../types';
 export declare class Region {
     region: CombinedRegion;
     constructor();
@@ -12,17 +12,17 @@ export declare class Region {
         loading: boolean | undefined;
         fetchTime: number | undefined;
         error: Error | undefined;
-    } & import("../types").Props;
+    } & Props;
     getValue: () => any;
     getLoading: () => any;
     getError: () => any;
     getFetchTime: () => any;
-    useProps: () => import("../types").Props;
+    useProps: () => Props;
     useValue: () => any;
     useLoading: () => any;
     useError: () => any;
     useFetchTime: () => any;
-    connect: (Component: any, alias?: string) => ((ownProps: import("../types").Props) => JSX.Element) | null;
+    connect: (Component: any, alias?: string) => (ownProps: Props) => JSX.Element;
 }
 declare const createRegion: (initialValue?: any) => Region;
 export default createRegion;

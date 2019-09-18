@@ -1,28 +1,28 @@
 /// <reference types="react" />
 import CombinedRegion from '../CombinedRegion';
-import { LoadOption, Props } from '../types';
+import { LoadOption, OptionOrReducer } from '../types';
 export declare class Region {
     region: CombinedRegion;
     constructor();
     set: (result: any, option?: LoadOption) => any;
     setBy: (option?: LoadOption) => (result: any) => any;
-    load: (asyncFunction: any, option?: LoadOption) => Promise<any>;
-    loadBy: (asyncFunction: any, option?: LoadOption) => (params: any) => Promise<any>;
+    load: (asyncFunction: any, option?: OptionOrReducer, exOption?: LoadOption | undefined) => Promise<any>;
+    loadBy: (asyncFunction: any, option?: OptionOrReducer, exOption?: LoadOption | undefined) => (params: any) => Promise<any>;
     getProps: () => {
         loading: boolean | undefined;
         fetchTime: number | undefined;
         error: Error | undefined;
-    } & Props;
+    } & import("../types").Props;
     getValue: () => any;
     getLoading: () => any;
     getError: () => any;
     getFetchTime: () => any;
-    useProps: () => Props;
+    useProps: () => import("../types").Props;
     useValue: () => any;
     useLoading: () => any;
     useError: () => any;
     useFetchTime: () => any;
-    connect: (Component: any, alias?: string) => (ownProps: Props) => JSX.Element;
+    connect: (Component: any, alias?: string) => (ownProps: import("../types").Props) => JSX.Element;
 }
 declare const createRegion: (initialValue?: any) => Region;
 export default createRegion;

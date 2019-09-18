@@ -26,7 +26,7 @@ export declare type Params = any;
 declare type Id = any;
 declare type Snapshot = any;
 declare type Format = (result: Result, snapshot: Snapshot) => Result;
-export declare type Reducer = (state: any, action: any, params: any) => any;
+declare type Reducer = (state: any, action: any, params: any) => any;
 export interface LoadOption {
     format?: Format;
     reducer?: Reducer;
@@ -35,6 +35,7 @@ export interface LoadOption {
     id?: string;
     delay?: boolean;
 }
+export declare type OptionOrReducer = LoadOption | Reducer;
 export declare type Name = string;
 export interface StrictConfig {
     name?: Name;

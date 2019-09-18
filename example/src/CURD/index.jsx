@@ -7,38 +7,40 @@ const listRegion = createRegion();
 listRegion.load(getList);
 
 /* eslint-disable no-param-reassign */
-const handleGet = () => listRegion.load(getList);
+const handleGet = listRegion.loadBy(getList);
 
-const handlePost = () => listRegion.load(postList, {
-  format: (result, snapshot) => {
-    snapshot[result.id] = result;
-    return snapshot;
+const handlePost = listRegion.loadBy(
+  postList,
+  (state, result) => {
+    state[result.id] = result;
+    return state;
   },
-});
+);
 
-const handlePutBy = params => listRegion.load(putList, {
-  params,
-  format: (result, snapshot) => {
-    snapshot[result.id] = result;
-    return snapshot;
+const handlePutBy = listRegion.loadBy(
+  putList,
+  (state, result) => {
+    state[result.id] = result;
+    return state;
   },
-});
+);
 
-const handlePatchBy = params => listRegion.load(patchList, {
-  params,
-  format: (result, snapshot) => {
-    snapshot[result.id] = result;
-    return snapshot;
+const handlePatchBy = listRegion.loadBy(
+  patchList,
+  (state, result) => {
+    state[result.id] = result;
+    return state;
   },
-});
+);
 
-const handleDeleteBy = id => listRegion.load(deleteList, {
-  params: id,
-  format: (result, snapshot) => {
-    delete snapshot[id];
-    return snapshot;
+const handleDeleteBy = listRegion.loadBy(
+  deleteList,
+  (state, result, params) => {
+    const { id } = params;
+    delete state[id];
+    return state;
   },
-});
+);
 /* eslint-enable no-param-reassign */
 
 const deNormalize = (entity = {}) => {

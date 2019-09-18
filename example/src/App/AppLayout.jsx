@@ -57,11 +57,17 @@ const AppLayout = () => {
     selectedKeyRegion.set(defaultSelectKey);
     return null;
   }
-  const { Component } = route;
+  const { Component, groupName } = route;
   return (
     <Layout style={{ height: '100vh' }}>
       <Layout.Sider width={200} theme="light" style={{ overflowY: 'auto' }}>
-        <Menu mode="inline" selectedKeys={[selectedKey]} onClick={onClick} style={{ minHeight: '100%', borderRight: '1px solid #e8e8e8' }}>
+        <Menu
+          mode="inline"
+          defaultOpenKeys={[groupName]}
+          selectedKeys={[selectedKey]}
+          onClick={onClick}
+          style={{ minHeight: '100%', borderRight: '1px solid #e8e8e8' }}
+        >
           {menuElements}
         </Menu>
       </Layout.Sider>

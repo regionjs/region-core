@@ -4,6 +4,7 @@ import UseLoading from '../UseLoading';
 import UseError from '../UseError';
 import UseProps from '../UseProps';
 import SharedValue from '../SharedValue';
+import ClassComponent from '../ClassComponent';
 import AdvancedLoading from '../AdvancedLoading';
 import CURD from '../CURD';
 import SelectValue from '../SelectValue';
@@ -58,10 +59,11 @@ export default [{
   groupName: 'Advanced',
   Component: AdvancedLoading,
 }, {
-//   key: 'SetNextCall',
-//   label: 'Set Next Call',
-//   Component: SetNextCall,
-// }, {
+  key: 'ClassComponent',
+  label: 'Class Component',
+  groupName: 'Advanced',
+  Component: ClassComponent,
+}, {
   key: 'SelectValue',
   label: 'Select Value',
   groupName: 'Advanced',

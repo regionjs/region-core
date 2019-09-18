@@ -6,12 +6,13 @@ const followerRegion = createRegion();
 
 export const loadUser = userRegion.loadBy(fetchUser);
 
-export const loadFollower = followerRegion.loadBy(fetchFollower, {
-  format: (result, snapshot = []) => {
-    snapshot.push(result);
-    return snapshot.slice();
+export const loadFollower = followerRegion.loadBy(
+  fetchFollower,
+  (state = [], result) => {
+    state.push(result);
+    return state.slice();
   },
-});
+);
 
 export const clearFollower = followerRegion.loadBy(deleteFollower);
 

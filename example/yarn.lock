@@ -9206,10 +9206,10 @@ regexpu-core@^4.5.4:
     unicode-match-property-ecmascript "^1.0.4"
     unicode-match-property-value-ecmascript "^1.1.0"
 
-region-core@^8.8.0:
-  version "8.8.0"
-  resolved "https://registry.yarnpkg.com/region-core/-/region-core-8.8.0.tgz#98401f00a2d3d1ee43b5bd7a37c6ca0084fdf1d9"
-  integrity sha512-FAaxW1lOPjmERYSS/9Mjs9+tLIq+3I7etVnzhIBAHZocRZqbCtXVmP91436n8AW56/NxxWSvKyF/brTeGN9tQg==
+region-core@^8.8.2:
+  version "8.8.2"
+  resolved "https://registry.yarnpkg.com/region-core/-/region-core-8.8.2.tgz#282ff385cfb51186570efa690977919378bb6344"
+  integrity sha512-wZLt6QLfqbW+igq9mtu7TejptfDIzUUjoB4ARu5WXNPYDwX/Xt42wTn0J0rik1N3rSTzctdSDrUnWKIoqo4Vsw==
   dependencies:
     redux "^4.0.0"
     shallowequal "^1.1.0"

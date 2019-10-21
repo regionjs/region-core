@@ -2,15 +2,11 @@
 import { Store } from 'redux';
 import { Key, LoadOption, State, Action, Props, ConnectOption } from '../types';
 declare const createCombinedRegion: () => {
-    name: string;
     private_actionTypes: {
         LOAD: string;
         SET: string;
         RESET: string;
     };
-    expiredTime: number;
-    enableLog: boolean;
-    strictLoading: boolean;
     private_reducer: (state: State | undefined, action: Action) => State;
     private_store: Store<any, import("redux").AnyAction>;
     private_getState: () => any;

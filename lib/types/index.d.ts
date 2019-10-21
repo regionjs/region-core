@@ -37,15 +37,6 @@ export interface LoadOption {
 }
 export declare type OptionOrReducer = LoadOption | Reducer;
 export declare type Name = string;
-export interface StrictConfig {
-    name?: Name;
-    expiredTime?: number;
-    enableLog?: boolean;
-    strictLoading?: boolean;
-    DefaultLoading?: ComponentType;
-    DefaultError?: ComponentType;
-}
-export declare type Config = StrictConfig | Name;
 export interface State {
     [key: string]: any;
 }

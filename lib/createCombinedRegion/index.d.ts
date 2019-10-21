@@ -1,15 +1,14 @@
 /// <reference types="react" />
-import { Store } from 'redux';
-import { Key, LoadOption, State, Action, Props, ConnectOption } from '../types';
+import { Key, LoadOption, Props, ConnectOption } from '../types';
 declare const createCombinedRegion: () => {
-    private_actionTypes: {
-        LOAD: string;
-        SET: string;
-        RESET: string;
+    private_store: {
+        getState: () => {};
+        load: (payload: import("../types").Payload) => {};
+        set: (payload: import("../types").Payload) => {};
+        reset: () => void;
+        subscribe: (listener: () => void) => () => void;
     };
-    private_reducer: (state: State | undefined, action: Action) => State;
-    private_store: Store<any, import("redux").AnyAction>;
-    private_getState: () => any;
+    private_getState: () => {};
     private_getLoadings: (key: string | string[]) => any;
     private_getResults: (key: string | string[]) => any;
     private_getFetchTimes: (key: string | string[]) => any;

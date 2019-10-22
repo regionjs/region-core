@@ -27,8 +27,8 @@ declare const createCombinedRegion: () => {
     getLoading: (key: string) => any;
     getError: (key: string) => any;
     getFetchTime: (key: string) => any;
-    connectWith: (key: Key, Display: any, option?: ConnectOption | undefined) => ((ownProps: Props) => JSX.Element) | null;
-    connect: (key: Key, { Loading, Error }?: ConnectOption) => (Display?: any) => ((ownProps: Props) => JSX.Element) | null;
+    connectWith: (key: Key, Display: any, option?: ConnectOption | undefined) => (ownProps: Props) => JSX.Element;
+    connect: (key: Key, { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: Props) => JSX.Element;
     useProps: (key: Key) => Props;
     useValue: (key: Key) => any;
     useLoading: (key: Key) => any;

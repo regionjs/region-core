@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import { CombinedRegion } from 'region-core';
+import { createCombinedRegion } from 'region-core';
 import { Input, Switch, Radio, Checkbox, Card, Divider } from '../components';
 
-const combinedRegion = new CombinedRegion();
+const combinedRegion = createCombinedRegion();
 
 const handleChange = value => combinedRegion.set('a', value);
 const handleInput = e => combinedRegion.set('b', e.target.value);

@@ -1,9 +1,9 @@
 import React from 'react';
-import { CombinedRegion } from 'region-core';
+import { createCombinedRegion } from 'region-core';
 import { Button, Divider, Icon, Card } from '../components';
 import { fetchValue1, fetchValue2 } from './api';
 
-const errorRegion = new CombinedRegion();
+const errorRegion = createCombinedRegion();
 
 const loadValueWithError = () => {
   errorRegion.load('value1', fetchValue1);

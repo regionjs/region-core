@@ -1,7 +1,6 @@
 /// <reference types="react" />
 declare const createLocalStorageRegion: (key: string, fallbackValue: any) => {
-    set: (result: any, option?: import("../types").LoadOption) => any;
-    setBy: (option?: import("../types").LoadOption) => (result: any) => any;
+    set: (resultOrFunc: any) => any;
     load: (asyncFunction: any, option?: import("../types").OptionOrReducer, exOption?: import("../types").LoadOption | undefined) => Promise<any>;
     loadBy: (asyncFunction: any, option?: import("../types").OptionOrReducer, exOption?: import("../types").LoadOption | undefined) => (params: any) => Promise<any>;
     getProps: () => {

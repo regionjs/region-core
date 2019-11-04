@@ -21,6 +21,8 @@ export interface ConnectOption {
 }
 export declare type EntityName = string;
 export declare type Result = any;
+declare type ResultFunc = (snapshot: Snapshot) => Result;
+export declare type ResultOrFunc = Result | ResultFunc;
 export declare type AsyncFunction = any;
 export declare type Params = any;
 declare type Id = any;
@@ -54,16 +56,15 @@ export interface Action {
 export declare type Loading = boolean | undefined;
 export declare type FetchTime = number;
 export declare type Error = any;
-declare type ResultFunction = (snapshot: Snapshot) => Result;
 export interface FormatResultParams {
-    result: ResultFunction | Result;
+    resultOrFunc: ResultOrFunc;
     snapshot: Snapshot;
     format?: Format;
     reducer?: Reducer;
     params?: Params;
 }
 export interface FormatResultWithIdParams {
-    result: Result;
+    resultOrFunc: ResultOrFunc;
     snapshot: Snapshot;
     format?: Format;
     id: Id;

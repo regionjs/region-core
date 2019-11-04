@@ -1,8 +1,7 @@
 /// <reference types="react" />
 import { LoadOption, OptionOrReducer } from '../types';
 export declare const createRegion: (initialValue?: any) => {
-    set: (result: any, option?: LoadOption) => any;
-    setBy: (option?: LoadOption) => (result: any) => any;
+    set: (resultOrFunc: any) => any;
     load: (asyncFunction: any, option?: OptionOrReducer, exOption?: LoadOption | undefined) => Promise<any>;
     loadBy: (asyncFunction: any, option?: OptionOrReducer, exOption?: LoadOption | undefined) => (params: any) => Promise<any>;
     getProps: () => {

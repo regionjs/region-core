@@ -25,20 +25,20 @@ declare type ResultFunc = (snapshot: Snapshot) => Result;
 export declare type ResultOrFunc = Result | ResultFunc;
 export declare type AsyncFunction = any;
 export declare type Params = any;
-declare type Id = any;
+declare type Id = string | number;
 declare type Snapshot = any;
 declare type Format = (result: Result, snapshot: Snapshot) => Result;
 declare type Reducer = (state: any, action: any, params: any) => any;
+declare type IdFunc = (params: Params) => Id;
 export interface LoadOption {
     format?: Format;
     reducer?: Reducer;
     forceUpdate?: boolean;
     params?: Params;
-    id?: string;
+    id?: Id | IdFunc;
     delay?: boolean;
 }
 export declare type OptionOrReducer = LoadOption | Reducer;
-export declare type Name = string;
 export interface State {
     [key: string]: any;
 }
@@ -48,10 +48,6 @@ export interface Payload {
     results?: Result[];
     id?: Id;
     error?: Error;
-}
-export interface Action {
-    type: string;
-    payload: Payload;
 }
 export declare type Loading = boolean | undefined;
 export declare type FetchTime = number;

@@ -16,7 +16,7 @@ declare const createCombinedRegion: () => {
     set: (key: string, resultOrFunc: any) => any;
     reset: () => void;
     load: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | ((state: any, action: any, params: any) => any) | undefined, exOption?: LoadOption | undefined) => Promise<any>;
-    loadBy: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | ((state: any, action: any, params: any) => any) | undefined, exOption?: LoadOption | undefined) => (params: any) => Promise<any>;
+    loadBy: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | ((state: any, action: any, params: any) => any) | undefined, exOption?: LoadOption | undefined) => (params?: any) => Promise<any>;
     getProps: (key: Key) => {
         loading: boolean | undefined;
         fetchTime: number | undefined;

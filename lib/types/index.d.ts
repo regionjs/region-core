@@ -45,6 +45,11 @@ export interface State {
 interface Results {
     [key: string]: Result;
 }
+export interface LoadPayload {
+    key: string;
+    promise: Promise<any>;
+    id?: Id;
+}
 export interface Payload {
     key: string;
     result?: Result;

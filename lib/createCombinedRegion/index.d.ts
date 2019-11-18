@@ -3,7 +3,7 @@ import { Key, LoadOption, Props, ConnectOption } from '../types';
 declare const createCombinedRegion: () => {
     private_store: {
         getState: () => {};
-        load: (payload: import("../types").Payload) => {};
+        load: (payload: import("../types").LoadPayload) => {};
         set: (payload: import("../types").Payload) => {};
         reset: () => void;
         subscribe: (listener: () => void) => () => void;

@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { Key, LoadOption, Props, ConnectOption } from '../types';
+import { LegacyKey, LoadOption, Props, ConnectOption } from '../types';
 declare const createCombinedRegion: () => {
     private_store: {
         getState: () => {};
@@ -17,21 +17,21 @@ declare const createCombinedRegion: () => {
     reset: () => void;
     load: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | ((state: any, action: any, params: any) => any) | undefined, exOption?: LoadOption | undefined) => Promise<any>;
     loadBy: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | ((state: any, action: any, params: any) => any) | undefined, exOption?: LoadOption | undefined) => (params?: any) => Promise<any>;
-    getProps: (key: Key) => {
+    getProps: (key: LegacyKey) => {
         loading: boolean | undefined;
         fetchTime: number | undefined;
         error: Error | undefined;
     } & Props;
-    getValue: (key: string) => any;
-    getLoading: (key: string) => any;
-    getError: (key: string) => any;
-    getFetchTime: (key: string) => any;
-    connectWith: (key: Key, Display: any, option?: ConnectOption | undefined) => (ownProps: Props) => JSX.Element;
-    connect: (key: Key, { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: Props) => JSX.Element;
-    useProps: (key: Key) => Props;
-    useValue: (key: Key) => any;
-    useLoading: (key: Key) => any;
-    useError: (key: Key) => any;
-    useFetchTime: (key: Key) => any;
+    getValue: (key: string | string[]) => any;
+    getLoading: (key: string | string[]) => any;
+    getError: (key: string | string[]) => any;
+    getFetchTime: (key: string | string[]) => any;
+    connectWith: (key: LegacyKey, Display: any, option?: ConnectOption | undefined) => (ownProps: Props) => JSX.Element;
+    connect: (key: LegacyKey, { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: Props) => JSX.Element;
+    useProps: (key: LegacyKey) => Props;
+    useValue: (key: LegacyKey) => any;
+    useLoading: (key: LegacyKey) => any;
+    useError: (key: LegacyKey) => any;
+    useFetchTime: (key: LegacyKey) => any;
 };
 export default createCombinedRegion;

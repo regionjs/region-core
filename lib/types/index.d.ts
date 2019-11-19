@@ -5,15 +5,15 @@ export interface Props {
 export declare type ComponentType = RawComponentType | any;
 export declare type SimpleKey = string;
 export declare type SimpleKeys = SimpleKey[];
-export declare type BaseKey = SimpleKey | SimpleKeys;
+export declare type Key = SimpleKey | SimpleKeys;
 interface ComplexKey {
-    key?: BaseKey;
-    loading?: BaseKey;
-    result?: BaseKey;
-    fetchTime?: BaseKey;
-    error?: BaseKey;
+    key?: Key;
+    loading?: Key;
+    result?: Key;
+    fetchTime?: Key;
+    error?: Key;
 }
-export declare type Key = BaseKey | ComplexKey;
+export declare type LegacyKey = Key | ComplexKey;
 export declare type DisplayType = ComponentType;
 export interface ConnectOption {
     Loading?: ComponentType;

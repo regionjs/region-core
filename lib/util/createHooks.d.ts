@@ -1,4 +1,4 @@
-import { Key } from '../types';
+import { LegacyKey } from '../types';
 interface CreateHooksParams {
     getFn: (key: any) => any;
     equalityFn: (a: any, b: any) => boolean;
@@ -13,5 +13,5 @@ interface CreateHooksParams {
  *   Advanced example for manually managing subscriptions in an async-safe way using hooks
  * }
  */
-export declare const createHooks: ({ getFn, equalityFn, store }: CreateHooksParams) => (key: Key) => any;
+export declare const createHooks: ({ getFn, equalityFn, store }: CreateHooksParams) => (key: LegacyKey) => any;
 export {};

@@ -15,9 +15,9 @@ export declare const createRegion: (initialValue?: any) => {
     getFetchTime: () => number | undefined;
     useProps: () => import("../types").Props;
     useValue: () => any;
-    useLoading: () => any;
-    useError: () => any;
-    useFetchTime: () => any;
+    useLoading: () => boolean | undefined;
+    useError: () => Error | undefined;
+    useFetchTime: () => number | undefined;
     connect: (Component: any, alias?: string) => (ownProps: import("../types").Props) => JSX.Element;
 };
 export default createRegion;

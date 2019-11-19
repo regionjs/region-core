@@ -23,10 +23,10 @@ declare const createCombinedRegion: () => {
     getFetchTime: (key: string | string[]) => number | undefined;
     connectWith: (key: LegacyKey, Display: any, option?: ConnectOption | undefined) => (ownProps: Props) => JSX.Element;
     connect: (key: LegacyKey, { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: Props) => JSX.Element;
-    useProps: (key: LegacyKey) => Props;
-    useValue: (key: LegacyKey) => any;
-    useLoading: (key: LegacyKey) => any;
-    useError: (key: LegacyKey) => any;
-    useFetchTime: (key: LegacyKey) => any;
+    useProps: (key: string | string[]) => Props;
+    useValue: (key: string | string[]) => any;
+    useLoading: (key: string | string[]) => boolean | undefined;
+    useError: (key: string | string[]) => Error | undefined;
+    useFetchTime: (key: string | string[]) => number | undefined;
 };
 export default createCombinedRegion;

@@ -25,7 +25,7 @@ declare type ResultFunc = (snapshot: Snapshot) => Result;
 export declare type ResultOrFunc = Result | ResultFunc;
 export declare type AsyncFunction = any;
 export declare type Params = any;
-declare type Id = string | number;
+export declare type Id = string | number;
 declare type Snapshot = any;
 declare type Format = (result: Result, snapshot: Snapshot) => Result;
 declare type Reducer = (state: any, action: any, params: any) => any;

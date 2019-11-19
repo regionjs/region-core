@@ -8,11 +8,6 @@ declare const createCombinedRegion: () => {
         reset: () => void;
         subscribe: (listener: () => void) => () => void;
     };
-    private_getState: () => {};
-    private_getLoadings: (key: string | string[]) => any;
-    private_getResults: (key: string | string[]) => any;
-    private_getFetchTimes: (key: string | string[]) => any;
-    private_getErrors: (key: string | string[]) => any;
     set: (key: string, resultOrFunc: any) => any;
     reset: () => void;
     load: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | ((state: any, action: any, params: any) => any) | undefined, exOption?: LoadOption | undefined) => Promise<any>;
@@ -23,9 +18,9 @@ declare const createCombinedRegion: () => {
         error: Error | undefined;
     } & Props;
     getValue: (key: string | string[]) => any;
-    getLoading: (key: string | string[]) => any;
-    getError: (key: string | string[]) => any;
-    getFetchTime: (key: string | string[]) => any;
+    getLoading: (key: string | string[]) => boolean | undefined;
+    getError: (key: string | string[]) => Error | undefined;
+    getFetchTime: (key: string | string[]) => number | undefined;
     connectWith: (key: LegacyKey, Display: any, option?: ConnectOption | undefined) => (ownProps: Props) => JSX.Element;
     connect: (key: LegacyKey, { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: Props) => JSX.Element;
     useProps: (key: LegacyKey) => Props;

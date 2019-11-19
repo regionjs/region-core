@@ -58,7 +58,7 @@ export interface Payload {
     error?: Error;
 }
 export declare type Loading = boolean | undefined;
-export declare type FetchTime = number;
+export declare type FetchTime = number | undefined;
 export declare type Error = any;
 export interface FormatResultParams {
     resultOrFunc: ResultOrFunc;

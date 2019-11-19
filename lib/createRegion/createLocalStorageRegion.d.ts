@@ -9,9 +9,9 @@ declare const createLocalStorageRegion: (key: string, fallbackValue: any) => {
         error: Error | undefined;
     } & import("../types").Props;
     getValue: () => any;
-    getLoading: () => any;
-    getError: () => any;
-    getFetchTime: () => any;
+    getLoading: () => boolean | undefined;
+    getError: () => Error | undefined;
+    getFetchTime: () => number | undefined;
     useProps: () => import("../types").Props;
     useValue: () => any;
     useLoading: () => any;

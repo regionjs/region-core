@@ -42,9 +42,6 @@ export declare type OptionOrReducer = LoadOption | Reducer;
 export interface State {
     [key: string]: any;
 }
-interface Results {
-    [key: string]: Result;
-}
 export interface LoadPayload {
     key: string;
     promise: Promise<any>;
@@ -53,7 +50,6 @@ export interface LoadPayload {
 export interface Payload {
     key: string;
     result?: Result;
-    results?: Results;
     id?: Id;
     error?: Error;
 }

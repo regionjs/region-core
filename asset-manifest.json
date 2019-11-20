@@ -1,7 +1,7 @@
 {
   "main.css": "/region-core/static/css/main.cea90e38.chunk.css",
-  "main.js": "/region-core/static/js/main.6cd9c68d.chunk.js",
-  "main.js.map": "/region-core/static/js/main.6cd9c68d.chunk.js.map",
+  "main.js": "/region-core/static/js/main.05b45bf1.chunk.js",
+  "main.js.map": "/region-core/static/js/main.05b45bf1.chunk.js.map",
   "runtime~main.js": "/region-core/static/js/runtime~main.579c4cb7.js",
   "runtime~main.js.map": "/region-core/static/js/runtime~main.579c4cb7.js.map",
   "static/css/2.1867dda4.chunk.css": "/region-core/static/css/2.1867dda4.chunk.css",
@@ -10,7 +10,7 @@
   "static/js/3.c5cf03bd.chunk.js": "/region-core/static/js/3.c5cf03bd.chunk.js",
   "static/js/3.c5cf03bd.chunk.js.map": "/region-core/static/js/3.c5cf03bd.chunk.js.map",
   "index.html": "/region-core/index.html",
-  "precache-manifest.1807cf4d1b098152f88f9a50cc382487.js": "/region-core/precache-manifest.1807cf4d1b098152f88f9a50cc382487.js",
+  "precache-manifest.ce5fbd109b521aa1a0aad03ec846a70b.js": "/region-core/precache-manifest.ce5fbd109b521aa1a0aad03ec846a70b.js",
   "service-worker.js": "/region-core/service-worker.js",
   "static/css/2.1867dda4.chunk.css.map": "/region-core/static/css/2.1867dda4.chunk.css.map",
   "static/css/main.cea90e38.chunk.css.map": "/region-core/static/css/main.cea90e38.chunk.css.map"

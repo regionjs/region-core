@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/region-core/static/js/runtime~main.579c4cb7.js"
   },
   {
-    "revision": "f390e186254897ff137c",
-    "url": "/region-core/static/js/main.6cd9c68d.chunk.js"
+    "revision": "66b16d87b943e95e5794",
+    "url": "/region-core/static/js/main.05b45bf1.chunk.js"
   },
   {
     "revision": "280d251fa5dea3c6fa5b",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/region-core/static/js/2.3f05b37c.chunk.js"
   },
   {
-    "revision": "f390e186254897ff137c",
+    "revision": "66b16d87b943e95e5794",
     "url": "/region-core/static/css/main.cea90e38.chunk.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/region-core/static/css/2.1867dda4.chunk.css"
   },
   {
-    "revision": "7d105117eec4d5d332f824fcc55dee37",
+    "revision": "867013ddd66f2d453a4a73d4659620a6",
     "url": "/region-core/index.html"
   }
 ];

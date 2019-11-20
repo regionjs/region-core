@@ -1,9 +1,9 @@
-import { Payload, LoadPayload } from '../types';
+import { State, Payload, LoadPayload } from '../types';
 declare type Listener = () => void;
 export declare const createStore: () => {
-    getState: () => {};
-    load: (payload: LoadPayload) => {};
-    set: (payload: Payload) => {};
+    getState: () => State;
+    load: (payload: LoadPayload) => State;
+    set: (payload: Payload) => State;
     reset: () => void;
     subscribe: (listener: Listener) => () => void;
 };

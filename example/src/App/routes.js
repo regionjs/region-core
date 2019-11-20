@@ -6,7 +6,8 @@ import UseProps from '../UseProps';
 import SharedValue from '../SharedValue';
 import ClassComponent from '../ClassComponent';
 import AdvancedLoading from '../AdvancedLoading';
-import CURD from '../CURD';
+import RESTful from '../RESTful';
+import SWR from '../SWR';
 import SelectValue from '../SelectValue';
 import Form from '../Form';
 import AsyncValidate from '../AsyncValidate';
@@ -69,18 +70,23 @@ export default [{
   groupName: 'Advanced',
   Component: SelectValue,
 }, {
-  key: 'CURD',
-  label: 'CURD',
+  key: 'RESTful',
+  label: 'RESTful',
   groupName: 'Advanced',
-  Component: CURD,
+  Component: RESTful,
 }, {
-  key: 'Form',
-  label: 'Form',
+  key: 'SWR',
+  label: 'SWR',
   groupName: 'Advanced',
-  Component: Form,
+  Component: SWR,
 }, {
   key: 'AsyncValidate',
   label: 'Async Validate',
   groupName: 'Advanced',
   Component: AsyncValidate,
+}, {
+  key: 'Form',
+  label: 'Form',
+  groupName: 'Advanced',
+  Component: Form,
 }];

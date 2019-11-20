@@ -57,6 +57,13 @@ export default () => {
   const formattedList = deNormalize(list);
   return (
     <Card>
+      <a
+        href={'https://en.wikipedia.org/wiki/Representational_state_transfer'}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        What is RESTful?
+      </a>
       <List
         loading={loading}
         dataSource={formattedList}

@@ -13,19 +13,19 @@ declare const createCombinedRegion: () => {
     load: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | ((state: any, action: any, params: any) => any) | undefined, exOption?: LoadOption | undefined) => Promise<any>;
     loadBy: (key: string, asyncFunction: any, optionOrReducer?: LoadOption | ((state: any, action: any, params: any) => any) | undefined, exOption?: LoadOption | undefined) => (params?: any) => Promise<any>;
     getProps: (key: LegacyKey) => {
-        loading: boolean | undefined;
+        loading: boolean;
         fetchTime: number | undefined;
         error: Error | undefined;
     } & AnyObject;
     getValue: (key: string | string[]) => any;
-    getLoading: (key: string | string[]) => boolean | undefined;
+    getLoading: (key: string | string[]) => boolean;
     getError: (key: string | string[]) => Error | undefined;
     getFetchTime: (key: string | string[]) => number | undefined;
     connectWith: (key: LegacyKey, Display: any, option?: ConnectOption | undefined) => (ownProps: AnyObject) => JSX.Element;
     connect: (key: LegacyKey, { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: AnyObject) => JSX.Element;
     useProps: (key: string | string[]) => AnyObject;
     useValue: (key: string | string[]) => any;
-    useLoading: (key: string | string[]) => boolean | undefined;
+    useLoading: (key: string | string[]) => boolean;
     useError: (key: string | string[]) => Error | undefined;
     useFetchTime: (key: string | string[]) => number | undefined;
 };

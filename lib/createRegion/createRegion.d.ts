@@ -5,17 +5,17 @@ export declare const createRegion: (initialValue?: any) => {
     load: (asyncFunction: any, option?: OptionOrReducer, exOption?: LoadOption | undefined) => Promise<any>;
     loadBy: (asyncFunction: any, option?: OptionOrReducer, exOption?: LoadOption | undefined) => (params?: any) => Promise<any>;
     getProps: () => {
-        loading: boolean | undefined;
+        loading: boolean;
         fetchTime: number | undefined;
         error: Error | undefined;
     } & import("../types").AnyObject;
     getValue: () => any;
-    getLoading: () => boolean | undefined;
+    getLoading: () => boolean;
     getError: () => Error | undefined;
     getFetchTime: () => number | undefined;
     useProps: () => import("../types").AnyObject;
     useValue: () => any;
-    useLoading: () => boolean | undefined;
+    useLoading: () => boolean;
     useError: () => Error | undefined;
     useFetchTime: () => number | undefined;
     connect: (Component: any, alias?: string) => (ownProps: import("../types").Props) => JSX.Element;

@@ -4,17 +4,17 @@ declare const createLocalStorageRegion: (key: string, fallbackValue: any) => {
     load: (asyncFunction: any, option?: import("../types").OptionOrReducer, exOption?: import("../types").LoadOption | undefined) => Promise<any>;
     loadBy: (asyncFunction: any, option?: import("../types").OptionOrReducer, exOption?: import("../types").LoadOption | undefined) => (params?: any) => Promise<any>;
     getProps: () => {
-        loading: boolean | undefined;
+        loading: boolean;
         fetchTime: number | undefined;
         error: Error | undefined;
     } & import("../types").AnyObject;
     getValue: () => any;
-    getLoading: () => boolean | undefined;
+    getLoading: () => boolean;
     getError: () => Error | undefined;
     getFetchTime: () => number | undefined;
     useProps: () => import("../types").AnyObject;
     useValue: () => any;
-    useLoading: () => boolean | undefined;
+    useLoading: () => boolean;
     useError: () => Error | undefined;
     useFetchTime: () => number | undefined;
     connect: (Component: any, alias?: string) => (ownProps: import("../types").Props) => JSX.Element;

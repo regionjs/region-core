@@ -1,7 +1,17 @@
 import { ComponentType as RawComponentType } from 'react';
-export interface Props {
+export interface AnyObject {
     [key: string]: any;
 }
+export interface Props {
+    loading?: number;
+    result?: any;
+    id?: Id;
+    promise?: Promise<any>;
+    error?: Error;
+    fetchTime?: number;
+    results: AnyObject;
+}
+export declare type PropsKey = 'loading' | 'result' | 'id' | 'promise' | 'error' | 'fetchTime' | 'results';
 export declare type ComponentType = RawComponentType | any;
 export declare type SimpleKey = string;
 export declare type SimpleKeys = SimpleKey[];
@@ -25,7 +35,7 @@ declare type ResultFunc = (snapshot: Snapshot) => Result;
 export declare type ResultOrFunc = Result | ResultFunc;
 export declare type AsyncFunction = any;
 export declare type Params = any;
-export declare type Id = string | number | Symbol;
+export declare type Id = string | number;
 declare type Snapshot = any;
 declare type Format = (result: Result, snapshot: Snapshot) => Result;
 declare type Reducer = (state: any, action: any, params: any) => any;

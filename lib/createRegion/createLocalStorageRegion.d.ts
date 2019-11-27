@@ -7,12 +7,12 @@ declare const createLocalStorageRegion: (key: string, fallbackValue: any) => {
         loading: boolean | undefined;
         fetchTime: number | undefined;
         error: Error | undefined;
-    } & import("../types").Props;
+    } & import("../types").AnyObject;
     getValue: () => any;
     getLoading: () => boolean | undefined;
     getError: () => Error | undefined;
     getFetchTime: () => number | undefined;
-    useProps: () => import("../types").Props;
+    useProps: () => import("../types").AnyObject;
     useValue: () => any;
     useLoading: () => boolean | undefined;
     useError: () => Error | undefined;

@@ -25,7 +25,7 @@ declare type ResultFunc = (snapshot: Snapshot) => Result;
 export declare type ResultOrFunc = Result | ResultFunc;
 export declare type AsyncFunction = any;
 export declare type Params = any;
-export declare type Id = string | number;
+export declare type Id = string | number | Symbol;
 declare type Snapshot = any;
 declare type Format = (result: Result, snapshot: Snapshot) => Result;
 declare type Reducer = (state: any, action: any, params: any) => any;
@@ -40,7 +40,7 @@ export interface LoadOption {
 }
 export declare type OptionOrReducer = LoadOption | Reducer;
 export interface State {
-    [key: string]: any;
+    [key: string]: Props;
 }
 export interface LoadPayload {
     key: string;

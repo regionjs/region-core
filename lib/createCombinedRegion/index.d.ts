@@ -1,10 +1,12 @@
 /// <reference types="react" />
-import { LegacyKey, LoadOption, ConnectOption, AnyObject } from '../types';
+import { LegacyKey, LoadOption, ConnectOption, AnyObject, PropsKey } from '../types';
 declare const createCombinedRegion: () => {
     private_store: {
-        getState: () => import("../types").State;
+        getAttribute: (key: string, attribute: PropsKey) => any;
+        private_setState: (value: import("../types").State) => void;
         load: (payload: import("../types").LoadPayload) => import("../types").State;
-        set: (payload: import("../types").Payload, cache?: boolean | undefined) => import("../types").State;
+        set: (payload: import("../types").Payload) => import("../types").State;
+        setCache: (payload: import("../types").Payload) => import("../types").State;
         reset: () => void;
         subscribe: (listener: () => void) => () => void;
     };

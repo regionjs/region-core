@@ -1,8 +1,8 @@
 /// <reference types="react" />
-import { LegacyKey, LoadOption, ConnectOption, AnyObject, PropsKey } from '../types';
+import { LegacyKey, LoadOption, ConnectOption, AnyObject } from '../types';
 declare const createCombinedRegion: () => {
     private_store: {
-        getAttribute: (key: string, attribute: PropsKey) => any;
+        getAttribute: (key: string, attribute: import("../types").PropsKey) => any;
         private_setState: (value: import("../types").State) => void;
         load: (payload: import("../types").LoadPayload) => import("../types").State;
         set: (payload: import("../types").Payload) => import("../types").State;
@@ -19,6 +19,8 @@ declare const createCombinedRegion: () => {
         fetchTime: number | undefined;
         error: Error | undefined;
     } & AnyObject;
+    getMap: (key: string | string[]) => any;
+    getId: (key: string | string[]) => any;
     getValue: (key: string | string[]) => any;
     getLoading: (key: string | string[]) => boolean;
     getError: (key: string | string[]) => Error | undefined;
@@ -27,6 +29,8 @@ declare const createCombinedRegion: () => {
     connect: (key: LegacyKey, { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: AnyObject) => JSX.Element;
     useProps: (key: string | string[]) => AnyObject;
     useValue: (key: string | string[]) => any;
+    useMap: (key: string | string[]) => any;
+    useId: (key: string | string[]) => any;
     useLoading: (key: string | string[]) => boolean;
     useError: (key: string | string[]) => Error | undefined;
     useFetchTime: (key: string | string[]) => number | undefined;

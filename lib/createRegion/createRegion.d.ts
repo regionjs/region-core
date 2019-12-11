@@ -9,11 +9,15 @@ export declare const createRegion: (initialValue?: any) => {
         fetchTime: number | undefined;
         error: Error | undefined;
     } & import("../types").AnyObject;
+    getMap: () => any;
+    getId: () => any;
     getValue: () => any;
     getLoading: () => boolean;
     getError: () => Error | undefined;
     getFetchTime: () => number | undefined;
     useProps: () => import("../types").AnyObject;
+    useMap: () => any;
+    useId: () => any;
     useValue: () => any;
     useLoading: () => boolean;
     useError: () => Error | undefined;

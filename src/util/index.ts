@@ -3,6 +3,5 @@ export { getPayload, getLoadPayload } from './formatResult';
 export { hoc } from './hoc';
 export { isAsync } from './isAsync';
 export { isValidConnectKey } from './isValidConnectKey';
-export { formatKeys, selectLoading, selectResult, selectFetchTime, selectError } from './selectProps';
-export { createHooks } from './createHooks';
+export { formatLegacyKeys, selectLoading, selectResult, selectFetchTime, selectError } from './selectProps';
 export { createStore } from './createStore';

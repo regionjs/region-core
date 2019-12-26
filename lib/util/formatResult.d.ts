@@ -1,18 +1,17 @@
-import { FormatResultParams, LoadOption, LoadPayload, Params, Payload, SimpleKey, ResultOrFunc } from '../types';
-export declare const formatResult: ({ resultOrFunc, snapshot, format, reducer, params }: FormatResultParams) => any;
-interface GetPayloadParams {
-    key: SimpleKey;
-    result: ResultOrFunc;
-    snapshot: any;
-    params: Params;
-    option: LoadOption;
+import { LoadOption, LoadPayload, Payload } from '../types';
+interface GetPayloadParams<T, K extends keyof T, TParams> {
+    key: K;
+    result: T[K];
+    snapshot?: T[K];
+    params: TParams;
+    option: LoadOption<TParams, T[K]>;
 }
-export declare const getPayload: ({ key, snapshot, result, params, option }: GetPayloadParams) => Payload;
-interface GetLoadPayloadParams {
-    key: SimpleKey;
-    promise: Promise<any>;
-    params: Params;
-    option: LoadOption;
+export declare const getPayload: <T, K extends keyof T, TParams>({ key, snapshot, result, params, option }: GetPayloadParams<T, K, TParams>) => Payload<T, K>;
+interface GetLoadPayloadParams<T, K extends keyof T, TParams> {
+    key: K;
+    promise: Promise<T[K]>;
+    params: TParams;
+    option: LoadOption<TParams, T[K]>;
 }
-export declare const getLoadPayload: ({ key, promise, params, option }: GetLoadPayloadParams) => LoadPayload;
+export declare const getLoadPayload: <T, K extends keyof T, TParams>({ key, promise, params, option }: GetLoadPayloadParams<T, K, TParams>) => LoadPayload<T, K>;
 export {};

@@ -1,37 +1,18 @@
 import { ComponentType as RawComponentType } from 'react';
 
-export interface AnyObject {
-  [key: string]: any;
-}
-
-export interface Props {
-  loading?: number;
-  result?: any;
-  id?: Id;
-  promise?: Promise<any>;
-  error?: Error;
-  fetchTime?: number;
-  results: AnyObject;
-}
-
-export type PropsKey = 'loading' | 'result' | 'id' | 'promise' | 'error' | 'fetchTime' | 'results';
-
 export type ComponentType = RawComponentType | any;
 
 // public
 // useProps
-export type SimpleKey = string;
-export type SimpleKeys = SimpleKey[];
-export type Key = SimpleKey | SimpleKeys;
-interface ComplexKey {
-  key?: Key;
-  loading?: Key;
-  result?: Key;
-  fetchTime?: Key;
-  error?: Key;
+export interface ComplexKey<K> {
+  key?: K;
+  loading?: K;
+  result?: K;
+  fetchTime?: K;
+  error?: K;
 }
 
-export type LegacyKey = Key | ComplexKey;
+export type LegacyKey<K> = K | K[] | ComplexKey<K>;
 
 // connect
 export type DisplayType = ComponentType;
@@ -42,81 +23,64 @@ export interface ConnectOption {
 }
 
 // set & load
-export type EntityName = string;
-
 // set
-export type Result = any;
-type ResultFunc = (snapshot: Snapshot) => Result;
-export type ResultOrFunc = Result | ResultFunc;
+export type ResultFunc<V> = (snapshot?: V) => V;
+export type ResultOrFunc<V> = V | ResultFunc<V>;
 
 // load
-export type AsyncFunction = any;
-export type Params = any;
+export type AsyncFunction<TParams, V> = (params: TParams) => Promise<V>;
+export type AsyncFunctionOrPromise<TParams, V> = AsyncFunction<TParams, V>; // 事实上有 Promise<V> | V，但是 TS 上不支持;
+
+export type AsyncFunctionWithoutParams<V> = () => Promise<V>;
+export type AsyncFunctionOrPromiseWithoutParams<V> = AsyncFunctionWithoutParams<V> | Promise<V> | V;
 
 export type Id = string | number;
-type Snapshot = any;
-type Format = (result: Result, snapshot: Snapshot) => Result;
-type Reducer = (state: any, action: any, params: any) => any;
+type Format<V> = (result: V, snapshot?: V) => V;
+type Reducer<TParams, V> = (state: V | undefined, result: V, params: TParams) => V;
 
-type IdFunc = (params: Params) => Id;
+export type IdFunc<TParams> = (params: TParams) => Id;
 
-export interface LoadOption {
-  format?: Format;
-  reducer?: Reducer;
+export interface LoadOption<TParams, V> {
+  format?: Format<V>;
+  reducer?: Reducer<TParams, V>;
   forceUpdate?: boolean;
-  params?: Params;
-  id?: Id | IdFunc;
+  params?: TParams;
+  id?: Id | IdFunc<TParams>;
   delay?: boolean;
 }
 
-export type OptionOrReducer = LoadOption | Reducer;
+export type OptionOrReducer<TParams, V> = LoadOption<TParams, V> | Reducer<TParams, V>;
 
 // private
 // get
 // reducer
 
-export interface State {
-  [key: string]: Props;
-}
-
-interface Results {
-  [key: string]: Result;
-}
-
-export interface LoadPayload {
-  key: string;
-  promise: Promise<any>;
+export interface LoadPayload<T, K extends keyof T> {
+  key: K;
+  promise: Promise<T[K]>;
   id?: Id;
 }
 
-export interface Payload {
-  key: string;
-  result?: Result;
+export interface Payload<T, K extends keyof T> {
+  key: K;
+  result?: T[K];
   id?: Id;
-  error?: Error;
+  error?: any;
 }
 
-// other
-// selectProps
-// loading === undefined occurs when strictLoading === false
-export type Loading = boolean | undefined;
-export type FetchTime = number | undefined;
-export type Error = any;
-
-// formatResult
-export interface FormatResultParams {
-  resultOrFunc: ResultOrFunc;
-  snapshot: Snapshot;
-  format?: Format;
-  reducer?: Reducer;
-  params?: Params;
+// internal
+export interface Props<V> {
+  loading?: number;
+  result?: V;
+  id?: any;
+  promise?: Promise<V>;
+  error?: any;
+  fetchTime?: number;
+  results: {[key: string]: V};
 }
 
-export interface FormatResultWithIdParams {
-  resultOrFunc: ResultOrFunc;
-  snapshot: Snapshot;
-  format?: Format;
-  id: Id;
-  reducer?: Reducer;
-  params?: Params;
-}
+export type PropsAttribute<T> = keyof Props<T>;
+
+export type State<T> = {
+  [P in keyof T]?: Props<T[P]>;
+};

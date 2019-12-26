@@ -1,19 +1,27 @@
 import createCombinedRegion from '../createCombinedRegion';
-import { AsyncFunction, LoadOption, OptionOrReducer, ResultOrFunc } from '../types';
+import { AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ResultOrFunc } from '../types';
 import { hoc } from './hoc';
 
-export const createRegion = (initialValue?: any) => {
-  const region = createCombinedRegion();
+export const createRegion = <V>(initialValue?: V) => {
+  const region = createCombinedRegion<{value: V}>();
 
-  const set = (resultOrFunc: ResultOrFunc) => {
+  const set = (resultOrFunc: ResultOrFunc<V>) => {
     return region.set('value', resultOrFunc);
   };
 
-  const load = (asyncFunction: AsyncFunction, option: OptionOrReducer = {}, exOption?: LoadOption) => {
+  const load = <TParams>(
+    asyncFunction: AsyncFunctionOrPromise<TParams, V>,
+    option: OptionOrReducer<TParams, V> = {},
+    exOption?: LoadOption<TParams, V>,
+  ) => {
     return region.load('value', asyncFunction, option, exOption);
   };
 
-  const loadBy = (asyncFunction: AsyncFunction, option: OptionOrReducer = {}, exOption?: LoadOption) => {
+  const loadBy = <TParams>(
+    asyncFunction: AsyncFunctionOrPromise<TParams, V>,
+    option: OptionOrReducer<TParams, V> = {},
+    exOption?: LoadOption<TParams, V>,
+  ) => {
     return region.loadBy('value', asyncFunction, option, exOption);
   };
 

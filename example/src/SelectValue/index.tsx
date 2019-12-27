@@ -2,23 +2,29 @@ import React, { Fragment, useMemo } from 'react';
 import { createRegion } from 'region-core';
 import { Radio, Card, Lines } from '../components';
 
-const generate = (type, id) => ({
+interface Animal {
+  type: string;
+  id: string;
+  value: string;
+}
+
+const generate = (type: string, id: number) => ({
   id: String(id),
   type,
   value: `${type}-${id}`,
 });
 
-const animalRegion = createRegion(['cat', 'cat', 'dog', 'cat', 'dog'].map(generate));
+const animalRegion = createRegion<Animal[]>(['cat', 'cat', 'dog', 'cat', 'dog'].map((type, index) => generate(type, index)));
 const typeRegion = createRegion();
 
-const getFilteredArray = (array, type) => {
+const getFilteredArray = (array: Animal[], type: string) => {
   if (type && type !== 'all') {
     return array.filter(item => item.type === type);
   }
   return array;
 };
 
-const handleRadio = e => typeRegion.set(e.target.value);
+const handleRadio = (e: any) => typeRegion.set(e.target.value);
 
 const Panel = () => {
   const array = animalRegion.useValue();

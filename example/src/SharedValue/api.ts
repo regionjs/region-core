@@ -1,4 +1,4 @@
-const fetchFactory = (value, delay = 1000) => () => new Promise((resolve) => {
+const fetchFactory = <T>(value: T, delay = 1000) => (): Promise<T> => new Promise((resolve) => {
   setTimeout(() => { resolve(value); }, delay);
 });
 

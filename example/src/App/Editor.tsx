@@ -5,12 +5,7 @@ import { codeRegion, loadCode } from './codeRegion';
 
 const getWindowSize = () => {
   if (typeof window === 'undefined') {
-    return {
-      innerWidth: null,
-      innerHeight: null,
-      outerWidth: null,
-      outerHeight: null,
-    };
+    throw new Error('window undefined');
   }
   return {
     innerWidth: window.innerWidth,
@@ -34,7 +29,7 @@ const useWindowSize = () => {
   return size;
 };
 
-const Editor = ({ selectedKey }) => {
+const Editor = ({ selectedKey }: any) => {
   const { innerWidth } = useWindowSize();
   const loading = codeRegion.useLoading();
   const code = codeRegion.useValue();

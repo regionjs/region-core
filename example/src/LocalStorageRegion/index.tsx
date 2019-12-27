@@ -4,7 +4,7 @@ import { Input, Card } from '../components';
 
 const localStorageRegion = createLocalStorageRegion('localStorage-key', 'some value stored in localStorage');
 
-const handleChange = e => localStorageRegion.set(e.target.value);
+const handleChange = (e: any) => localStorageRegion.set(e.target.value);
 
 const LocalStorageRegion = () => {
   const value = localStorageRegion.useValue();

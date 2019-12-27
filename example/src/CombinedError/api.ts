@@ -1,7 +1,7 @@
 const toggleList = [false, false, false, true, true, false, true, true];
 let index = -1;
 
-export const fetchValue1 = () => new Promise((resolve, reject) => {
+export const fetchValue1 = (): Promise<string> => new Promise((resolve, reject) => {
   setTimeout(() => {
     index += 1;
     if (toggleList[index]) {
@@ -12,7 +12,7 @@ export const fetchValue1 = () => new Promise((resolve, reject) => {
   }, 1000);
 });
 
-export const fetchValue2 = () => new Promise((resolve, reject) => {
+export const fetchValue2 = (): Promise<string> => new Promise((resolve, reject) => {
   setTimeout(() => {
     index += 1;
     if (toggleList[index]) {

@@ -3,18 +3,18 @@ import { createRegion } from 'region-core';
 import { Form, Input, Card } from '../components';
 import { fetchValidate } from './api';
 
-const asyncValidateRegion = createRegion(null);
+const asyncValidateRegion = createRegion<string>('');
 
-const loadValidate = (value) => {
+const loadValidate = (value: string) => {
   asyncValidateRegion.set(value);
   asyncValidateRegion.loadBy(fetchValidate)(value);
 };
 
-const handleChange = e => loadValidate(e.target.value);
+const handleChange = (e: any) => loadValidate(e.target.value);
 
-const getValidateStatus = ({ loading, error, value }) => {
-  if (value === null) {
-    return null;
+const getValidateStatus = ({ loading, error, value }: any) => {
+  if (value === '') {
+    return undefined;
   }
   if (loading) {
     return 'validating';

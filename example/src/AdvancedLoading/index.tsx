@@ -2,10 +2,10 @@ import React from 'react';
 import { createRegion } from 'region-core';
 import { Button, Spin, Card, Divider } from '../components';
 
-const leftPartRegion = createRegion(null);
-const rightPartRegion = createRegion(null);
+const leftPartRegion = createRegion<null>(null);
+const rightPartRegion = createRegion<null>(null);
 
-const fetch = () => new Promise(resolve => setTimeout(resolve, 1000));
+const fetch = (): Promise<null> => new Promise(resolve => setTimeout(() => resolve(null), 1000));
 
 const handleLeft = leftPartRegion.loadBy(fetch);
 

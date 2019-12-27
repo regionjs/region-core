@@ -1,8 +1,8 @@
 import { createRegion } from 'region-core';
 import { fetchUser, fetchFollower, deleteFollower } from './api';
 
-const userRegion = createRegion();
-const followerRegion = createRegion();
+const userRegion = createRegion<string[]>();
+const followerRegion = createRegion<string[]>();
 
 export const loadUser = userRegion.loadBy(fetchUser);
 

@@ -20,12 +20,12 @@ const selectedKeyRegion = createRegion(initSelectedKey());
 
 const defaultSelectKey = get(routes, ['0', 'key']);
 
-const onClick = ({ key }) => {
+const onClick = ({ key }: any) => {
   history.replace(`#${key}`);
   selectedKeyRegion.set(key);
 };
 
-const MenuItem = ({ key, label }) => <Menu.Item key={key}>{label}</Menu.Item>;
+const MenuItem = ({ key, label }: any) => <Menu.Item key={key}>{label}</Menu.Item>;
 
 const getMenuElements = () => {
   const routeGroups = groupBy(routes, 'groupName');

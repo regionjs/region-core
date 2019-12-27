@@ -3,7 +3,11 @@ import { createCombinedRegion } from 'region-core';
 import { Button, Divider, Icon, Card } from '../components';
 import { fetchValue1, fetchValue2 } from './api';
 
-const errorRegion = createCombinedRegion();
+interface Shape {
+  value1: string;
+  value2: string;
+}
+const errorRegion = createCombinedRegion<Shape>();
 
 const loadValueWithError = () => {
   errorRegion.load('value1', fetchValue1);
@@ -12,7 +16,7 @@ const loadValueWithError = () => {
 
 loadValueWithError();
 
-const getStatus = ({ loading, error }) => {
+const getStatus = ({ loading, error }: {loading: boolean, error: Error}) => {
   if (loading) {
     return 'loading';
   }

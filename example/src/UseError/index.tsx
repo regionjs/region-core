@@ -14,7 +14,7 @@ const Component = () => {
   const loading = region.useLoading();
   const value = region.useValue();
   const error = region.useError();
-  const fetchTime = region.useFetchTime();
+  const fetchTime = region.useFetchTime() || 0;
 
   return (
     <Card loading={loading}>

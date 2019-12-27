@@ -4,9 +4,9 @@ import { Input, Card, Divider } from '../components';
 
 const region = createRegion('initialValue');
 
-const handleChange = e => region.set(e.target.value);
+const handleChange = (e: any) => region.set(e.target.value);
 
-class ClassComponent extends Component {
+class ClassComponent extends Component<{value: string}> {
   render() {
     const { value } = this.props;
     return (
@@ -19,8 +19,8 @@ class ClassComponent extends Component {
   }
 }
 
-const withValue = (ComponentIn) => {
-  const ComponentOut = (props) => {
+const withValue = (ComponentIn: any) => {
+  const ComponentOut = (props: any) => {
     const value = region.useValue();
     return <ComponentIn value={value} {...props}/>;
   };

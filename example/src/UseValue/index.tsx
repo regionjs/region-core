@@ -4,7 +4,7 @@ import { Input, Card, Divider } from '../components';
 
 const region = createRegion('initialValue');
 
-const handleChange = e => region.set(e.target.value);
+const handleChange = (e: any) => region.set(e.target.value);
 
 const Component = () => {
   const value = region.useValue();

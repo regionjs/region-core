@@ -3,7 +3,15 @@ import { createRegion } from 'region-core';
 import { Button, List, Card } from '../components';
 import { getList, postList, putList, patchList, deleteList } from './mockList';
 
-const listRegion = createRegion();
+interface Item {
+  id: number;
+  value: number;
+}
+
+interface Shape {
+  [key: number]: Item;
+}
+const listRegion = createRegion<Shape>();
 listRegion.load(getList);
 
 /* eslint-disable no-param-reassign */
@@ -11,7 +19,7 @@ const handleGet = listRegion.loadBy(getList);
 
 const handlePost = listRegion.loadBy(
   postList,
-  (state, result) => {
+  (state = {}, result) => {
     state[result.id] = result;
     return state;
   },
@@ -19,7 +27,7 @@ const handlePost = listRegion.loadBy(
 
 const handlePutBy = listRegion.loadBy(
   putList,
-  (state, result) => {
+  (state = {}, result) => {
     state[result.id] = result;
     return state;
   },
@@ -27,7 +35,7 @@ const handlePutBy = listRegion.loadBy(
 
 const handlePatchBy = listRegion.loadBy(
   patchList,
-  (state, result) => {
+  (state = {}, result) => {
     state[result.id] = result;
     return state;
   },
@@ -35,8 +43,7 @@ const handlePatchBy = listRegion.loadBy(
 
 const handleDeleteBy = listRegion.loadBy(
   deleteList,
-  (state, result, params) => {
-    const { id } = params;
+  (state = {}, result, id) => {
     delete state[id];
     return state;
   },
@@ -44,9 +51,11 @@ const handleDeleteBy = listRegion.loadBy(
 /* eslint-enable no-param-reassign */
 
 const deNormalize = (entity = {}) => {
-  const array = [];
+  const array: any[] = [];
   Object.keys(entity).forEach((key) => {
-    array.push(entity[key]);
+    // @ts-ignore
+    const item = entity[key];
+    array.push(item);
   });
   return array;
 };

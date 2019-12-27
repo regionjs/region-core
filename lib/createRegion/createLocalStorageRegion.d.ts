@@ -1,26 +1,26 @@
 /// <reference types="react" />
 declare const createLocalStorageRegion: (key: string, fallbackValue: any) => {
     set: (resultOrFunc: any) => any;
-    load: (asyncFunction: any, option?: import("../types").OptionOrReducer, exOption?: import("../types").LoadOption | undefined) => Promise<any>;
-    loadBy: (asyncFunction: any, option?: import("../types").OptionOrReducer, exOption?: import("../types").LoadOption | undefined) => (params?: any) => Promise<any>;
-    getProps: () => {
-        loading: boolean;
-        fetchTime: number | undefined;
-        error: Error | undefined;
-    } & import("../types").AnyObject;
-    getMap: () => any;
-    getId: () => any;
+    load: <TParams, TResult>(asyncFunction: import("../types").AsyncFunction<TParams, TResult>, option?: import("../types").OptionOrReducer<TParams, TResult, any>, exOption?: import("../types").LoadOption<TParams, TResult, any> | undefined) => Promise<any>;
+    loadBy: <TParams_1, TResult_1>(asyncFunction: import("../types").AsyncFunction<TParams_1, TResult_1>, option?: import("../types").OptionOrReducer<TParams_1, TResult_1, any>, exOption?: import("../types").LoadOption<TParams_1, TResult_1, any> | undefined) => (params?: TParams_1 | undefined) => Promise<any>;
+    getProps: () => any;
+    getMap: () => {
+        [key: string]: any;
+    };
+    getId: () => string | undefined;
     getValue: () => any;
     getLoading: () => boolean;
     getError: () => Error | undefined;
     getFetchTime: () => number | undefined;
-    useProps: () => import("../types").AnyObject;
-    useMap: () => any;
-    useId: () => any;
+    useProps: () => any;
+    useMap: () => {
+        [key: string]: any;
+    };
+    useId: () => string | undefined;
     useValue: () => any;
     useLoading: () => boolean;
     useError: () => Error | undefined;
     useFetchTime: () => number | undefined;
-    connect: (Component: any, alias?: string) => (ownProps: import("../types").Props) => JSX.Element;
+    connect: (Component: any, alias?: string) => (ownProps: any) => JSX.Element;
 };
 export default createLocalStorageRegion;

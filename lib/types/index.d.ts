@@ -1,84 +1,61 @@
 import { ComponentType as RawComponentType } from 'react';
-export interface AnyObject {
-    [key: string]: any;
-}
-export interface Props {
-    loading?: number;
-    result?: any;
-    id?: Id;
-    promise?: Promise<any>;
-    error?: Error;
-    fetchTime?: number;
-    results: AnyObject;
-}
-export declare type PropsKey = 'loading' | 'result' | 'id' | 'promise' | 'error' | 'fetchTime' | 'results';
 export declare type ComponentType = RawComponentType | any;
-export declare type SimpleKey = string;
-export declare type SimpleKeys = SimpleKey[];
-export declare type Key = SimpleKey | SimpleKeys;
-interface ComplexKey {
-    key?: Key;
-    loading?: Key;
-    result?: Key;
-    fetchTime?: Key;
-    error?: Key;
+export interface ComplexKey<K> {
+    key?: K;
+    loading?: K;
+    result?: K;
+    fetchTime?: K;
+    error?: K;
 }
-export declare type LegacyKey = Key | ComplexKey;
+export declare type LegacyKey<K> = K | K[] | ComplexKey<K>;
 export declare type DisplayType = ComponentType;
 export interface ConnectOption {
     Loading?: ComponentType;
     Error?: ComponentType;
 }
-export declare type EntityName = string;
-export declare type Result = any;
-declare type ResultFunc = (snapshot: Snapshot) => Result;
-export declare type ResultOrFunc = Result | ResultFunc;
-export declare type AsyncFunction = any;
-export declare type Params = any;
+export declare type ResultFunc<V> = (snapshot?: V) => V;
+export declare type ResultOrFunc<V> = V | ResultFunc<V>;
+export declare type AsyncFunction<TParams, TResult> = (params: TParams) => Promise<TResult>;
+export declare type AsyncFunctionOrPromise<TParams, TResult> = AsyncFunction<TParams, TResult>;
+export declare type AsyncFunctionWithoutParams<V> = () => Promise<V>;
+export declare type AsyncFunctionOrPromiseWithoutParams<V> = AsyncFunctionWithoutParams<V> | Promise<V> | V;
 export declare type Id = string | number;
-declare type Snapshot = any;
-declare type Format = (result: Result, snapshot: Snapshot) => Result;
-declare type Reducer = (state: any, action: any, params: any) => any;
-declare type IdFunc = (params: Params) => Id;
-export interface LoadOption {
-    format?: Format;
-    reducer?: Reducer;
+declare type Format<TResult, V> = (result: TResult, snapshot?: V) => V;
+declare type Reducer<TParams, TResult, V> = (state: V | undefined, result: TResult, params: TParams) => V;
+export declare type IdFunc<TParams> = (params: TParams) => Id;
+export interface LoadOption<TParams, TResult, V> {
+    format?: Format<TResult, V>;
+    reducer?: Reducer<TParams, TResult, V>;
     forceUpdate?: boolean;
-    params?: Params;
-    id?: Id | IdFunc;
+    params?: TParams;
+    id?: Id | IdFunc<TParams>;
     delay?: boolean;
 }
-export declare type OptionOrReducer = LoadOption | Reducer;
-export interface State {
-    [key: string]: Props;
-}
-export interface LoadPayload {
-    key: string;
-    promise: Promise<any>;
+export declare type OptionOrReducer<TParams, TResult, V> = LoadOption<TParams, TResult, V> | Reducer<TParams, TResult, V>;
+export interface LoadPayload<K, TResult> {
+    key: K;
+    promise: Promise<TResult>;
     id?: Id;
 }
-export interface Payload {
-    key: string;
-    result?: Result;
+export interface Payload<T, K extends keyof T> {
+    key: K;
+    result?: T[K];
     id?: Id;
-    error?: Error;
+    error?: any;
 }
-export declare type Loading = boolean | undefined;
-export declare type FetchTime = number | undefined;
-export declare type Error = any;
-export interface FormatResultParams {
-    resultOrFunc: ResultOrFunc;
-    snapshot: Snapshot;
-    format?: Format;
-    reducer?: Reducer;
-    params?: Params;
+export interface Props<V> {
+    loading?: number;
+    result?: V;
+    id?: any;
+    promise?: Promise<unknown>;
+    error?: any;
+    fetchTime?: number;
+    results: {
+        [key: string]: V;
+    };
 }
-export interface FormatResultWithIdParams {
-    resultOrFunc: ResultOrFunc;
-    snapshot: Snapshot;
-    format?: Format;
-    id: Id;
-    reducer?: Reducer;
-    params?: Params;
-}
+export declare type PropsAttribute<T> = keyof Props<T>;
+export declare type State<T> = {
+    [P in keyof T]?: Props<T[P]>;
+};
 export {};

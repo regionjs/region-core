@@ -14,36 +14,25 @@ declare const createCombinedRegion: <T>() => {
     reset: () => void;
     load: <K_5 extends keyof T, TParams, TResult_1>(key: K_5, asyncFunction: AsyncFunction<TParams, TResult_1>, optionOrReducer?: LoadOption<TParams, TResult_1, T[K_5]> | ((state: T[K_5] | undefined, result: TResult_1, params: TParams) => T[K_5]) | undefined, exOption?: LoadOption<TParams, TResult_1, T[K_5]> | undefined) => Promise<T[K_5] | undefined>;
     loadBy: <TParams_1, TResult_2, K_6 extends keyof T>(key: K_6, asyncFunction: AsyncFunction<TParams_1, TResult_2>, optionOrReducer?: LoadOption<TParams_1, TResult_2, T[K_6]> | ((state: T[K_6] | undefined, result: TResult_2, params: TParams_1) => T[K_6]) | undefined, exOption?: LoadOption<TParams_1, TResult_2, T[K_6]> | undefined) => (params?: TParams_1 | undefined) => Promise<T[K_6] | undefined>;
-    getProps: <K_7 extends keyof T>(key: K_7 | K_7[]) => any;
-    getMap: {
-        <K_8 extends keyof T>(key: K_8): {
-            [key: string]: T[K_8];
-        };
-        <K_9 extends keyof T>(key: K_9[]): {
-            [key: string]: T[K_9];
-        }[];
+    getProps: <K_7 extends keyof T>(key: K_7) => any;
+    getMap: <K_8 extends keyof T>(key: K_8) => {
+        [key: string]: T[K_8];
     };
-    getId: {
-        <K_10 extends keyof T>(key: K_10): string | undefined;
-        <K_11 extends keyof T>(key: K_11[]): (string | undefined)[];
+    getId: <K_9 extends keyof T>(key: K_9) => string | undefined;
+    getValue: <K_10 extends keyof T>(key: K_10) => T[K_10] | undefined;
+    getLoading: <K_11 extends keyof T>(key: K_11) => boolean;
+    getError: <K_12 extends keyof T>(key: K_12) => Error | undefined;
+    getFetchTime: <K_13 extends keyof T>(key: K_13) => number | undefined;
+    connectWith: <K_14 extends keyof T>(key: K_14, Display: any, option?: ConnectOption | undefined) => (ownProps: any) => JSX.Element;
+    connect: <K_15 extends keyof T>(key: K_15, { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: any) => JSX.Element;
+    useProps: <K_16 extends keyof T>(key: K_16) => any;
+    useValue: <K_17 extends keyof T>(key: K_17) => T[K_17] | undefined;
+    useMap: <K_18 extends keyof T>(key: K_18) => {
+        [key: string]: T[K_18];
     };
-    getValue: {
-        <K_12 extends keyof T>(key: K_12): T[K_12] | undefined;
-        <K_13 extends keyof T>(key: K_13[]): (T[K_13] | undefined)[];
-    };
-    getLoading: <K_14 extends keyof T>(key: K_14 | K_14[]) => boolean;
-    getError: <K_15 extends keyof T>(key: K_15 | K_15[]) => Error | undefined;
-    getFetchTime: <K_16 extends keyof T>(key: K_16 | K_16[]) => number | undefined;
-    connectWith: <K_17 extends keyof T>(key: K_17 | K_17[], Display: any, option?: ConnectOption | undefined) => (ownProps: any) => JSX.Element;
-    connect: <K_18 extends keyof T>(key: K_18 | K_18[], { Loading, Error: ErrorComponent }?: ConnectOption) => (Display?: any) => (ownProps: any) => JSX.Element;
-    useProps: <K_19 extends keyof T>(key: K_19 | K_19[]) => any;
-    useValue: <K_20 extends keyof T>(key: K_20 | K_20[]) => T[any] | undefined;
-    useMap: <K_21 extends keyof T>(key: K_21 | K_21[]) => {
-        [key: string]: T[any];
-    };
-    useId: <K_22 extends keyof T>(key: K_22 | K_22[]) => string | undefined;
-    useLoading: <K_23 extends keyof T>(key: K_23 | K_23[]) => boolean;
-    useError: <K_24 extends keyof T>(key: K_24 | K_24[]) => Error | undefined;
-    useFetchTime: <K_25 extends keyof T>(key: K_25 | K_25[]) => number | undefined;
+    useId: <K_19 extends keyof T>(key: K_19) => string | undefined;
+    useLoading: <K_20 extends keyof T>(key: K_20) => boolean;
+    useError: <K_21 extends keyof T>(key: K_21) => Error | undefined;
+    useFetchTime: <K_22 extends keyof T>(key: K_22) => number | undefined;
 };
 export default createCombinedRegion;

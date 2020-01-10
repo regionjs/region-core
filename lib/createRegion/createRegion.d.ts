@@ -15,10 +15,10 @@ export declare const createRegion: <V>(initialValue?: V | undefined) => {
     getFetchTime: () => number | undefined;
     useProps: () => any;
     useMap: () => {
-        [key: string]: any;
+        [key: string]: V;
     };
     useId: () => string | undefined;
-    useValue: () => any;
+    useValue: () => V | undefined;
     useLoading: () => boolean;
     useError: () => Error | undefined;
     useFetchTime: () => number | undefined;

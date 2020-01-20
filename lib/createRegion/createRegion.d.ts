@@ -2,8 +2,8 @@
 import { LoadOption, OptionOrReducer, ResultOrFunc } from '../types';
 export declare const createRegion: <V>(initialValue?: V | undefined) => {
     set: (resultOrFunc: ResultOrFunc<V>) => V;
-    load: <TParams, TResult>(asyncFunction: import("../types").AsyncFunction<TParams, TResult>, option?: OptionOrReducer<TParams, TResult, V>, exOption?: LoadOption<TParams, TResult, V> | undefined) => Promise<V | undefined>;
-    loadBy: <TParams_1, TResult_1>(asyncFunction: import("../types").AsyncFunction<TParams_1, TResult_1>, option?: OptionOrReducer<TParams_1, TResult_1, V>, exOption?: LoadOption<TParams_1, TResult_1, V> | undefined) => (params?: TParams_1 | undefined) => Promise<V | undefined>;
+    load: <TParams = void, TResult = unknown>(asyncFunction: import("../types").AsyncFunction<TParams, TResult>, option?: OptionOrReducer<TParams, TResult, V>, exOption?: LoadOption<TParams, TResult, V> | undefined) => Promise<V | undefined>;
+    loadBy: <TParams_1 = void, TResult_1 = unknown>(asyncFunction: import("../types").AsyncFunction<TParams_1, TResult_1>, option?: OptionOrReducer<TParams_1, TResult_1, V>, exOption?: LoadOption<TParams_1, TResult_1, V> | undefined) => (params: TParams_1) => Promise<V | undefined>;
     getProps: () => any;
     getMap: () => {
         [key: string]: V;

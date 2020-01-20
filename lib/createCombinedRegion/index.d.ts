@@ -12,8 +12,8 @@ declare const createCombinedRegion: <T>() => {
     };
     set: <K_4 extends keyof T>(key: K_4, resultOrFunc: ResultOrFunc<T[K_4]>) => T[K_4];
     reset: () => void;
-    load: <K_5 extends keyof T, TParams, TResult_1>(key: K_5, asyncFunction: AsyncFunction<TParams, TResult_1>, optionOrReducer?: LoadOption<TParams, TResult_1, T[K_5]> | ((state: T[K_5] | undefined, result: TResult_1, params: TParams) => T[K_5]) | undefined, exOption?: LoadOption<TParams, TResult_1, T[K_5]> | undefined) => Promise<T[K_5] | undefined>;
-    loadBy: <TParams_1, TResult_2, K_6 extends keyof T>(key: K_6, asyncFunction: AsyncFunction<TParams_1, TResult_2>, optionOrReducer?: LoadOption<TParams_1, TResult_2, T[K_6]> | ((state: T[K_6] | undefined, result: TResult_2, params: TParams_1) => T[K_6]) | undefined, exOption?: LoadOption<TParams_1, TResult_2, T[K_6]> | undefined) => (params?: TParams_1 | undefined) => Promise<T[K_6] | undefined>;
+    load: <K_5 extends keyof T, TParams = void, TResult_1 = unknown>(key: K_5, asyncFunction: AsyncFunction<TParams, TResult_1>, optionOrReducer?: LoadOption<TParams, TResult_1, T[K_5]> | ((state: T[K_5] | undefined, result: TResult_1, params: TParams) => T[K_5]) | undefined, exOption?: LoadOption<TParams, TResult_1, T[K_5]> | undefined) => Promise<T[K_5] | undefined>;
+    loadBy: <K_6 extends keyof T, TParams_1 = void, TResult_2 = unknown>(key: K_6, asyncFunction: AsyncFunction<TParams_1, TResult_2>, optionOrReducer?: LoadOption<TParams_1, TResult_2, T[K_6]> | ((state: T[K_6] | undefined, result: TResult_2, params: TParams_1) => T[K_6]) | undefined, exOption?: LoadOption<TParams_1, TResult_2, T[K_6]> | undefined) => (params: TParams_1) => Promise<T[K_6] | undefined>;
     getProps: <K_7 extends keyof T>(key: K_7) => any;
     getMap: <K_8 extends keyof T>(key: K_8) => {
         [key: string]: T[K_8];

@@ -1,5 +1,3 @@
-import { ComponentType as RawComponentType } from 'react';
-export declare type ComponentType = RawComponentType | any;
 export interface ComplexKey<K> {
     key?: K;
     loading?: K;
@@ -8,10 +6,9 @@ export interface ComplexKey<K> {
     error?: K;
 }
 export declare type LegacyKey<K> = K | K[] | ComplexKey<K>;
-export declare type DisplayType = ComponentType;
 export interface ConnectOption {
-    Loading?: ComponentType;
-    Error?: ComponentType;
+    Loading?: any;
+    Error?: any;
 }
 export declare type ResultFunc<V> = (snapshot?: V) => V;
 export declare type ResultOrFunc<V> = V | ResultFunc<V>;

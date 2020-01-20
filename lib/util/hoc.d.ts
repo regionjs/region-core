@@ -1,11 +1,11 @@
-/// <reference types="react" />
-import { ComponentType } from '../types';
+import * as React from 'react';
 interface Params {
-    Display?: ComponentType;
-    Loading?: ComponentType;
-    Error?: ComponentType;
+    Display?: any;
+    Loading?: any;
+    Error?: any;
     useProps?: any;
     key?: any;
 }
-export declare const hoc: ({ Display, Loading, Error, useProps, key }: Params) => (ownProps: any) => JSX.Element;
+declare type Hoc = (params: Params) => React.FC<any>;
+export declare const hoc: Hoc;
 export {};

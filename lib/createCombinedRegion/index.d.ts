@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { ResultOrFunc, AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ConnectOption } from '../types';
+import { ResultFunc, ResultFuncPure, AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ConnectOption } from '../types';
 export interface CreateCombinedRegionReturnValue<T> {
     private_setState_just_for_test: (value: any) => void;
-    set: <K extends keyof T>(key: K, resultOrFunc: ResultOrFunc<T[K]>) => T[K];
+    set: <K extends keyof T>(key: K, resultOrFunc: T[K] | ResultFunc<T[K]>) => T[K];
     reset: () => void;
     load: <K extends keyof T, TParams = void, TResult = unknown>(key: K, asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, T[K]>, exOption?: LoadOption<TParams, TResult, T[K]>) => Promise<T[K] | void>;
     loadBy: <K extends keyof T, TParams = void, TResult = unknown>(key: K, asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, T[K]>, exOption?: LoadOption<TParams, TResult, T[K]>) => (params: TParams) => Promise<T[K] | void>;
@@ -27,7 +27,8 @@ export interface CreateCombinedRegionReturnValue<T> {
     useFetchTime: <K extends keyof T>(key: K) => number | undefined;
     useProps: <K extends keyof T>(key: K) => any;
 }
-export interface CreateCombinedRegionPureReturnValue<T> extends Omit<CreateCombinedRegionReturnValue<T>, 'load' | 'loadBy' | 'getValue' | 'useValue'> {
+export interface CreateCombinedRegionPureReturnValue<T> extends Omit<CreateCombinedRegionReturnValue<T>, 'set' | 'load' | 'loadBy' | 'getValue' | 'useValue'> {
+    set: <K extends keyof T>(key: K, resultOrFunc: T[K] | ResultFuncPure<T[K]>) => T[K];
     load: <K extends keyof T, TParams = void, TResult = unknown>(key: K, asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, T[K]>, exOption?: LoadOption<TParams, TResult, T[K]>) => Promise<T[K]>;
     loadBy: <K extends keyof T, TParams = void, TResult = unknown>(key: K, asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, T[K]>, exOption?: LoadOption<TParams, TResult, T[K]>) => (params: TParams) => Promise<T[K]>;
     getValue: <K extends keyof T>(key: K) => T[K];

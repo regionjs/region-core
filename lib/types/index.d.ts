@@ -11,7 +11,7 @@ export interface ConnectOption {
     Error?: any;
 }
 export declare type ResultFunc<V> = (snapshot?: V) => V;
-export declare type ResultOrFunc<V> = V | ResultFunc<V>;
+export declare type ResultFuncPure<V> = (snapshot: V) => V;
 export declare type AsyncFunction<TParams, TResult> = (params: TParams) => Promise<TResult>;
 export declare type AsyncFunctionOrPromise<TParams, TResult> = AsyncFunction<TParams, TResult>;
 export declare type AsyncFunctionWithoutParams<V> = () => Promise<V>;

@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ResultFunc, ResultFuncPure } from '../types';
 export interface CreateRegionReturnValue<V> {
     set: (resultOrFunc: V | ResultFunc<V>) => V;
+    reset: () => void;
     load: <TParams = void, TResult = unknown>(asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, V>, exOption?: LoadOption<TParams, TResult, V>) => Promise<V | void>;
     loadBy: <TParams = void, TResult = unknown>(asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, V>, exOption?: LoadOption<TParams, TResult, V>) => (params: TParams) => Promise<V | void>;
     getMap: () => {

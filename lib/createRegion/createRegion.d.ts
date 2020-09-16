@@ -5,20 +5,12 @@ export interface CreateRegionReturnValue<V> {
     reset: () => void;
     load: <TParams = void, TResult = unknown>(asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, V>, exOption?: LoadOption<TParams, TResult, V>) => Promise<V | void>;
     loadBy: <TParams = void, TResult = unknown>(asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, V>, exOption?: LoadOption<TParams, TResult, V>) => (params: TParams) => Promise<V | void>;
-    getMap: () => {
-        [key: string]: V;
-    };
-    getId: () => string | undefined;
     getValue: () => V | undefined;
     getLoading: () => boolean;
     getError: () => Error | undefined;
     getFetchTime: () => number | undefined;
     getProps: () => any;
     connect: (Component: any, alias?: string) => FC<any>;
-    useMap: () => {
-        [key: string]: V;
-    };
-    useId: () => string | undefined;
     useValue: () => V | undefined;
     useLoading: () => boolean;
     useError: () => Error | undefined;

@@ -6,10 +6,6 @@ export interface CreateMappedRegionReturnValue<K, V> {
     reset: () => void;
     load: <TParams = void, TResult = unknown>(key: K, asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, V>, exOption?: LoadOption<TParams, TResult, V>) => Promise<V | void>;
     loadBy: <TParams = void, TResult = unknown>(key: K, asyncFunction: AsyncFunctionOrPromise<TParams, TResult>, optionOrReducer?: OptionOrReducer<TParams, TResult, V>, exOption?: LoadOption<TParams, TResult, V>) => (params: TParams) => Promise<V | void>;
-    getMap: (key: K) => {
-        [key: string]: V;
-    };
-    getId: (key: K) => string | undefined;
     getValue: (key: K) => V | undefined;
     getLoading: (key: K) => boolean;
     getError: (key: K) => Error | undefined;
@@ -17,10 +13,6 @@ export interface CreateMappedRegionReturnValue<K, V> {
     getProps: (key: K) => any;
     connectWith: (key: K, Display: any, option?: ConnectOption) => FC<any>;
     connect: (key: K, option?: ConnectOption) => (Display?: any) => FC<any>;
-    useMap: (key: K) => {
-        [key: string]: V;
-    };
-    useId: (key: K) => string | undefined;
     useValue: (key: K) => V | undefined;
     useLoading: (key: K) => boolean;
     useError: (key: K) => Error | undefined;

@@ -1,11 +1,4 @@
-export interface ComplexKey<K> {
-    key?: K;
-    loading?: K;
-    result?: K;
-    fetchTime?: K;
-    error?: K;
-}
-export declare type LegacyKey<K> = K | K[] | ComplexKey<K>;
+export declare type LegacyKey<K> = K | K[];
 export interface ConnectOption {
     Loading?: any;
     Error?: any;

@@ -1,17 +1,28 @@
 {
-  "main.css": "/region-core/static/css/main.4551825a.chunk.css",
-  "main.js": "/region-core/static/js/main.bcef2447.chunk.js",
-  "main.js.map": "/region-core/static/js/main.bcef2447.chunk.js.map",
-  "runtime~main.js": "/region-core/static/js/runtime~main.004c2587.js",
-  "runtime~main.js.map": "/region-core/static/js/runtime~main.004c2587.js.map",
-  "static/css/2.723bae3f.chunk.css": "/region-core/static/css/2.723bae3f.chunk.css",
-  "static/js/2.27fbb8e4.chunk.js": "/region-core/static/js/2.27fbb8e4.chunk.js",
-  "static/js/2.27fbb8e4.chunk.js.map": "/region-core/static/js/2.27fbb8e4.chunk.js.map",
-  "static/js/3.be4c752e.chunk.js": "/region-core/static/js/3.be4c752e.chunk.js",
-  "static/js/3.be4c752e.chunk.js.map": "/region-core/static/js/3.be4c752e.chunk.js.map",
-  "index.html": "/region-core/index.html",
-  "precache-manifest.bb321516bf49176bf197951989b59d6f.js": "/region-core/precache-manifest.bb321516bf49176bf197951989b59d6f.js",
-  "service-worker.js": "/region-core/service-worker.js",
-  "static/css/2.723bae3f.chunk.css.map": "/region-core/static/css/2.723bae3f.chunk.css.map",
-  "static/css/main.4551825a.chunk.css.map": "/region-core/static/css/main.4551825a.chunk.css.map"
+  "files": {
+    "main.css": "/region-core/static/css/main.c139fc73.chunk.css",
+    "main.js": "/region-core/static/js/main.672222e0.chunk.js",
+    "main.js.map": "/region-core/static/js/main.672222e0.chunk.js.map",
+    "runtime-main.js": "/region-core/static/js/runtime-main.a0322fb6.js",
+    "runtime-main.js.map": "/region-core/static/js/runtime-main.a0322fb6.js.map",
+    "static/css/2.2cc0cb98.chunk.css": "/region-core/static/css/2.2cc0cb98.chunk.css",
+    "static/js/2.8552c0af.chunk.js": "/region-core/static/js/2.8552c0af.chunk.js",
+    "static/js/2.8552c0af.chunk.js.map": "/region-core/static/js/2.8552c0af.chunk.js.map",
+    "static/js/3.9c6bcda1.chunk.js": "/region-core/static/js/3.9c6bcda1.chunk.js",
+    "static/js/3.9c6bcda1.chunk.js.map": "/region-core/static/js/3.9c6bcda1.chunk.js.map",
+    "index.html": "/region-core/index.html",
+    "precache-manifest.099379a625ad2552ac973ec7ce97f669.js": "/region-core/precache-manifest.099379a625ad2552ac973ec7ce97f669.js",
+    "service-worker.js": "/region-core/service-worker.js",
+    "static/css/2.2cc0cb98.chunk.css.map": "/region-core/static/css/2.2cc0cb98.chunk.css.map",
+    "static/css/main.c139fc73.chunk.css.map": "/region-core/static/css/main.c139fc73.chunk.css.map",
+    "static/js/2.8552c0af.chunk.js.LICENSE.txt": "/region-core/static/js/2.8552c0af.chunk.js.LICENSE.txt",
+    "static/media/codicon.css": "/region-core/static/media/codicon.22349029.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a0322fb6.js",
+    "static/css/2.2cc0cb98.chunk.css",
+    "static/js/2.8552c0af.chunk.js",
+    "static/css/main.c139fc73.chunk.css",
+    "static/js/main.672222e0.chunk.js"
+  ]
 }

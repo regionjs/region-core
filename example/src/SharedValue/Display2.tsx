@@ -1,4 +1,5 @@
 import React from 'react';
+import { Space } from 'antd';
 import { Card, Button, Lines } from '../components';
 import { loadFollower, clearFollower, useLoading, useUser, useFollower } from './load';
 
@@ -12,8 +13,10 @@ const Display = () => {
       style={{ width: 300, margin: 30 }}
     >
       <Lines lines={follower} />
-      <Button loading={loading} onClick={loadFollower}>More</Button>
-      <Button loading={loading} onClick={clearFollower}>Clear</Button>
+      <Space>
+        <Button loading={loading} onClick={loadFollower}>More</Button>
+        <Button loading={loading} onClick={clearFollower}>Clear</Button>
+      </Space>
     </Card>
   );
 };

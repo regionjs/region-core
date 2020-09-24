@@ -1,7 +1,7 @@
 import React from 'react';
-import { Icon } from '../components';
+import { createFromIconfontCN, GithubOutlined } from '@ant-design/icons';
 
-const IconFont = Icon.createFromIconfontCN({
+const IconFont = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_942570_3ol64gksd4x.js',
 });
 
@@ -17,7 +17,7 @@ const GetStarted = () => (
     <pre>{pre}</pre>
     <h1>Related</h1>
     <div style={{ fontSize: 18 }}>
-      <a href="https://github.com/regionjs/region-core"><Icon type="github" /> Github</a>
+      <a href="https://github.com/regionjs/region-core"><GithubOutlined /> Github</a>
       <span style={{ margin: '0 15px' }} />
       <a href="https://www.npmjs.com/package/region-core"><IconFont type="npm" /> npm</a>
       <span style={{ margin: '0 15px' }} />

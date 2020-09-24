@@ -1,6 +1,5 @@
-/* global window */
 import React from 'react';
-import { Icon } from '../components';
+import { GithubOutlined } from '@ant-design/icons';
 import Editor from './Editor';
 import styles from './External.module.css';
 import { codeRegion } from './codeRegion';
@@ -19,7 +18,7 @@ const External = ({ selectedKey }: any) => {
           rel="noreferrer noopener"
           target="_blank"
         >
-          <Icon type="github" />
+          <GithubOutlined />
         </a>
       </div>
       <Editor selectedKey={selectedKey} />

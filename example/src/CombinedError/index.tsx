@@ -1,6 +1,7 @@
 import React from 'react';
 import { createCombinedRegion } from 'region-core';
-import { Button, Divider, Icon, Card } from '../components';
+import { LoadingOutlined, CloseCircleOutlined, CheckCircleOutlined } from '@ant-design/icons';
+import { Button, Divider, Card } from '../components';
 import { fetchValue1, fetchValue2 } from './api';
 
 interface Shape {
@@ -16,22 +17,23 @@ const loadValueWithError = () => {
 
 loadValueWithError();
 
-const getStatus = ({ loading, error }: {loading: boolean, error: Error}) => {
+const getIcon = ({ loading, error }: {loading: boolean, error: Error}) => {
   if (loading) {
-    return 'loading';
+    return <LoadingOutlined />;
   }
   if (error) {
-    return 'close-circle';
+    return <CloseCircleOutlined />;
   }
-  return 'check-circle';
+  return <CheckCircleOutlined />;
 };
 
 const Display = () => {
   // loading and error is combined
+  // @ts-ignore
   const { loading, error, value1, value2 } = errorRegion.useProps(['value1', 'value2']);
   return (
     <Card>
-      {'Status: '}<Icon type={getStatus({ loading, error })} />
+      {'Status: '}{getIcon({ loading, error })}
       <Divider />
       {'Value will remain last resolved value'}
       <pre>{`value1: ${value1}\nvalue2: ${value2}\n`}</pre>

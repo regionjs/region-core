@@ -4,22 +4,26 @@
   "private": true,
   "homepage": "https://regionjs.github.io/region-core/",
   "dependencies": {
-    "@types/history": "^4.7.3",
-    "@types/jest": "^24.0.25",
-    "@types/lodash": "^4.14.149",
-    "@types/node": "^13.1.1",
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
-    "antd": "^3.25.2",
-    "history": "^4.7.2",
-    "lodash": "^4.17.11",
-    "monaco-editor": "^0.17.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-monaco-editor": "^0.25.1",
-    "react-scripts": "^2.1.5",
-    "region-core": "github:regionjs/region-core",
-    "typescript": "^3.7.4"
+    "@ant-design/colors": "^4.0.5",
+    "@ant-design/icons": "^4.2.2",
+    "@types/history": "^4.7.8",
+    "@types/jest": "^26.0.14",
+    "@types/lodash": "^4.14.161",
+    "@types/node": "^14.11.2",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "antd": "^4.6.5",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "gh-pages": "^3.1.0",
+    "history": "^5.0.0",
+    "lodash": "^4.17.20",
+    "monaco-editor": "^0.21.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-monaco-editor": "^0.40.0",
+    "react-scripts": "^3.4.3",
+    "region-core": "^10.0.0",
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,9 +38,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "eslint-config-airbnb-base": "^13.2.0",
-    "gh-pages": "^2.0.1"
-  }
+  ]
 }

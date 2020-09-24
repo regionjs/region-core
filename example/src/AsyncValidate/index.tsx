@@ -29,12 +29,13 @@ const AsyncValidate = () => {
   const { loading, error, value } = asyncValidateRegion.useProps();
   const validateStatus = getValidateStatus({ loading, error, value });
   const errorMessage = error && error.message;
+  // TODO fix error occurs
   return (
     <Card>
       <Form.Item
         hasFeedback
         validateStatus={validateStatus}
-        help={loading ? 'validating...' : errorMessage}
+        help={validateStatus === 'validating' ? 'validating...' : errorMessage}
       >
         <Input
           placeholder="type some number"

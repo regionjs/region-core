@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { createRegion } from 'region-core';
 import { get, groupBy } from 'lodash';
 import { Menu, Layout } from '../components';
@@ -46,12 +46,8 @@ const getMenuElements = () => {
 
 const menuElements = getMenuElements();
 
-const AppLayout = () => {
-  const loading = selectedKeyRegion.useLoading();
+const AppLayout: FC = () => {
   const selectedKey = selectedKeyRegion.useValue();
-  if (loading) {
-    return null;
-  }
   const route = routes.find(({ key }) => key === selectedKey);
   if (!route) {
     selectedKeyRegion.set(defaultSelectKey);

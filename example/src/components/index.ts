@@ -5,7 +5,6 @@ import Lines from './Lines';
 export { Card, Divider, Lines };
 
 export {
-  Icon,
   Button,
   Spin,
   Menu,

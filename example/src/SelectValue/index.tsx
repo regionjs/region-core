@@ -15,9 +15,9 @@ const generate = (type: string, id: number) => ({
 });
 
 const animalRegion = createRegion<Animal[]>(['cat', 'cat', 'dog', 'cat', 'dog'].map((type, index) => generate(type, index)));
-const typeRegion = createRegion();
+const typeRegion = createRegion<'cat' | 'dog'>();
 
-const getFilteredArray = (array: Animal[], type: string) => {
+const getFilteredArray = (array: Animal[], type?: string) => {
   if (type && type !== 'all') {
     return array.filter(item => item.type === type);
   }

@@ -6,7 +6,7 @@ import { apiGetUser } from './api';
 const region = createRegion();
 
 // apiGetUser may reject
-const loadUser = region.loadBy(apiGetUser);
+const loadUser = () => region.load(apiGetUser);
 
 loadUser();
 

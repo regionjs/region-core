@@ -5,7 +5,7 @@ import { apiGetUser } from './api';
 
 const region = createRegion();
 
-const loadUser = region.loadBy(apiGetUser);
+const loadUser = () => region.load(apiGetUser);
 
 // application initial
 loadUser();

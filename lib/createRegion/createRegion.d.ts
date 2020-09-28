@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ResultFunc, ResultFuncPure } from '../types';
+import { AsyncFunctionOrPromise, LoadOption, OptionOrReducer, RegionOption, ResultFunc, ResultFuncPure } from '../types';
 export interface CreateRegionReturnValue<V> {
     set: (resultOrFunc: V | ResultFunc<V>) => V;
     reset: () => void;
@@ -24,6 +24,6 @@ export interface CreateRegionPureReturnValue<V> extends Omit<CreateRegionReturnV
     getValue: () => V;
     useValue: () => V;
 }
-declare function createRegion<V>(initialValue: void): CreateRegionReturnValue<V>;
-declare function createRegion<V>(initialValue: V): CreateRegionPureReturnValue<V>;
+declare function createRegion<V>(initialValue: void | undefined, option?: RegionOption): CreateRegionReturnValue<V>;
+declare function createRegion<V>(initialValue: V, option?: RegionOption): CreateRegionPureReturnValue<V>;
 export default createRegion;

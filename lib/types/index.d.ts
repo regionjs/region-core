@@ -1,3 +1,7 @@
+export declare type Strategy = 'acceptLatest' | 'acceptEvery';
+export interface RegionOption {
+    strategy: Strategy;
+}
 export declare type LegacyKey<K> = K | K[];
 export interface ConnectOption {
     Loading?: any;

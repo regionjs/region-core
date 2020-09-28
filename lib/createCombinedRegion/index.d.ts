@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ResultFunc, ResultFuncPure, AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ConnectOption } from '../types';
+import { ResultFunc, ResultFuncPure, AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ConnectOption, RegionOption } from '../types';
 export interface CreateCombinedRegionReturnValue<T> {
     private_setState_just_for_test: (value: any) => void;
     set: <K extends keyof T>(key: K, resultOrFunc: T[K] | ResultFunc<T[K]>) => T[K];
@@ -26,6 +26,6 @@ export interface CreateCombinedRegionPureReturnValue<T> extends Omit<CreateCombi
     getValue: <K extends keyof T>(key: K) => T[K];
     useValue: <K extends keyof T>(key: K) => T[K];
 }
-declare function createCombinedRegion<T>(initialValue: void): CreateCombinedRegionReturnValue<T>;
-declare function createCombinedRegion<T>(initialValue: T): CreateCombinedRegionPureReturnValue<T>;
+declare function createCombinedRegion<T>(initialValue: void | undefined, option?: RegionOption): CreateCombinedRegionReturnValue<T>;
+declare function createCombinedRegion<T>(initialValue: T, option?: RegionOption): CreateCombinedRegionPureReturnValue<T>;
 export default createCombinedRegion;

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ResultFunc, ResultFuncPure, AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ConnectOption } from '../types';
+import { ResultFunc, ResultFuncPure, AsyncFunctionOrPromise, LoadOption, OptionOrReducer, ConnectOption, RegionOption } from '../types';
 export interface CreateMappedRegionReturnValue<K, V> {
     private_setState_just_for_test: (value: any) => void;
     set: (key: K, resultOrFunc: V | ResultFunc<V>) => V;
@@ -26,6 +26,6 @@ export interface CreateMappedRegionPureReturnValue<K, V> extends Omit<CreateMapp
     getValue: (key: K) => V;
     useValue: (key: K) => V;
 }
-declare function createMappedRegion<K, V>(initialValue: void): CreateMappedRegionReturnValue<K, V>;
-declare function createMappedRegion<K, V>(initialValue: V): CreateMappedRegionPureReturnValue<K, V>;
+declare function createMappedRegion<K, V>(initialValue: void | undefined, option?: RegionOption): CreateMappedRegionReturnValue<K, V>;
+declare function createMappedRegion<K, V>(initialValue: V, option?: RegionOption): CreateMappedRegionPureReturnValue<K, V>;
 export default createMappedRegion;

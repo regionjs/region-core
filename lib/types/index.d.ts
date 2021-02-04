@@ -12,12 +12,19 @@ export declare type ResultFuncPure<V> = (snapshot: V) => V;
 export declare type AsyncFunction<TParams, TResult> = (params: TParams) => Promise<TResult>;
 export declare type AsyncFunctionOrPromise<TParams, TResult> = AsyncFunction<TParams, TResult>;
 declare type Reducer<TParams, TResult, V> = (state: V | undefined, result: TResult, params: TParams) => V;
+declare type ReducerPure<TParams, TResult, V> = (state: V, result: TResult, params: TParams) => V;
 export interface LoadOption<TParams, TResult, V> {
     reducer?: Reducer<TParams, TResult, V>;
     forceUpdate?: boolean;
     params?: TParams;
 }
+export interface LoadOptionPure<TParams, TResult, V> {
+    reducer?: ReducerPure<TParams, TResult, V>;
+    forceUpdate?: boolean;
+    params?: TParams;
+}
 export declare type OptionOrReducer<TParams, TResult, V> = LoadOption<TParams, TResult, V> | Reducer<TParams, TResult, V>;
+export declare type OptionOrReducerPure<TParams, TResult, V> = LoadOptionPure<TParams, TResult, V> | ReducerPure<TParams, TResult, V>;
 export interface LoadPayload<K, TResult> {
     key: K;
     promise: Promise<TResult>;

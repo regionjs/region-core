@@ -12,7 +12,7 @@ const Component = () => {
     <Card>
       {value}
       <Divider/>
-      <Input value={value} onChange={handleChange} />
+      <Input style={{ width: 300 }} value={value} onChange={handleChange} />
     </Card>
   );
 };

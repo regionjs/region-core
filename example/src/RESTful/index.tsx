@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRegion } from 'region-core';
+import { Space } from 'antd';
 import { Button, List, Card } from '../components';
 import { getList, postList, putList, patchList, deleteList } from './mockList';
 
@@ -87,9 +88,11 @@ export default () => {
             return (
               <List.Item>
                 <span style={{ flex: 1 }}>{item.value}</span>
-                <Button onClick={handlePut}>PUT</Button>
-                <Button onClick={handlePatch}>PATCH</Button>
-                <Button onClick={handleDelete}>DELETE</Button>
+                <Space>
+                  <Button onClick={handlePut}>PUT</Button>
+                  <Button onClick={handlePatch}>PATCH</Button>
+                  <Button onClick={handleDelete}>DELETE</Button>
+                </Space>
               </List.Item>
             );
           }

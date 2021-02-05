@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
-import { createCombinedRegion } from 'region-core';
+import { createRegion } from 'region-core';
 import { Input, Switch, Radio, Checkbox, Card, Divider } from '../components';
+import {Descriptions} from "antd";
 
 interface Shape {
   a: boolean;
@@ -8,16 +9,19 @@ interface Shape {
   c: string;
   d: string[];
 }
-const combinedRegion = createCombinedRegion<Shape>();
+const combinedRegion = createRegion<Shape>({a: false, b: '', c: '', d: []});
 
-const handleChange = (value: boolean) => combinedRegion.set('a', value);
-const handleInput = (e: any) => combinedRegion.set('b', e.target.value);
-const handleRadio = (e: any) => combinedRegion.set('c', e.target.value);
-const handleCheckBox = (value: any[]) => combinedRegion.set('d', value);
+const setKeyValue = (key: any, value: any) => {
+  combinedRegion.set((state) => ({...state, [key]: value}))
+}
+
+const handleChange = (value: boolean) => setKeyValue('a', value);
+const handleInput = (e: any) => setKeyValue('b', e.target.value);
+const handleRadio = (e: any) => setKeyValue('c', e.target.value);
+const handleCheckBox = (value: any[]) => setKeyValue('d', value);
 
 const FormCard = () => {
-  // @ts-ignore
-  const { a, b, c, d } = combinedRegion.useProps(['a', 'b', 'c', 'd']);
+  const { a, b, c, d } = combinedRegion.useValue();
   return (
     <Card>
       <Switch checked={a} onChange={handleChange} />
@@ -32,13 +36,15 @@ const FormCard = () => {
 };
 
 const Result = () => {
-  // @ts-ignore
-  const { a, b, c, d } = combinedRegion.useProps(['a', 'b', 'c', 'd']);
+  const { a, b, c, d } = combinedRegion.useValue();
   return (
     <Card>
-      {JSON.stringify({
-        a, b, c, d,
-      })}
+      <Descriptions title="User Info" bordered>
+        <Descriptions.Item label="A">{String(a)}</Descriptions.Item>
+        <Descriptions.Item label="B">{b}</Descriptions.Item>
+        <Descriptions.Item label="C">{c}</Descriptions.Item>
+        <Descriptions.Item label="D">{d.join(', ')}</Descriptions.Item>
+      </Descriptions>
     </Card>
   );
 };

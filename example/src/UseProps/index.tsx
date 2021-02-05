@@ -2,6 +2,7 @@ import React from 'react';
 import { createRegion } from 'region-core';
 import { Button, Card, Divider } from '../components';
 import { apiGetUser } from './api';
+import {Descriptions} from "antd";
 
 const region = createRegion();
 
@@ -15,11 +16,11 @@ const Component = () => {
 
   return (
     <Card loading={loading}>
-      {value}
-      <Divider/>
-      {error && error.message}
-      <Divider/>
-      {new Date(fetchTime).toString()}
+      <Descriptions title="User Info" bordered>
+        <Descriptions.Item label="Value">{value}</Descriptions.Item>
+        <Descriptions.Item label="Error">{error ? error.message : ''}</Descriptions.Item>
+        <Descriptions.Item label="FetchTime">{new Date(fetchTime).toString()}</Descriptions.Item>
+      </Descriptions>
       <Divider/>
       <Button onClick={loadUser}>loadUser</Button>
     </Card>

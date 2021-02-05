@@ -8,11 +8,9 @@ import ClassComponent from '../ClassComponent';
 import AdvancedLoading from '../AdvancedLoading';
 import RESTful from '../RESTful';
 import SWR from '../SWR';
-import SelectValue from '../SelectValue';
 import Form from '../Form';
 import AsyncValidate from '../AsyncValidate';
 import LocalStorageRegion from '../LocalStorageRegion';
-import CombinedError from '../CombinedError';
 
 export default [{
   key: 'GetStarted',
@@ -45,11 +43,6 @@ export default [{
   groupName: 'Basic',
   Component: LocalStorageRegion,
 }, {
-  key: 'CombinedError',
-  label: 'Combined Error',
-  groupName: 'Basic',
-  Component: CombinedError,
-}, {
   key: 'SharedValue',
   label: 'Shared Value',
   groupName: 'Advanced',
@@ -64,11 +57,6 @@ export default [{
   label: 'Class Component',
   groupName: 'Advanced',
   Component: ClassComponent,
-}, {
-  key: 'SelectValue',
-  label: 'Select Value',
-  groupName: 'Advanced',
-  Component: SelectValue,
 }, {
   key: 'RESTful',
   label: 'RESTful',

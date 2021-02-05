@@ -26,6 +26,8 @@ export interface CreateCombinedRegionPureReturnValue<T> extends Omit<CreateCombi
     getValue: <K extends keyof T>(key: K) => T[K];
     useValue: <K extends keyof T>(key: K) => T[K];
 }
+/** @deprecated */
 declare function createCombinedRegion<T>(initialValue: void | undefined, option?: RegionOption): CreateCombinedRegionReturnValue<T>;
+/** @deprecated */
 declare function createCombinedRegion<T>(initialValue: T, option?: RegionOption): CreateCombinedRegionPureReturnValue<T>;
 export default createCombinedRegion;

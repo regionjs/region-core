@@ -2,7 +2,6 @@ import GetStarted from '../GetStarted';
 import UseValue from '../UseValue';
 import UseLoading from '../UseLoading';
 import UseError from '../UseError';
-import UseProps from '../UseProps';
 import SharedValue from '../SharedValue';
 import ClassComponent from '../ClassComponent';
 import AdvancedLoading from '../AdvancedLoading';
@@ -11,6 +10,7 @@ import SWR from '../SWR';
 import Form from '../Form';
 import AsyncValidate from '../AsyncValidate';
 import LocalStorageRegion from '../LocalStorageRegion';
+import MappedRegion from '../MappedRegion';
 
 export default [{
   key: 'GetStarted',
@@ -33,15 +33,15 @@ export default [{
   groupName: 'Basic',
   Component: UseError,
 }, {
-  key: 'UseProps',
-  label: 'useProps',
-  groupName: 'Basic',
-  Component: UseProps,
-}, {
   key: 'LocalStorageRegion',
   label: 'localStorage',
   groupName: 'Basic',
   Component: LocalStorageRegion,
+}, {
+  key: 'MappedRegion',
+  label: 'mappedRegion',
+  groupName: 'Basic',
+  Component: MappedRegion,
 }, {
   key: 'SharedValue',
   label: 'Shared Value',

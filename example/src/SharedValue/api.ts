@@ -1,7 +1,9 @@
-const fetchFactory = <T>(value: T, delay = 1000) => (): Promise<T> => new Promise((resolve) => {
-  setTimeout(() => { resolve(value); }, delay);
-});
+import faker from 'faker';
 
-export const fetchUser = fetchFactory('the user from api', 500);
-export const fetchFollower = fetchFactory('some followers from api');
-export const deleteFollower = fetchFactory([]);
+export const apiGetUser = (): Promise<string> => new Promise((resolve) => setTimeout(() => {
+  resolve(`${faker.name.lastName()} ${faker.name.firstName()}`);
+}, 500));
+
+export const apiGetNextFollower = (): Promise<string> => new Promise((resolve) => setTimeout(() => {
+  resolve(`${faker.name.lastName()} ${faker.name.firstName()}`);
+}, 1000));

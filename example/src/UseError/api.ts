@@ -1,11 +1,9 @@
-let count = 0;
+import faker from "faker";
 
-export const apiGetUser = () => new Promise((resolve, reject) => setTimeout(() => {
-  if (count > 3) {
-    const error = new Error(`error: ${count}`);
-    reject(error);
-  } else {
-    resolve(`user from api: ${count}`);
-  }
-  count++;
+export const apiGetUserResolved = () => new Promise((resolve) => setTimeout(() => {
+  resolve(`${faker.name.lastName()} ${faker.name.firstName()}`);
+}, 1000));
+
+export const apiGetUserRejected = () => new Promise((resolve, reject) => setTimeout(() => {
+  reject(new Error(faker.lorem.word()));
 }, 1000));

@@ -16,7 +16,7 @@ const Component = () => {
 
   return (
     <Card loading={loading}>
-      {value}
+      User: {value}
       <Divider/>
       <Button onClick={loadUser}>loadUser</Button>
     </Card>

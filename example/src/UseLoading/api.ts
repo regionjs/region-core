@@ -1,6 +1,5 @@
-let count = 0;
+import faker from 'faker';
 
 export const apiGetUser = () => new Promise(resolve => setTimeout(() => {
-  resolve(`user from api: ${count}`);
-  count++;
+  resolve(`${faker.name.lastName()} ${faker.name.firstName()}`);
 }, 1000));

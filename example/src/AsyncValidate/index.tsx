@@ -26,7 +26,9 @@ const getValidateStatus = ({ loading, error, value }: any) => {
 };
 
 const AsyncValidate = () => {
-  const { loading, error, value } = asyncValidateRegion.useProps();
+  const loading = asyncValidateRegion.useLoading();
+  const error = asyncValidateRegion.useError();
+  const value = asyncValidateRegion.useValue();
   const validateStatus = getValidateStatus({ loading, error, value });
   const errorMessage = error && error.message;
   // TODO fix error occurs

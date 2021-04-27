@@ -1,20 +1,20 @@
 import { createRegion } from 'region-core';
-import { fetchUser, fetchFollower, deleteFollower } from './api';
+import { apiGetUser, apiGetNextFollower } from './api';
 
-const userRegion = createRegion<string[]>([]);
+const userRegion = createRegion<string>();
 const followerRegion = createRegion<string[]>([]);
 
-export const loadUser = userRegion.loadBy(fetchUser);
+export const loadUser = userRegion.loadBy(apiGetUser);
 
 export const loadFollower = () => followerRegion.load(
-  fetchFollower,
+  apiGetNextFollower,
   (state = [], result) => {
     state.push(result);
     return state.slice();
   },
 );
 
-export const clearFollower = () => followerRegion.load(deleteFollower);
+export const clearFollower = followerRegion.reset;
 
 export const useUser = userRegion.useValue;
 

@@ -24,7 +24,7 @@
     "react-dom": "^16.13.1",
     "react-monaco-editor": "^0.40.0",
     "react-scripts": "^3.4.3",
-    "region-core": "^11.0.0",
+    "region-core": "^11.1.0",
     "typescript": "^4.0.3"
   },
   "scripts": {

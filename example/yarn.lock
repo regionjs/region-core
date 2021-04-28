@@ -10173,10 +10173,10 @@ regexpu-core@^4.7.0:
     unicode-match-property-ecmascript "^1.0.4"
     unicode-match-property-value-ecmascript "^1.2.0"
 
-region-core@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/region-core/-/region-core-11.0.0.tgz#84c6cff4d8e92201c8073cb7baad24cc424a6fe1"
-  integrity sha512-aK8QTKjbP3bcAj7MV7cvyS9bhiureXSLYCM+DeKi4RNfyzxu6/p7EUvo9zSC+spQPnx9vK2rt88Q9ECroscwHA==
+region-core@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/region-core/-/region-core-11.1.0.tgz#1857189c7344724b0aab3a8951a3794af51687bc"
+  integrity sha512-htprbBhPJawmTUpJqvCafF+drDOwYlUD9R40UVgofsuVUcVUMIxNUyXu4GP3P7HiE14gkb0FZVIEH7k8Lp1X2w==
   dependencies:
     json-stable-stringify "^1.0.1"
     use-subscription "^1.5.1"

@@ -1,14 +1,14 @@
 import React from 'react';
 import { createRegion } from 'region-core';
-import {Descriptions, Button, Spin, Space} from 'antd';
+import { Descriptions, Button, Spin, Space } from 'antd';
 import { Card, Divider } from '../components';
 import { apiGetUserResolved, apiGetUserRejected } from './api';
 
 const region = createRegion<string>();
 
 // apiGetUser may reject
-const loadUserResolved = () => region.load(apiGetUserResolved);
-const loadUserRejected = () => region.load(apiGetUserRejected);
+const loadUserResolved = region.loadBy(apiGetUserResolved);
+const loadUserRejected = region.loadBy(apiGetUserRejected);
 
 const Component = () => {
   const loading = region.useLoading();

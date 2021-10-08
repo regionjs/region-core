@@ -2,8 +2,16 @@
   margin: 0 30px 30px 30px;
 }
 
+.title {
+  color: #ccc;
+}
+
+.title-text {
+  margin-left: 8px;
+}
+
 .code {
-  padding: 0 10px;
+  padding: 0 1em;
 }
 
 .dark {

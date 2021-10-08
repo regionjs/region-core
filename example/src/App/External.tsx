@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Spin } from 'antd';
+import Refractor from 'react-refractor';
 import { GithubOutlined } from '@ant-design/icons';
-import Editor from './Editor';
 import styles from './External.module.css';
-import { codeRegion } from './codeRegion';
+import { codeRegion, loadCode } from './codeRegion';
 
-const External = ({ selectedKey }: any) => {
-  const codeLoading = codeRegion.useLoading();
-  let gotoDefinitionClass = styles.code;
-  if (!codeLoading) {
-    gotoDefinitionClass = `${styles.code} ${styles.dark}`;
+interface Props {
+  selectedKey: string
+}
+
+const External = ({ selectedKey }: Props) => {
+  const codeLoading = codeRegion.useLoading(selectedKey);
+  const code = codeRegion.useValue(selectedKey);
+
+  useEffect(
+    () => {
+      loadCode(selectedKey);
+    },
+    [selectedKey],
+  );
+
+  if (codeLoading) {
+    return <div className={styles.container}><Spin /></div>;
   }
+
   return (
     <div className={styles.container}>
-      <div className={gotoDefinitionClass}>
+      <div className={`${styles.code} ${styles.dark}`}>
         <a
+          className={styles.title}
           href={`https://github.com/regionjs/region-core/blob/master/example/src/${selectedKey}/index.tsx`}
           rel="noreferrer noopener"
           target="_blank"
         >
           <GithubOutlined />
+          <span className={styles['title-text']}>{`src/${selectedKey}/index.tsx`}</span>
         </a>
       </div>
-      <Editor selectedKey={selectedKey} />
+      <Refractor language="tsx" value={code} />
     </div>
   );
 };

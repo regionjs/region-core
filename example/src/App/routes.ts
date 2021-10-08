@@ -12,7 +12,7 @@ import AsyncValidate from '../AsyncValidate';
 import LocalStorageRegion from '../LocalStorageRegion';
 import MappedRegion from '../MappedRegion';
 
-export default [{
+const routes = [{
   key: 'GetStarted',
   label: 'Get Started',
   groupName: 'GetStarted',
@@ -78,3 +78,5 @@ export default [{
   groupName: 'Advanced',
   Component: Form,
 }];
+
+export default routes;

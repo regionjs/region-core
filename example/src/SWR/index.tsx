@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 import { createMappedRegion } from 'region-core';
 import { Space } from 'antd';
 import { Button, Card, Divider } from '../components';
@@ -10,23 +10,23 @@ const region = createMappedRegion<Key, unknown>();
 const loadA = region.loadBy('A', fetchA);
 const loadB = region.loadBy('B', fetchB);
 
-export default () => {
+const Component = () => {
   const [current, setCurrent] = useState<'A' | 'B'>('A');
   const value = region.useValue(current);
   const handleClickA = useCallback(
     () => {
       setCurrent('A');
-      loadA()
+      loadA();
     },
-    []
-  )
+    [],
+  );
   const handleClickB = useCallback(
     () => {
       setCurrent('B');
       loadB();
     },
-    []
-  )
+    [],
+  );
   return (
     <Card>
       <p>
@@ -48,3 +48,5 @@ export default () => {
     </Card>
   );
 };
+
+export default Component;

@@ -13,7 +13,7 @@ interface Shape {
   [key: number]: Item;
 }
 const listRegion = createRegion<Shape>();
-listRegion.load(getList);
+listRegion.load(getList());
 
 /* eslint-disable no-param-reassign */
 const handleGet = listRegion.loadBy(getList);
@@ -61,7 +61,7 @@ const deNormalize = (entity = {}) => {
   return array;
 };
 
-export default () => {
+const Component = () => {
   const loading = listRegion.useLoading();
   const list = listRegion.useValue();
   const formattedList = deNormalize(list);
@@ -101,3 +101,5 @@ export default () => {
     </Card>
   );
 };
+
+export default Component;

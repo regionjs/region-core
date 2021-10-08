@@ -1,8 +1,8 @@
-import React, {useEffect, VFC} from 'react';
-import {random, times} from 'lodash';
-import {Table} from 'antd';
-import {createMappedRegion, createRegion} from "region-core";
-import faker from "faker";
+import React, { useEffect, VFC } from 'react';
+import { random, times } from 'lodash';
+import { Table } from 'antd';
+import { createMappedRegion, createRegion } from 'region-core';
+import faker from 'faker';
 import { Card } from '../components';
 
 interface IssueKey {
@@ -18,7 +18,7 @@ interface Issue {
 }
 
 const issueKeyListRegion = createRegion<IssueKey[]>([]);
-const issueRegion = createMappedRegion<string, Issue>()
+const issueRegion = createMappedRegion<string, Issue>();
 
 const newIssue = (): Issue => ({
   id: faker.random.uuid(),
@@ -26,37 +26,35 @@ const newIssue = (): Issue => ({
   createdTime: faker.date.recent(30).toISOString(),
   status: ['New', 'Assigned', 'In Progress', 'Completed', 'Abandoned'][random(4)],
   title: faker.lorem.sentence(),
-})
+});
 
-const apiGetIssueList = (): Promise<Issue[]> => Promise.resolve(times(20, newIssue))
+const apiGetIssueList = (): Promise<Issue[]> => Promise.resolve(times(20, newIssue));
 
 const loadIssueList = issueKeyListRegion.loadBy(
   apiGetIssueList,
-  (state, result) => {
-    return result.map(issue => {
-      issueRegion.set(issue.id, issue);
-      return {id: issue.id};
-    })
-  }
-)
+  (state, result) => result.map((issue) => {
+    issueRegion.set(issue.id, issue);
+    return { id: issue.id };
+  }),
+);
 
-const useIssue = issueRegion.useValue
+const useIssue = issueRegion.useValue;
 
-const TitleField: VFC<IssueKey> = ({id}) => {
+const TitleField: VFC<IssueKey> = ({ id }) => {
   const issue = useIssue(id);
 
   return <>{issue?.title}</>;
 };
 
 const statusColorMap = {
-  'New': '#989898',
-  'Assigned': '#78cc52',
+  New: '#989898',
+  Assigned: '#78cc52',
   'In Progress': '#dbae03',
-  'Completed': '#5c6c9b',
-  'Abandoned': '#cc5256',
-}
+  Completed: '#5c6c9b',
+  Abandoned: '#cc5256',
+};
 
-const StatusLabel: VFC<IssueKey> = ({id}) => {
+const StatusLabel: VFC<IssueKey> = ({ id }) => {
   const issue = useIssue(id);
 
   return (
@@ -76,13 +74,13 @@ const StatusLabel: VFC<IssueKey> = ({id}) => {
   );
 };
 
-const CreatorName: VFC<IssueKey> = ({id}) => {
+const CreatorName: VFC<IssueKey> = ({ id }) => {
   const issue = useIssue(id);
 
   return <>{issue?.creator}</>;
 };
 
-const FieldText: VFC<IssueKey> = ({id}) => {
+const FieldText: VFC<IssueKey> = ({ id }) => {
   const issue = useIssue(id);
 
   // @ts-ignore
@@ -124,7 +122,7 @@ const App: VFC = () => {
     () => {
       loadIssueList();
     },
-    []
+    [],
   );
 
   return (

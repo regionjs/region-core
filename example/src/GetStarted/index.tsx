@@ -1,4 +1,5 @@
 import React from 'react';
+import Refractor from 'react-refractor';
 import { createFromIconfontCN, GithubOutlined } from '@ant-design/icons';
 
 const IconFont = createFromIconfontCN({
@@ -14,7 +15,7 @@ const pre = ''
 const GetStarted = () => (
   <div style={{ padding: 32 }}>
     <h1>How to run this</h1>
-    <pre>{pre}</pre>
+    <Refractor language="bash" value={pre} />
     <h1>Related</h1>
     <div style={{ fontSize: 18 }}>
       <a href="https://github.com/regionjs/region-core"><GithubOutlined /> Github</a>

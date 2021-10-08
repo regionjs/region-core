@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { createRegion } from 'region-core';
+import { Descriptions } from 'antd';
 import { Input, Switch, Radio, Checkbox, Card, Divider } from '../components';
-import {Descriptions} from "antd";
 
 interface Shape {
   a: boolean;
@@ -9,11 +9,11 @@ interface Shape {
   c: string;
   d: string[];
 }
-const combinedRegion = createRegion<Shape>({a: false, b: '', c: '', d: []});
+const combinedRegion = createRegion<Shape>({ a: false, b: '', c: '', d: [] });
 
 const setKeyValue = (key: any, value: any) => {
-  combinedRegion.set((state) => ({...state, [key]: value}))
-}
+  combinedRegion.set((state) => ({ ...state, [key]: value }));
+};
 
 const handleChange = (value: boolean) => setKeyValue('a', value);
 const handleInput = (e: any) => setKeyValue('b', e.target.value);

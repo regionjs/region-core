@@ -5,6 +5,7 @@ import { Menu, Layout } from '../components';
 import history from './history';
 import routes from './routes';
 import External from './External';
+import styles from './AppLayout.module.css';
 
 const initSelectedKey = () => {
   const { hash } = history.location;
@@ -55,8 +56,8 @@ const AppLayout: FC = () => {
   }
   const { Component, groupName } = route;
   return (
-    <Layout style={{ height: '100vh' }}>
-      <Layout.Sider width={200} theme="light" style={{ overflowY: 'auto' }}>
+    <Layout className={styles.container}>
+      <Layout.Sider className={styles.sider}>
         <Menu
           mode="inline"
           defaultOpenKeys={[groupName]}

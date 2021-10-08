@@ -1,15 +1,15 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { createRegion } from 'region-core';
 import { Button, Spin, Card, Divider } from '../components';
 
 const leftPartRegion = createRegion<null>();
 const rightPartRegion = createRegion<null>();
 
-const fetch = (): Promise<null> => new Promise(resolve => setTimeout(() => resolve(null), 1000));
+const fetch = (): Promise<null> => new Promise((resolve) => setTimeout(() => resolve(null), 1000));
 
-const handleLeft = () => leftPartRegion.load(fetch);
+const handleLeft = leftPartRegion.loadBy(fetch);
 
-const handleRight = () => rightPartRegion.load(fetch);
+const handleRight = rightPartRegion.loadBy(fetch);
 
 const LeftPart = () => {
   const loading = leftPartRegion.useLoading();
@@ -36,8 +36,8 @@ const Parent = () => {
       handleLeft();
       handleRight();
     },
-    []
-  )
+    [],
+  );
 
   return (
     <Card>

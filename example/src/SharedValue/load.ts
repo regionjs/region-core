@@ -6,13 +6,13 @@ const followerRegion = createRegion<string[]>([]);
 
 export const loadUser = userRegion.loadBy(apiGetUser);
 
-export const loadFollower = () => followerRegion.load(
+export const loadFollower = () => followerRegion.loadBy(
   apiGetNextFollower,
   (state = [], result) => {
     state.push(result);
     return state.slice();
   },
-);
+)();
 
 export const clearFollower = followerRegion.reset;
 

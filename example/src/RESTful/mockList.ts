@@ -11,32 +11,40 @@ const list: Shape = {
   0: { id: 0, value: 0 },
   1: { id: 1, value: 1 },
 };
+
 let index = 2;
 
-const factory = <T, R>(func: (v: T) => R) => (item: T): Promise<R> => new Promise((resolve) => {
-  setTimeout(() => { resolve(func(item)); }, 500);
+const delay = () => new Promise((resolve) => {
+  setTimeout(resolve, 500);
 });
 
-export const getList = factory(() => list);
+export const getList = async () => {
+  await delay();
+  return list;
+};
 
-export const postList = factory(() => {
+export const postList = async () => {
+  await delay();
   const item = { id: index, value: index };
   list[index] = item;
   index += 1;
   return item;
-});
+};
 
-export const putList = factory(((item: Item) => {
+export const putList = async (item: Item) => {
+  await delay();
   list[item.id] = item;
   return list[item.id];
-}));
+};
 
-export const patchList = factory((item: Item) => {
+export const patchList = async (item: Item) => {
+  await delay();
   list[item.id] = Object.assign(list[item.id], item);
   return list[item.id];
-});
+};
 
-export const deleteList = factory((id: number) => {
+export const deleteList = async (id: number) => {
+  await delay();
   delete list[id];
   return null;
-});
+};

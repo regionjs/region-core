@@ -1,28 +1,23 @@
 {
   "files": {
-    "main.css": "/region-core/static/css/main.c139fc73.chunk.css",
-    "main.js": "/region-core/static/js/main.14002f52.chunk.js",
-    "main.js.map": "/region-core/static/js/main.14002f52.chunk.js.map",
-    "runtime-main.js": "/region-core/static/js/runtime-main.fb9e95bc.js",
-    "runtime-main.js.map": "/region-core/static/js/runtime-main.fb9e95bc.js.map",
-    "static/css/2.b478e2d0.chunk.css": "/region-core/static/css/2.b478e2d0.chunk.css",
-    "static/js/2.97c3eb11.chunk.js": "/region-core/static/js/2.97c3eb11.chunk.js",
-    "static/js/2.97c3eb11.chunk.js.map": "/region-core/static/js/2.97c3eb11.chunk.js.map",
-    "static/js/3.2ba1e59f.chunk.js": "/region-core/static/js/3.2ba1e59f.chunk.js",
-    "static/js/3.2ba1e59f.chunk.js.map": "/region-core/static/js/3.2ba1e59f.chunk.js.map",
+    "main.css": "/region-core/static/css/main.45ef0c38.chunk.css",
+    "main.js": "/region-core/static/js/main.afba22ac.chunk.js",
+    "main.js.map": "/region-core/static/js/main.afba22ac.chunk.js.map",
+    "runtime-main.js": "/region-core/static/js/runtime-main.a103707d.js",
+    "runtime-main.js.map": "/region-core/static/js/runtime-main.a103707d.js.map",
+    "static/css/2.0781f203.chunk.css": "/region-core/static/css/2.0781f203.chunk.css",
+    "static/js/2.aa2ac9ca.chunk.js": "/region-core/static/js/2.aa2ac9ca.chunk.js",
+    "static/js/2.aa2ac9ca.chunk.js.map": "/region-core/static/js/2.aa2ac9ca.chunk.js.map",
     "index.html": "/region-core/index.html",
-    "precache-manifest.ba754720d45569938cdf82fd2a7a4a4b.js": "/region-core/precache-manifest.ba754720d45569938cdf82fd2a7a4a4b.js",
-    "service-worker.js": "/region-core/service-worker.js",
-    "static/css/2.b478e2d0.chunk.css.map": "/region-core/static/css/2.b478e2d0.chunk.css.map",
-    "static/css/main.c139fc73.chunk.css.map": "/region-core/static/css/main.c139fc73.chunk.css.map",
-    "static/js/2.97c3eb11.chunk.js.LICENSE.txt": "/region-core/static/js/2.97c3eb11.chunk.js.LICENSE.txt",
-    "static/media/codicon.css": "/region-core/static/media/codicon.22349029.ttf"
+    "static/css/2.0781f203.chunk.css.map": "/region-core/static/css/2.0781f203.chunk.css.map",
+    "static/css/main.45ef0c38.chunk.css.map": "/region-core/static/css/main.45ef0c38.chunk.css.map",
+    "static/js/2.aa2ac9ca.chunk.js.LICENSE.txt": "/region-core/static/js/2.aa2ac9ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb9e95bc.js",
-    "static/css/2.b478e2d0.chunk.css",
-    "static/js/2.97c3eb11.chunk.js",
-    "static/css/main.c139fc73.chunk.css",
-    "static/js/main.14002f52.chunk.js"
+    "static/js/runtime-main.a103707d.js",
+    "static/css/2.0781f203.chunk.css",
+    "static/js/2.aa2ac9ca.chunk.js",
+    "static/css/main.45ef0c38.chunk.css",
+    "static/js/main.afba22ac.chunk.js"
   ]
 }

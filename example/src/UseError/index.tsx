@@ -14,7 +14,6 @@ const Component = () => {
   const loading = region.useLoading();
   const value = region.useValue();
   const error = region.useError();
-  const fetchTime = region.useFetchTime() || 0;
 
   return (
     <Card>
@@ -22,7 +21,6 @@ const Component = () => {
         <Descriptions title="User Info" bordered>
           <Descriptions.Item label="Value">{value}</Descriptions.Item>
           <Descriptions.Item label="Error">{error ? error.message : ''}</Descriptions.Item>
-          <Descriptions.Item label="FetchTime">{new Date(fetchTime).toString()}</Descriptions.Item>
         </Descriptions>
       )}
       <Divider />

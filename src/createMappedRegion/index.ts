@@ -1,6 +1,7 @@
 import {useMemo, useRef} from 'react';
 import jsonStableStringify from 'json-stable-stringify';
 import {useSyncExternalStore} from 'use-sync-external-store/shim';
+import copy from 'fast-copy';
 import {deprecate} from '../util/deprecate';
 import {uniqLast, isLatest} from '../util/promiseQueue';
 import {getLocalStorageState, parseLocalStorageState, setLocalStorageState} from '../util/localStorageUtils';
@@ -246,12 +247,12 @@ function createMappedRegion <K, V>(initialValue: V | void | undefined, option?: 
     const private_getValueOrInitialValue = (key: string): V => {
         if (withLocalStorageKey) {
             const jsonString = getLocalStorageState(`${withLocalStorageKey}/${key}`);
-            const localStorageValue = parseLocalStorageState<V>(jsonString, initialValue as V);
+            const localStorageValue = parseLocalStorageState<V>(jsonString, copy(initialValue) as V);
             // 这里不 emit，所以直接操作 ref
             ref.value.set(key, localStorageValue);
             return localStorageValue;
         }
-        return initialValue as V;
+        return copy(initialValue) as V;
     };
 
     const private_getKeyString = (key: K): string => {

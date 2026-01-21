@@ -89,6 +89,7 @@ export interface MappedRegionUninitialized<K, V> {
     loadBy: LoadBy<K, V, undefined>;
     get: (key: K) => V | undefined;
     getValue: (key: K) => V | undefined;
+    getPendingMutex: (key: K) => number | undefined;
     getLoading: (key: K) => boolean;
     getError: (key: K) => Error | undefined;
     getPromise: (key: K) => Promise<V> | undefined;
@@ -375,6 +376,12 @@ export function createMappedRegion<K, V>(initialValue: V | void | undefined, opt
         return maybeSnapshot === undefined ? private_getValueOrInitialValue(keyString) : maybeSnapshot;
     };
 
+    const getPendingMutex: Result['getPendingMutex'] = (key) => {
+        const keyString = private_getKeyString(key);
+        const pendingMutex = ref.pendingMutex.get(keyString);
+        return pendingMutex;
+    };
+
     const getLoading: Result['getLoading'] = (key) => {
         const keyString = private_getKeyString(key);
         const pendingMutex = ref.pendingMutex.get(keyString);
@@ -412,6 +419,7 @@ export function createMappedRegion<K, V>(initialValue: V | void | undefined, opt
         loadBy,
         get: getValue,
         getValue,
+        getPendingMutex,
         getLoading,
         getError,
         getPromise,

@@ -20,7 +20,7 @@ describe('export api', () => {
         const {createRegion} = api;
         const {
             set, setValue, reset, load, loadBy, emit, subscribe,
-            get, getValue, getLoading, getError, getPromise,
+            get, getValue, getPendingMutex, getLoading, getError, getPromise,
             ...rest
         } = createRegion();
         expect(typeof set).toBe('function');
@@ -30,6 +30,7 @@ describe('export api', () => {
         expect(typeof loadBy).toBe('function');
         expect(typeof get).toBe('function');
         expect(typeof getValue).toBe('function');
+        expect(typeof getPendingMutex).toBe('function');
         expect(typeof getLoading).toBe('function');
         expect(typeof getError).toBe('function');
         expect(typeof getPromise).toBe('function');
@@ -40,7 +41,7 @@ describe('export api', () => {
         const {createMappedRegion} = api;
         const {
             set, setValue, reset, resetAll, load, loadBy, emit, subscribe,
-            get, getValue, getLoading, getError, getPromise,
+            get, getValue, getPendingMutex, getLoading, getError, getPromise,
             _internal,
             ...rest
         } = createMappedRegion();
@@ -51,6 +52,7 @@ describe('export api', () => {
         expect(typeof loadBy).toBe('function');
         expect(typeof get).toBe('function');
         expect(typeof getValue).toBe('function');
+        expect(typeof getPendingMutex).toBe('function');
         expect(typeof getLoading).toBe('function');
         expect(typeof getError).toBe('function');
         expect(typeof getPromise).toBe('function');

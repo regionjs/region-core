@@ -8,7 +8,6 @@ import type {
 import {getLocalStorageState, parseLocalStorageState} from 'region-core/es/utils/localStorageUtils.js';
 import {useStorageEvent} from './utils/document.js';
 import {RegionOption, Listener} from 'region-core/es/types.js';
-import {g} from 'vitest/dist/chunks/suite.d.FvehnV49.js';
 
 export interface MappedRegionUninitialized<K, V> extends Omit<CoreMappedRegionUninitialized<K, V>, '_internal'> {
     use: {
@@ -19,6 +18,7 @@ export interface MappedRegionUninitialized<K, V> extends Omit<CoreMappedRegionUn
         (key: K): V | undefined;
         <TResult>(key: K, selector: (value: V | undefined) => TResult): TResult;
     };
+    usePendingMutex: (key: K) => number | undefined;
     useLoading: (key: K) => boolean;
     useError: (key: K) => Error | undefined;
 }
@@ -32,6 +32,7 @@ export interface MappedRegionInitialized<K, V> extends Omit<CoreMappedRegionInit
         (key: K): V;
         <TResult>(key: K, selector: (value: V) => TResult): TResult;
     };
+    usePendingMutex: (key: K) => number | undefined;
     useLoading: (key: K) => boolean;
     useError: (key: K) => Error | undefined;
 }
@@ -71,6 +72,8 @@ export function createMappedRegion<K, V>(initialValue: V | void | undefined, opt
     const load: Result['load'] = mappedRegion.load;
 
     const getValue: Result['getValue'] = mappedRegion.getValue as Result['getValue'];
+
+    const getPendingMutex: Result['getPendingMutex'] = mappedRegion.getPendingMutex;
 
     const getLoading: Result['getLoading'] = mappedRegion.getLoading;
 
@@ -176,6 +179,8 @@ export function createMappedRegion<K, V>(initialValue: V | void | undefined, opt
         );
     };
 
+    const usePendingMutex: Result['usePendingMutex'] = createHooks(getPendingMutex);
+
     const useLoading: Result['useLoading'] = createHooks(getLoading);
 
     const useError: Result['useError'] = createHooks(getError);
@@ -192,11 +197,13 @@ export function createMappedRegion<K, V>(initialValue: V | void | undefined, opt
         loadBy,
         get: getValue,
         getValue,
+        getPendingMutex,
         getLoading,
         getError,
         getPromise,
         use: useValue,
         useValue,
+        usePendingMutex,
         useLoading,
         useError,
     };

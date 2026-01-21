@@ -8,7 +8,7 @@
 
 ## 11.x 升级至 12.x
 
-`region-core` 分拆为 `region-react` 和 `region-vanilla`，前者支持了 React 和 NextJS（新），后者不依赖 react 和浏览器环境，你可以将它用于 Node 开发。
+对 react 项目，使用 `region-react` 代替 `region-core`。对非 react 项目如 Node，使用 `region-vanilla`（新增支持）。
 
 移除了 `useData`，这是一个没有被完全跑通的用法，并不再支持。
 

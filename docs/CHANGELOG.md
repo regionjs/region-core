@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 12.x
+
+- add `setValue` as the alias of `set`, `get` as the alias of `getValue`, `use` as the alias of `useValue`
+
+- add `getPendingMutex` and `usePendingMutex`
+
 ### 11.x
 
 - add `syncLocalStorageFromEvent` option to control localStorage sync strategy

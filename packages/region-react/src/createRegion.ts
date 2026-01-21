@@ -14,6 +14,7 @@ export interface RegionUninitialized<V> extends CoreRegionUninitialized<V> {
         (): V | undefined;
         <TResult>(selector: (value: V | undefined) => TResult): TResult;
     };
+    usePendingMutex: () => number | undefined;
     useLoading: () => boolean;
     useError: () => Error | undefined;
 }
@@ -27,6 +28,7 @@ export interface RegionInitialized<V> extends CoreRegionInitialized<V> {
         (): V;
         <TResult>(selector: (value: V) => TResult): TResult;
     };
+    usePendingMutex: () => number | undefined;
     useLoading: () => boolean;
     useError: () => Error | undefined;
 }
@@ -77,6 +79,10 @@ export function createRegion<V>(initialValue: void | V | undefined, option?: Reg
         return region.getLoading('value');
     };
 
+    const getPendingMutex: Result['getPendingMutex'] = () => {
+        return region.getPendingMutex('value');
+    };
+
     const getError: Result['getError'] = () => {
         return region.getError('value');
     };
@@ -89,6 +95,10 @@ export function createRegion<V>(initialValue: void | V | undefined, option?: Reg
         // type actually strict, it is loose when developed
         // @ts-expect-error
         return region.useValue('value', selector);
+    };
+
+    const usePendingMutex: Result['usePendingMutex'] = () => {
+        return region.usePendingMutex('value');
     };
 
     const useLoading: Result['useLoading'] = () => {
@@ -109,11 +119,13 @@ export function createRegion<V>(initialValue: void | V | undefined, option?: Reg
         subscribe,
         get: getValue,
         getValue,
+        getPendingMutex,
         getLoading,
         getError,
         getPromise,
         use: useValue,
         useValue,
+        usePendingMutex,
         useLoading,
         useError,
     };

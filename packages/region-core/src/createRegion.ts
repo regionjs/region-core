@@ -28,6 +28,7 @@ export interface RegionUninitialized<V> {
     loadBy: LoadBy<V, undefined>;
     get: () => V | undefined;
     getValue: () => V | undefined;
+    getPendingMutex: () => number | undefined;
     getLoading: () => boolean;
     getError: () => Error | undefined;
     getPromise: () => Promise<V> | undefined;
@@ -83,6 +84,10 @@ export function createRegion<V>(initialValue: void | V | undefined, option?: Reg
         return region.getValue('value');
     };
 
+    const getPendingMutex: Result['getPendingMutex'] = () => {
+        return region.getPendingMutex('value');
+    };
+
     const getLoading: Result['getLoading'] = () => {
         return region.getLoading('value');
     };
@@ -105,6 +110,7 @@ export function createRegion<V>(initialValue: void | V | undefined, option?: Reg
         loadBy,
         get: getValue,
         getValue,
+        getPendingMutex,
         getLoading,
         getError,
         getPromise,

@@ -6,6 +6,12 @@ First of all, you should ensure no deprecated warning before migrate. Then read 
 
 If you meet some problem not listed, please raise an issue.
 
+## Migrate From 11.x to 12.x
+
+use `region-react` instead of `region-core` for react project. use `region-vanilla` for non-react project, such as Node (new support).
+
+remove undocumented `useData`, it is not fully supported.
+
 ## Migrate From 10.x to 11.x
 
 remove deprecated functions. Remove `getFetchTime` & `useFetchTime`. You could inject it in reducer.

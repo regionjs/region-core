@@ -20,8 +20,8 @@ describe('export api', () => {
         const {createRegion} = api;
         const {
             set, setValue, reset, load, loadBy, emit, subscribe,
-            get, getValue, getLoading, getError, getPromise,
-            use, useValue, useLoading, useError,
+            get, getValue, getPendingMutex, getLoading, getError, getPromise,
+            use, useValue, usePendingMutex, useLoading, useError,
             ...rest
         } = createRegion();
         expect(typeof set).toBe('function');
@@ -30,11 +30,13 @@ describe('export api', () => {
         expect(typeof loadBy).toBe('function');
         expect(typeof emit).toBe('function');
         expect(typeof subscribe).toBe('function');
+        expect(typeof getPendingMutex).toBe('function');
         expect(typeof getValue).toBe('function');
         expect(typeof getLoading).toBe('function');
         expect(typeof getError).toBe('function');
         expect(typeof getPromise).toBe('function');
         expect(typeof useValue).toBe('function');
+        expect(typeof usePendingMutex).toBe('function');
         expect(typeof useLoading).toBe('function');
         expect(typeof useError).toBe('function');
         expect(rest).toEqual({});
@@ -44,8 +46,8 @@ describe('export api', () => {
         const {createMappedRegion} = api;
         const {
             set, setValue, reset, resetAll, load, loadBy, emit, subscribe,
-            get, getValue, getLoading, getError, getPromise,
-            use, useValue, useLoading, useError,
+            get, getValue, getPendingMutex, getLoading, getError, getPromise,
+            use, useValue, usePendingMutex, useLoading, useError,
             ...rest
         } = createMappedRegion();
         expect(typeof set).toBe('function');
@@ -55,10 +57,12 @@ describe('export api', () => {
         expect(typeof emit).toBe('function');
         expect(typeof subscribe).toBe('function');
         expect(typeof getValue).toBe('function');
+        expect(typeof getPendingMutex).toBe('function');
         expect(typeof getLoading).toBe('function');
         expect(typeof getError).toBe('function');
         expect(typeof getPromise).toBe('function');
         expect(typeof useValue).toBe('function');
+        expect(typeof usePendingMutex).toBe('function');
         expect(typeof useLoading).toBe('function');
         expect(typeof useError).toBe('function');
         expect(rest).toEqual({});
